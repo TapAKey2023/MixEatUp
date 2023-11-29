@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <!-- Your content goes here -->
+
+  <h1>Pages#home</h1>
+  <p>"Let's Eat!"</p>
+  <p><button class="btn btn-primary"><%= link_to "Eat", restaurants_path, class: "btn btn-flat button" %></button></p>
+  <p><button class="btn btn-primary"><%= link_to "Up", new_bill_path, class: "btn btn-flat button" %></button></p>
+
+    <!-- Bottom row of buttons -->
+  <div class="row justify-content-end mt-3">
+    <div class="col-auto">
+      <button class="btn btn-primary">Home</button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-secondary">Find a Restaurant</button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-success">Upload Receipt</button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-danger">My Account</button>
+    </div>
+  </div>
+
+</div>
+
+<%# can't link to user_path?? %>
+<%# link_to "My Account", user_path(@user), class: "btn btn-flat button" %>

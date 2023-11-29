@@ -1,0 +1,18 @@
+  <div class="card-grid">
+      <% @current_user.saved_restaurants.each do |restaurant| %>
+      <div class="card">
+          <%= link_to restaurants_path(@restaurant), class:"text-decoration-none card-class" do %>
+              <div class="card-class-infos">
+                <h3><%= @current_user.saved_restaurants.name %></h3>
+              </div>
+          <% end %>
+      </div>
+      <% end %>
+  </div>
+
+
+<% if current_user.saved_restaurants.include?(@restaurant) %>
+  <%= link_to 'Remove Bookmark', restaurant_bookmark_path(@restaurant, bookmark_id), method: :delete %>
+<% else %>
+  <%= link_to 'Bookmark', restaurant_bookmarks_path(@restaurant), method: :post %>
+<% end %>
