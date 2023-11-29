@@ -1,1 +1,10 @@
 Hello from location
+Let's keep the dining drama free. <br>
+Select your city to unlock a world of culinary delight!
+
+
+<%= simple_form_for :my_method, url: restaurants_loading_path, method: :get do |f|  %>
+  <%= f.input :City, input_html: { type: 'text' } %>
+  <%= f.input :Radius, input_html: { type: 'number' } %>
+  <%= f.button :submit %>
+<% end %>

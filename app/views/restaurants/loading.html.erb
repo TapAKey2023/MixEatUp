@@ -1,1 +1,11 @@
 hello from restaurants loading
+
+<h2>The current cookies</h2>
+
+<p>occasion: <%= cookies[:occasion] %></p>
+<p>meal: <%= cookies[:meal] %></p>
+<p>budget: <%= cookies[:budget] %></p>
+<p>location: <%= cookies[:location] %></p>
+<p>preference: <%= cookies[:preferences] %></p>
+
+<%= link_to "See results", restaurants_path  %>
