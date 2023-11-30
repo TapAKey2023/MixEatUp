@@ -70,7 +70,7 @@ class FiltersController < ApplicationController
 
   def location
     if cookies[:preferences] == "positive"
-      cookies[:whear] = params[:wheat]
+      cookies[:wheat] = params[:wheat]
       cookies[:lactose] = params[:lactose]
       cookies[:nuts] = params[:nuts]
       cookies[:vegetarian] = params[:vegetarian]

@@ -1,5 +1,13 @@
 class RestaurantsController < ApplicationController
   def index
+    @restaurants = Restaurant.all
+    if cookies[:location]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(location: cookies[:location])
+    end
+    if cookies[:event]
+      @restaurants = @restaurants.where(event: cookies[:event])
+    end
   end
 
   def show
