@@ -2,7 +2,28 @@
 
 <p>Let's keep the dining drama free. Select your city to unlock a world of culinary delight!</p>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div data-controller="map address-autocomplete"
+     data-map-markers-value="<%= @markers.to_json %>"
+     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+     data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+     data-map-latitude-value=""
+     data-map-longitude-value=""
+     data-map-radius-value="">
+  <%= simple_form_for :geolocation, data: { turbo_remote: true, action: "submit->map#search" } do |f| %>
+    <%= f.input :city, label: "Location", input_html: {
+      data: {
+        address_autocomplete_target: "address"
+      },
+      class: "d-none"
+    }, wrapper_html: {
+        data: {
+          address_autocomplete_target: "wrapper"
+        }
+      } %>
+    <%= f.input :radius, collection: [1, 5, 10, 15], label: 'Radius (in km) from City Center:', prompt: "Select Radius", input_html: { data: { map_target: "radiusInput" } } %>
+    <%= f.button :submit, 'Save Location' %>
+  <% end %>
+
+  <div style="width: 100%; height: 600px;" data-map-target="map">
+  </div>
+</div>

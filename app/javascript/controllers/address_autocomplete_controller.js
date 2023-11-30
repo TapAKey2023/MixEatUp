@@ -5,20 +5,27 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 export default class extends Controller {
   static values = { apiKey: String }
 
-  static targets = ["address"]
+  static targets = ["address", "wrapper"]
 
   connect() {
     this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region,place,postcode,locality,neighborhood,address"
     })
-    this.geocoder.addTo(this.element)
+    this.geocoder.addTo(this.wrapperTarget)
 
     this.geocoder.on("result", event => this.#setInputValue(event))
     this.geocoder.on("clear", () => this.#clearInputValue())
   }
 
+  disconnect() {
+    this.geocoder.onRemove()
+  }
+
   #setInputValue(event) {
+    this.element.setAttribute("data-map-latitude-value", event.result.center[1])
+    this.element.setAttribute("data-map-longitude-value", event.result.center[0])
+    this.element.setAttribute("data-map-address-value", event.result["place_name"])
     this.addressTarget.value = event.result["place_name"]
   }
 
