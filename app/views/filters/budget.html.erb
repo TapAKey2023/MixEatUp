@@ -1,1 +1,10 @@
 Hello from budget
+As we embark on this culinary voyage, what financial parameters should we budget for?As we embark on this culinary voyage, <br>
+what financial parameters should we budget for?<br>
+
+
+<%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %>
+  <%= f.text_field :total_price, input_html: { type: 'number' } %>
+  <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
+  <%= f.submit "Next" %>
+<% end %>
