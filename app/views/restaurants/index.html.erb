@@ -13,7 +13,7 @@
   <div class="card-grid">
       <% @restaurants.each do |restaurant| %>
       <div class="card">
-          <%= link_to restaurants_path(@restaurant), class:"text-decoration-none card-class" do %>
+          <%= link_to restaurants_path, class:"text-decoration-none card-class" do %>
               <div class="card-class-infos">
                 <h3><%= restaurant.name %></h3>
               </div>
