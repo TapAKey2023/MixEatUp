@@ -32,4 +32,8 @@ Rails.application.routes.draw do
   patch "users/:id", to: "users#update"
 
   get "saved_restaurants", to: "restaurants#saved"
+
+
+  get "test_page", to: "pages#test_page"
+  get "2_test_page", to: "pages#2_test_page"
 end
