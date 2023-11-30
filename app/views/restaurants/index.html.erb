@@ -1,2 +1,30 @@
+<<<<<<< HEAD
 hello from restaurants index
 Here you can see the results
+=======
+<h2>5 Perfect Restaurants</h2>
+
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-black">
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Explore the Restaurants:</h3>
+  </div>
+
+  <div class="card-grid">
+      <% @restaurants.each do |restaurant| %>
+      <div class="card">
+          <%= link_to restaurants_path(@restaurant), class:"text-decoration-none card-class" do %>
+              <div class="card-class-infos">
+                <h3><%= restaurant.name %></h3>
+              </div>
+          <% end %>
+      </div>
+      <% end %>
+  </div>
+
+</div>
+>>>>>>> 8e06f9bc5bf1c3ec4d3ce6d99520d9394ef2d4b6

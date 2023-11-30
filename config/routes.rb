@@ -20,12 +20,18 @@ Rails.application.routes.draw do
   get "filters/location", to: "filters#location"
   get "filters/preferences", to: "filters#preferences"
   get "filters/budget", to: "filters#budget"
+
   get "restaurants/loading", to: "restaurants#loading"
   get "restaurants", to: "restaurants#index"
   get "restaurants/:id", to: "restaurants#show"
   post "restaurants/:id", to: "saved_restaurants#create"
-  post "bills/:id", to: "bills#create"
-  get "users/edit", to: "users#edit"
-  patch "users/edit", to: "users#update"
+
+  get "bills/new", to: "bills#new",  as: :new_bill
+  post "bills", to: "bills#create"
+
+  get "users/:id", to: "users#show", as: :user
+  get "users/:id/edit", to: "users#edit", as: :edit_user
+  patch "users/:id", to: "users#update"
+
   get "saved_restaurants", to: "restaurants#saved"
 end

@@ -8,16 +8,19 @@ class RestaurantsController < ApplicationController
     if cookies[:event]
       @restaurants = @restaurants.where(event: cookies[:event])
     end
+    @user = current_user
   end
 
   def show
+    @restaurant = Restaurant.find(params[:id])
+    @user = current_user
   end
 
   def loading
     if cookies[:location] == "positive"
       cookies[:city] = params[:my_method][:City]
       cookies[:radius] = params[:my_method][:Radius]
-      end
+    end
     # if params[:my_method][:wheat] == "positive"
     #   cookies[:wheat] = params[:my_method][:wheat]
     # end
@@ -33,6 +36,7 @@ class RestaurantsController < ApplicationController
   end
 
   def saved
+    @user = current_user
+    @saved_restaurants = @user.saved_restaurants
   end
-
 end
