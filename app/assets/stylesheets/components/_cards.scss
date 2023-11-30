@@ -97,7 +97,7 @@ justify-content: space-between;
 
 
 
-.card-occassion {
+.card-occasion {
     background-size: cover;
     background-position: center;
     height: 130px;
@@ -109,12 +109,12 @@ justify-content: space-between;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 15px;
     // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin: 20px;
+    margin: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
               0 6px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .card-occassion img {
+  .card-occasion img {
     filter: brightness(50%);
   }
 
@@ -122,14 +122,105 @@ justify-content: space-between;
   .card-get-started {
       background-size: cover;
       background-position: center;
-      height: 220px;
+      height: 250px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 40px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin: 15px;
+      overflow: hidden;
   }
+
+    .budget-pic {
+      max-width: 100%;
+      filter: brightness(50%);
+      object-fit: cover;
+  }
+
+  .overlay-text {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+
+  .card-food-preference {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+    width: 170px;
+  }
+
+  .card-food-preference img {
+    filter: brightness(40%);
+  }
+
+
+  .drink-or-food {
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .drink-or-food img {
+    filter: brightness(50%);
+  }
+
+
+  .temp {
+    display: flex;
+    justify-content: space-between;
+ }
+
+
+
+ .card-whole-meal {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+            0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-whole-meal img {
+  filter: brightness(50%);
+}
