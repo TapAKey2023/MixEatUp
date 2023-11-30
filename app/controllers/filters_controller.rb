@@ -63,6 +63,9 @@ class FiltersController < ApplicationController
     if cookies[:budget] == "positive"
       cookies[:total_price] = params[:my_method][:total_price]
       cookies[:number_of_people] = params[:my_method][:number_of_people]
+    else
+      cookies[:total_price] = "negative"
+      cookies[:number_of_people] = "negative"
     end
 
     redirect_to filters_location_path if cookies[:preferences] == "negative"
@@ -70,10 +73,15 @@ class FiltersController < ApplicationController
 
   def location
     if cookies[:preferences] == "positive"
-      cookies[:wheat] = params[:wheat]
-      cookies[:lactose] = params[:lactose]
-      cookies[:nuts] = params[:nuts]
-      cookies[:vegetarian] = params[:vegetarian]
+      cookies[:wheat] = params[:my_method][:wheat]
+      cookies[:lactose] = params[:my_method][:lactose]
+      cookies[:nuts] = params[:my_method][:nuts]
+      cookies[:vegetarian] = params[:my_method][:vegetarian]
+    else
+      cookies[:wheat] = "negative"
+      cookies[:lactose] = "negative"
+      cookies[:nuts] = "negative"
+      cookies[:vegetarian] = "negative"
     end
 
     if cookies[:location] == "negative"

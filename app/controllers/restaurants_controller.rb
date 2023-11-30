@@ -3,11 +3,11 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
     if cookies[:location]
       # TODO: filter by location
-      @restaurants = @restaurants.where(location: cookies[:location])
+      @restaurants = @restaurants.where(address: cookies[:city])
     end
-    if cookies[:event]
-      @restaurants = @restaurants.where(event: cookies[:event])
-    end
+    # if cookies[:event]
+    #   @restaurants = @restaurants.where(event: cookies[:event])
+    # end
     @user = current_user
   end
 
@@ -17,6 +17,7 @@ class RestaurantsController < ApplicationController
   end
 
   def loading
+    @restaurants = Restaurant.all
     if cookies[:location] == "positive"
       cookies[:city] = params[:my_method][:City]
       cookies[:radius] = params[:my_method][:Radius]
