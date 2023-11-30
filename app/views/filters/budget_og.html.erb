@@ -1,0 +1,5 @@
+<%= form_for :my_method, url: filters_meal_og_path, method: :get do |f|  %>
+  <%= f.text_field :total_price_og, input_html: { type: 'number' } %>
+  <%= f.text_field :number_of_people_og, input_html: { type: 'number' } %>
+  <%= f.submit "Next" %>
+<% end %>

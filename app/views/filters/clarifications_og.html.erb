@@ -1,0 +1,24 @@
+<h1>Cookies to use for the filtering</h1>
+
+
+<%= form_for :user_clarifications_og, url: filters_user_clarification_choice_og_path, method: :get  do |f| %>
+
+  <%= f.label "Food preferences important?" %> <br />
+  <%= f.check_box :preferences_og %> <br />
+  <%= f.label "Location important?" %> <br />
+  <%= f.check_box :location_og %> <br />
+
+  <%= f.submit "Next" %>
+<% end %>
+
+<%
+=begin%>
+
+<%= simple_form_for :my_method, url: filters_budget_path, method: :get do |f|  %>
+<%= f.input :budget, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%= f.input :preferences, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%= f.input :location, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%= f.button :submit %>
+<% end %>
+<%
+=end%>
