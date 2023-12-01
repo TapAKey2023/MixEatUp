@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get "restaurants/loading", to: "restaurants#loading"
   get "restaurants", to: "restaurants#index"
-  get "restaurants/:id", to: "restaurants#show"
+  get "restaurants/:id", to: "restaurants#show", as: :restaurant
   post "restaurants/:id", to: "saved_restaurants#create"
 
   get "bills/new", to: "bills#new",  as: :new_bill
