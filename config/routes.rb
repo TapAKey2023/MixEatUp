@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get "restaurants/loading", to: "restaurants#loading"
   get "restaurants", to: "restaurants#index"
-  get "restaurants/:id", to: "restaurants#show"
+  get "restaurants/:id", to: "restaurants#show", as: :restaurant
   post "restaurants/:id", to: "saved_restaurants#create"
 
   get "bills/new", to: "bills#new",  as: :new_bill
@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   patch "users/:id", to: "users#update"
 
   get "saved_restaurants", to: "restaurants#saved"
+
+
+  get "test_page", to: "pages#test_page"
+  get "2_test_page", to: "pages#2_test_page"
 end
