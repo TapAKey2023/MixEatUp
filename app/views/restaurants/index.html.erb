@@ -10,17 +10,42 @@
     <h3 class="mb-0">Explore the Restaurants:</h3>
   </div>
 
-  <div class="card-grid">
+  <%# <div class="card-grid">
       <% @restaurants.each do |restaurant| %>
-      <div class="card">
-          <%= link_to restaurant_path(restaurant), class:"text-decoration-none card-class" do %>
-              <div class="card-class-infos">
-                <h3><%= restaurant.name %></h3>
-              </div>
-          <% end %>
+      <%# <div class="card"> %>
+          <%# <%= link_to restaurant_path(restaurant), class:"text-decoration-none card-class" do %>
+              <%# <div class="card-class-infos"> %>
+                <%# <h3><%= restaurant.name</h3>  %>
+              <%# </div> %>
+          <%# <% end %>
+      <%# </div> %>
+      <%# <% end %>
+  <%# </div> %>
+
+
+ <% @restaurants.each do |restaurant| %>
+<div class="card-small">
+
+  <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:300px" />
+  <div class="card-small-infos">
+  <div class="title-icon">
+      <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
       </div>
-      <% end %>
+      <div class="info">
+      <div>
+      <p><%= "Why you'll love it: " %> <%= restaurant.about %></p>
+      <p><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></p>
+      <p><%= "How others feel: " %><%= restaurant.rating %></p>
+    </div>
+      </div>
+      <div class="flame-bookmark" style="display:flex; font-size:16px; justify-content: space-between;">
+      <%# <p><%= "🔥" %>
+     <i class="fa-solid fa-circle-info"></i>
+     <div style="display:flex">
+      <i class="fas fa-location-dot"></i> <p><%= restaurant.address %></p>
+     </div>
+      </div>
+    </div>
   </div>
-
+<% end %>
 </div>
-
