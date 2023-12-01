@@ -92,7 +92,7 @@ class FiltersController < ApplicationController
       redirect_to filters_location_path if cookies[:preferences] == "0"
     end
 
-    if cookies[:budget] == "positive"
+    if cookies[:budget] == "positive" && cookies[:filter] != "budget"
       cookies[:total_price] = params[:my_method][:total_price]
       cookies[:number_of_people] = params[:my_method][:number_of_people]
     else
