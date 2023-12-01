@@ -1,0 +1,226 @@
+.card-small {
+  width: 90%;
+  overflow: hidden;
+  background: #FDFDFF;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+  0 6px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 700px;
+}
+
+.class-image {
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+.container {
+  padding: 20px;
+}
+
+.card-small-infos {
+ padding: 5px;
+justify-content: space-between;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+ .info {
+  display: flex;
+  font-size: 20px;
+ }
+
+ .title-icon {
+    display: flex;
+    justify-content: space-between;
+ }
+
+  .fa-location-dot {
+    font-size: 40px;
+    padding: 10px 20px 0 20px;
+  }
+
+  .fa-circle-info {
+    font-size: 23px;
+    margin-top: 10px;
+    margin-top: -20px;
+  }
+
+.answers {
+  margin-right: 20px;
+}
+
+
+
+
+.card-time {
+  display: flex;
+  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  // height: 100px;
+  // width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-items: center; /* Center the content horizontally */
+  // justify-content: center; /* Center the content vertically */
+  height: 120px; /* Adjust the height as desired */
+  width: 90%;
+  margin: 20px auto;
+}
+
+.card-time img {
+ border-radius: 15px;
+ height: 95px;
+ width: 95px;
+//  padding: 4px;
+ margin-left: 20px;
+}
+
+.card-time-infos {
+  padding-right: 40px;
+  margin-right: 55px;
+}
+
+
+
+.card-occasion {
+    background-size: cover;
+    background-position: center;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-occasion img {
+    filter: brightness(50%);
+  }
+
+
+  .card-get-started {
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 40px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin: 15px;
+      overflow: hidden;
+  }
+
+    .budget-pic {
+      max-width: 100%;
+      filter: brightness(50%);
+      object-fit: cover;
+  }
+
+  .overlay-text {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+
+  .card-food-preference {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+    width: 170px;
+  }
+
+  .card-food-preference img {
+    filter: brightness(40%);
+  }
+
+
+  .drink-or-food {
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .drink-or-food img {
+    filter: brightness(50%);
+  }
+
+
+  .temp {
+    display: flex;
+    justify-content: space-between;
+ }
+
+
+
+ .card-whole-meal {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+            0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-whole-meal img {
+  filter: brightness(50%);
+}
