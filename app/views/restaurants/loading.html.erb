@@ -1,1 +1,19 @@
 hello from restaurants loading
+
+<h2>The current cookies</h2>
+
+<p>occasion: <%= cookies[:occasion] %></p>
+<p>meal: <%= cookies[:meal] %></p>
+<p>budget: <%= cookies[:budget] %></p>
+<p>location: <%= cookies[:location] %></p>
+<p>total_price: <%= cookies[:total_price] %></p>
+<p>number of people: <%= cookies[:number_of_people] %></p>
+<p>wheat: <%= cookies[:wheat] %></p>
+<p>lactose: <%= cookies[:lactose] %></p>
+<p>nuts: <%= cookies[:nuts] %></p>
+<p>vegetarian: <%= cookies[:vegetarian] %></p>
+<p>city: <%= cookies[:city] %></p>
+<p>radius: <%= cookies[:radius] %></p>
+
+
+<%= link_to "See results", restaurants_path  %>

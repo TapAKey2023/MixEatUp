@@ -10,18 +10,20 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   #  root "posts#index"
-  get "index", to: "filters#index"
-
+  get "filters", to: "filters#index"
   get "filters/meal", to: "filters#meal"
   get "filters/event", to: "filters#event"
+  get "filters/occasion", to: "filters#occasion"
   get "filters/clarifications", to: "filters#clarifications"
+  get 'filters/user_clarification_choice', to: "filters#user_clarification_choice"
   get "filters/allergies", to: "filters#allergies"
   get "filters/location", to: "filters#location"
+  get "filters/preferences", to: "filters#preferences"
   get "filters/budget", to: "filters#budget"
 
   get "restaurants/loading", to: "restaurants#loading"
   get "restaurants", to: "restaurants#index"
-  get "restaurants/:id", to: "restaurants#show"
+  get "restaurants/:id", to: "restaurants#show", as: :restaurant
   post "restaurants/:id", to: "saved_restaurants#create"
 
   get "bills/new", to: "bills#new",  as: :new_bill
