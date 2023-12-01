@@ -1,3 +1,12 @@
-Hello from filters index
-<button><%= link_to "Occasion", filters_occasion_path(filter: "occasion" )  %></button>
-<button><%= link_to "Budget", filters_occasion_path(filter: "budget")  %></button>
+
+<div class="header">
+  <div class="name-number">
+    <a href="#home">MixEatUp</a>
+    <p>1 of 5</p>
+  </div>
+  <h1>Let's Get Started</h1>
+</div>
+<div>
+  <button><%= link_to "Occasion", filters_occasion_path  %></button>
+  <button><%= link_to "Budget", filters_budget_path(:filter => :event)  %></button>
+
