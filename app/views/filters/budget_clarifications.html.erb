@@ -1,0 +1,10 @@
+<%= form_for :user_clarifications, url: filters_preferences_path, method: :get  do |f| %>
+
+  <%= f.label "Food preferences important?" %> <br />
+  <%= f.check_box :preferences %> <br />
+
+  <%= f.label "Location important?" %> <br />
+  <%= f.check_box :location %> <br />
+
+  <%= f.submit "Next" %>
+<% end %>

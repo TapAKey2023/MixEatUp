@@ -27,9 +27,11 @@ class RestaurantsController < ApplicationController
 
   def loading
     @restaurants = Restaurant.all
-    if cookies[:location] == "positive"
-      cookies[:city] = params[:my_method][:City]
-      cookies[:radius] = params[:my_method][:Radius]
+    if cookies[:location] == "positive" || cookies[:location] == "1"
+      if params[:geolocation]
+        cookies[:city] = params[:geolocation][:city]
+        cookies[:radius] = params[:geolocation][:radius]
+      end
     end
     # if params[:my_method][:wheat] == "positive"
     #   cookies[:wheat] = params[:my_method][:wheat]
