@@ -5,9 +5,44 @@ class RestaurantsController < ApplicationController
       # TODO: filter by location
       @restaurants = @restaurants.where(address: cookies[:city])
     end
-    # if cookies[:event]
-    #   @restaurants = @restaurants.where(event: cookies[:event])
-    # end
+
+    if cookies[:wheat]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(wheat: cookies[:wheat])
+    end
+
+    if cookies[:lactose]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(lactose: cookies[:lactose])
+    end
+
+    if cookies[:nuts]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(nuts: cookies[:nuts])
+    end
+
+    if cookies[:vegetarian]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(vegetarian: cookies[:vegetarian])
+    end
+
+    if cookies[:occasion]
+    # TODO: filter by location
+    @restaurants = @restaurants.where(occasion: cookies[:occasion])
+    end
+
+    if cookies[:meal]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(meal_type: cookies[:meal])
+    end
+
+
+
+    if cookies[:total_price]
+      # TODO: filter by location
+      @restaurants = @restaurants.where(budget: cookies[:total_price])
+    end
+
     @user = current_user
     @restaurants = Restaurant.geocoded
     @markers = @restaurants.map do |restaurant|
@@ -18,6 +53,7 @@ class RestaurantsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: {restaurant: restaurant}) # Pass the restaurant to the partial
       }
     end
+    @restaurants = @restaurants.sample(5)
   end
 
   def show
@@ -27,9 +63,11 @@ class RestaurantsController < ApplicationController
 
   def loading
     @restaurants = Restaurant.all
-    if cookies[:location] == "positive"
-      cookies[:city] = params[:my_method][:City]
-      cookies[:radius] = params[:my_method][:Radius]
+    if cookies[:location] == "positive" || cookies[:location] == "1"
+      if params[:geolocation]
+        cookies[:city] = params[:geolocation][:city]
+        cookies[:radius] = params[:geolocation][:radius]
+      end
     end
     # if params[:my_method][:wheat] == "positive"
     #   cookies[:wheat] = params[:my_method][:wheat]
