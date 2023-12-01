@@ -20,6 +20,21 @@ puts "Creating user 3..."
 user_3 = User.new(email: "Alex@hotmail.com", password: "Alex123", name: "Alex")
 user_3.save!
 
+nuts = [
+  "positive", "negative"
+]
+wheat = [
+  "positive", "negative"
+]
+lactose = [
+  "positive", "negative"
+]
+vegetarian = [
+  "positive", "negative"
+]
+
+
+
 names = [
           "Ecem's Pizzeria",
           "Visar's Brewery",
@@ -36,7 +51,7 @@ names = [
           "Mexican Fiesta",
           "Justin's Chinese Takeaway",
           "Leo's Japanese Ramen",
-          "Miriam's Cake Shop"
+          "Miriam's Cake Shop",
         ]
 addresses = [
               "Hoxton",
@@ -78,7 +93,7 @@ chain_options = [true, false]
 budget_options = (10..200)
 opening_hours = ["12:00", "11:00", "10:00"]
 closing_hours = ["22:00", "23:00", "00:00"]
-meal_types = ["Lunch", "Dinner", "Breakfast"]
+meal_types = ["lunch", "dinner", "breakfast", "drinks"]
 latitudes = [51.527820, 51.539926, 51.551706]
 longitudes = [-0.081650, -0.102520, -0.123490]
 reasons = ["It's nice.", "Great atmosphere.", "Excellent service."]
@@ -89,12 +104,13 @@ facebooks = ["STK London", "Luna's Diner", "The Rustic Kitchen"]
 resys = ['stk_london.resy.com', 'lunas_diner.resy.com', 'rustic_kitchen.resy.com']
 abouts = ["It's the best", "A wonderful experience", "Highly recommended"]
 location_details = ['The food is delicious.', 'A charming place.', 'Incredible ambiance.']
-other_occasions = ["Family", "Business", "Friends"]
+other_occasions = ["family", "work", "friends","date"]
 
 50.times do |i|
+  address = addresses.sample
   restaurant = Restaurant.new(
-    name: names.sample,
-    address: addresses.sample,
+    name: "#{names.sample} in #{address}",
+    address: address,
     cuisine_type: cuisine_types.sample,
     phone_no: phone_numbers.sample,
     chain: chain_options.sample,
@@ -112,7 +128,11 @@ other_occasions = ["Family", "Business", "Friends"]
     resy: resys.sample,
     about: abouts.sample,
     location_details: location_details.sample,
-    other_occasion: other_occasions.sample
+    other_occasion: other_occasions.sample,
+    wheat: wheat.sample,
+    lactose: lactose.sample,
+    nuts: nuts.sample,
+    vegetarian: vegetarian.sample
   )
 
   restaurant.save!

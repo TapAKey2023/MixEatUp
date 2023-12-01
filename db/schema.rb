@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_165633) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_01_134825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -115,6 +115,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_165633) do
     t.text "about"
     t.text "location_details"
     t.string "other_occasion"
+    t.string "wheat"
+    t.string "nuts"
+    t.string "vegetarian"
+    t.string "lactose"
   end
 
   create_table "saved_restaurants", force: :cascade do |t|
