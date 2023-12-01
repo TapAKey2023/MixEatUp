@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "filters/event", to: "filters#event"
   get "filters/occasion", to: "filters#occasion"
   get "filters/clarifications", to: "filters#clarifications"
+  get "filters/budget_clarifications", to: "filters#budget_clarifications"
   get 'filters/user_clarification_choice', to: "filters#user_clarification_choice"
   get "filters/allergies", to: "filters#allergies"
   get "filters/location", to: "filters#location"

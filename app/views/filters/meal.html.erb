@@ -1,5 +1,13 @@
 hello from meals
+
+<% if cookies[:filter] == "budget"  %>
+<button><%=link_to  "Breakfast", filters_budget_clarifications_path(meal: "breakfast")  %></button>
+<button><%=link_to "Lunch", filters_budget_clarifications_path(meal: "lunch")  %></button>
+<button><%=link_to "Dinner", filters_budget_clarifications_path(meal: "dinner")  %></button>
+<button><%=link_to "Drinks", filters_budget_clarifications_path(meal: "drinks")  %></button>
+<% else %>
 <button><%=link_to  "Breakfast", filters_clarifications_path(meal: "breakfast")  %></button>
 <button><%=link_to "Lunch", filters_clarifications_path(meal: "lunch")  %></button>
 <button><%=link_to "Dinner", filters_clarifications_path(meal: "dinner")  %></button>
 <button><%=link_to "Drinks", filters_clarifications_path(meal: "drinks")  %></button>
+<% end %>
