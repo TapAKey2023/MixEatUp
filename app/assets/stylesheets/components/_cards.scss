@@ -102,29 +102,84 @@ justify-content: space-between;
 .card-occasion {
     background-size: cover;
     background-position: center;
-    height: 130px;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: $secondary-color;
     font-size: 30px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 15px;
-    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
               0 6px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
 
-  .card-occasion img {
+
+  .occ-style {
+
+    max-width: 100%;
+    object-fit: contain;
+
+    // max-width: 100%;
     filter: brightness(50%);
+    // object-fit: contain;
+  }
+
+  .card-meal {
+    display: flex;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $secondary-color;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+              0 6px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+
+
+  .meal-style {
+    width: 35%; /* Take up the full width of the container */
+    height: 85%; /* Take up the full height of the container */
+    padding: 5px 10px 5px 10px;
+    object-fit: cover; /* Adjust as needed based on your design */
+    border-radius: 15px;
+  }
+
+  .overlay-text2 {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    color: $primary-color; /* Assuming $primary-color is defined in your SCSS */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: $font; /* Assuming $font is defined in your SCSS */
+    /* Other styles for the overlay text */
+  }
+
+
+ .overlay-text2 a {
+    /* Your link styling */
+    color:  $primary-color;
+    text-decoration: none; /* If you want to remove underline */
   }
 
 
   .card-get-started {
       background-size: cover;
       background-position: center;
-      height: 250px;
+      height: 335px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -133,24 +188,29 @@ justify-content: space-between;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      margin: 15px;
+      margin: 18px;
       overflow: hidden;
   }
 
-    .budget-pic {
-      max-width: 100%;
-      filter: brightness(50%);
-      object-fit: cover;
-  }
+
 
   .overlay-text {
     position: absolute;
     z-index: 1;
-    color: white;
+    color: $secondary-color;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: $font;
+
   }
 
 
+
+
+  .overlay-text a {
+    /* Your link styling */
+    color: white;
+    text-decoration: none; /* If you want to remove underline */
+  }
 
 
   .card-food-preference {
@@ -204,7 +264,19 @@ justify-content: space-between;
     justify-content: space-between;
  }
 
+ .dinner-pic {
+  max-width: 100%;
+  height: 100%;
+  filter: brightness(50%);
+  object-fit: cover;
+}
 
+.budget-pic {
+    max-width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+    object-fit: cover;
+}
 
  .card-whole-meal {
   background-size: cover;

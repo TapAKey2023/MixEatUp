@@ -2,17 +2,20 @@
 <div class="header">
   <div class="name-number">
     <a href="#home">MixEatUp</a>
-    <p>1 of 5</p>
+    <p>1 of 4</p>
   </div>
   <h1>Let's Get Started</h1>
 </div>
 <div>
 
 
+
 <div class="card-get-started">
   <%= image_tag "dinner.jpeg", class: "dinner-pic" %>
   <div class="overlay-text">
-    <%= link_to "Occasion", filters_occasion_path(:filter => :event)%>
+    <%= link_to filters_occasion_path(:filter => :event) do %>
+      Occasion
+    <% end %>
   </div>
 </div>
 

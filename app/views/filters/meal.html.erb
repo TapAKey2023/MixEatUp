@@ -1,13 +1,75 @@
-hello from meals
+<div class="header">
+  <div class="name-number">
+    <a href="#home">MixEatUp</a>
+    <p>3 of 4</p>
+  </div>
+  <h1>Meals</h1>
+</div>
+<div>
 
-<% if cookies[:filter] == "budget"  %>
-<button><%=link_to  "Breakfast", filters_budget_clarifications_path(meal: "breakfast")  %></button>
-<button><%=link_to "Lunch", filters_budget_clarifications_path(meal: "lunch")  %></button>
-<button><%=link_to "Dinner", filters_budget_clarifications_path(meal: "dinner")  %></button>
-<button><%=link_to "Drinks", filters_budget_clarifications_path(meal: "drinks")  %></button>
-<% else %>
-<button><%=link_to  "Breakfast", filters_clarifications_path(meal: "breakfast")  %></button>
-<button><%=link_to "Lunch", filters_clarifications_path(meal: "lunch")  %></button>
-<button><%=link_to "Dinner", filters_clarifications_path(meal: "dinner")  %></button>
-<button><%=link_to "Drinks", filters_clarifications_path(meal: "drinks")  %></button>
-<% end %>
+
+<div class="label">
+  <p class="label">
+    <span class ="text-wrapper">We certainly don't want to match you with a restaurant taking the day off.</span>
+    <span class ="span">When do you plan to dine?</span>
+  </p>
+</div>
+
+
+<div class="card-meal">
+    <%= image_tag "pancakes.jpg", class: "meal-style" %>
+  <div class="overlay-text2">
+    <% if cookies[:filter] == "budget"  %>
+    <%=link_to  "Breakfast", filters_budget_clarifications_path(meal: "breakfast")  %>
+    <%else%>
+    <%=link_to  "Breakfast", filters_clarifications_path(meal: "breakfast")  %>
+    <%end%>
+  </div>
+</div>
+
+<div class="card-meal">
+    <%= image_tag "Lobster.jpeg", class: "meal-style" %>
+  <div class="overlay-text2">
+  <% if cookies[:filter] == "budget"  %>
+  <%=link_to "Lunch", filters_budget_clarifications_path(meal: "lunch")  %>
+  <% else %>
+  <%=link_to "Lunch", filters_clarifications_path(meal: "lunch")  %>
+  <%end%>
+  </div>
+</div>
+
+
+<div class="card-meal">
+    <%= image_tag "chicken.jpg", class: "meal-style" %>
+  <div class="overlay-text2">
+  <% if cookies[:filter] == "budget"  %>
+  <%=link_to "Dinner", filters_budget_clarifications_path(meal: "dinner")  %>
+  <% else %>
+  <%=link_to "Dinner", filters_clarifications_path(meal: "dinner")  %>
+  <% end %>
+
+  </div>
+</div>
+
+<div class="card-meal">
+    <%= image_tag "cocktail.jpg", class: "meal-style" %>
+  <div class="overlay-text2">
+    <% if cookies[:filter] == "budget"  %>
+    <%=link_to "Drinks", filters_budget_clarifications_path(meal: "drinks")  %>
+    <% else %>
+    <%=link_to "Drinks", filters_clarifications_path(meal: "drinks")  %>
+    <%end%>
+  </div>
+</div>
+
+
+
+<%# <% if cookies[:filter] == "budget"  %>
+<%# <button><%=link_to  "Breakfast", filters_budget_clarifications_path(meal: "breakfast")</button> %>
+<%# <button><%=link_to "Drinks", filters_budget_clarifications_path(meal: "drinks") </button> %>
+<%# <% else %>
+<%# <button><%=link_to  "Breakfast", filters_clarifications_path(meal: "breakfast") </button>  %>
+<%# <button><%=link_to "Lunch", filters_clarifications_path(meal: "lunch") </button>  %>
+<%# <button><%=link_to "Dinner", filters_clarifications_path(meal: "dinner") </button> %>
+<%# <button><%=link_to "Drinks", filters_clarifications_path(meal: "drinks") </button> %>
+<%# <% end %>
