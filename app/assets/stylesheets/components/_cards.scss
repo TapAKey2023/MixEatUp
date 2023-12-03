@@ -80,9 +80,8 @@ justify-content: space-between;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 10px;
-  align-items: center; /* Center the content horizontally */
-  // justify-content: center; /* Center the content vertically */
-  height: 120px; /* Adjust the height as desired */
+  align-items: center;
+  height: 120px;
   width: 90%;
   margin: 20px auto;
 }
@@ -154,10 +153,10 @@ justify-content: space-between;
 
 
   .meal-style {
-    width: 35%; /* Take up the full width of the container */
-    height: 85%; /* Take up the full height of the container */
+    width: 35%;
+    height: 85%;
     padding: 5px 10px 5px 10px;
-    object-fit: cover; /* Adjust as needed based on your design */
+    object-fit: cover;
     border-radius: 15px;
   }
 
@@ -165,17 +164,17 @@ justify-content: space-between;
     flex: 1;
     position: relative;
     z-index: 1;
-    color: $primary-color; /* Assuming $primary-color is defined in your SCSS */
+    color: $primary-color;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-family: $font; /* Assuming $font is defined in your SCSS */
-    /* Other styles for the overlay text */
+    font-family: $font;
+
   }
 
 
  .overlay-text2 a {
-    /* Your link styling */
+
     color:  $primary-color;
-    text-decoration: none; /* If you want to remove underline */
+    text-decoration: none;
   }
 
 
