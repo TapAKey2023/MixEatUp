@@ -1,9 +1,9 @@
 <div class="header">
   <div class="name-number">
-    <a href="#home">MixEatUp</a>
+    <%= link_to "MixEatUp", root_path%>
     <p> 4 of 4</p>
   </div>
-  <h1>Final Detailsl</h1>
+  <h1>Final Details</h1>
 </div>
 <div>
 
@@ -17,19 +17,59 @@
 </div>
 
 
+<%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get do |f| %>
 
-<%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get  do |f| %>
-  <%= f.label "Budget important?" %> <br />
-  <%= f.check_box :budget %> <br />
+  <div class="card-clarification" data-field="budget" onclick="toggleCheckbox(this, 'budget')">
+    <div class="card-content">
+      <%= f.hidden_field :budget, id: "budget" %>
+      <%= f.label :budget, "Budget" %>
+    </div>
+  </div>
 
-  <%= f.label "Food preferences important?" %> <br />
-  <%= f.check_box :preferences %> <br />
+  <div class="card-clarification" data-field="preferences" onclick="toggleCheckbox(this, 'preferences')">
+    <div class="card-content">
+      <%= f.hidden_field :preferences, id: "preferences" %>
+      <%= f.label :preferences, "Food Preferences" %>
+    </div>
+  </div>
 
-  <%= f.label "Location important?" %> <br />
-  <%= f.check_box :location %> <br />
+  <div class="card-clarification" data-field="location" onclick="toggleCheckbox(this, 'location')">
+    <div class="card-content">
+      <%= f.hidden_field :location, id: "location" %>
+      <%= f.label :location, "Location" %>
+    </div>
+  </div>
 
-  <%= f.submit "Next" %>
+  <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
+
 <% end %>
+
+<script>
+  function toggleCheckbox(element, field) {
+    const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
+    checkbox.value = !checkbox.value;
+    checkbox.checked = !checkbox.checked;
+    element.classList.toggle('selected', checkbox.checked);
+  }
+</script>
+
+
+
+
+<%# original code %>
+
+<%# <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get  do |f| %>
+  <%# <%= f.label "Budget important?" <br /> %>
+  <%# <%= f.check_box :budget <br />  %>
+
+  <%# <%= f.label "Food preferences important?" <br /> %>
+  <%# <%= f.check_box :preferences <br /> %>
+
+  <%# <%= f.label "Location important?" <br />  %>
+  <%# <%= f.check_box :location <br />  %>
+
+  <%# <%= f.submit "Next" %>
+<%# <% end %>
 
 
 

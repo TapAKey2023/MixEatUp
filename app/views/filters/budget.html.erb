@@ -1,6 +1,19 @@
-Hello from budget
-As we embark on this culinary voyage, what financial parameters should we budget for?As we embark on this culinary voyage, <br>
-what financial parameters should we budget for?<br>
+<div class="header">
+  <div class="name-number">
+    <%= link_to "MixEatUp", root_path%>
+    <p> 1 of 3</p>
+  </div>
+  <h1>Budget</h1>
+</div>
+<div>
+
+
+<div class="label">
+  <p class="label">
+    <span class ="text-wrapper">As we embark on this culinary voyage, what financial parameters should we </span>
+    <span class ="span">budget for?</span>
+  </p>
+</div>
 
 <% if cookies[:filter] == "budget" %>
 <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %>

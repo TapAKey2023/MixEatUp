@@ -1,8 +1,23 @@
-Hello from preferences
+<%# <div class="header">
+  <div class="name-number">
+    <a href="#home">MixEatUp</a>
+    <p> 3 of 3</p>
+  </div>
+  <h1>Food Preferences</h1>
+</div>
+<div>
+
+
+<div class="label">
+  <p class="label">
+    <span class ="text-wrapper">Don't let food FOMO strike! Tell us your <b>food preferences</b>, and we'll craft a menu that leaves no one hungry. </span>
+    <span class ="span">budget for?</span>
+  </p>
+</div>
 <%= simple_form_for :my_method, url: filters_location_path, method: :get do |f|  %>
-<%= f.input :wheat, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.input :lactose, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.input :nuts, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.input :vegetarian, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.button :submit %>
-<% end %>
+<%# <%= f.input :wheat, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.input :lactose, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.input :nuts, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.input :vegetarian, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.button :submit %>
+<%# <% end %>
