@@ -1,7 +1,6 @@
 Hello from budget
 As we embark on this culinary voyage, what financial parameters should we budget for?As we embark on this culinary voyage, <br>
 what financial parameters should we budget for?<br>
-
 <% if cookies[:filter] == "budget" %>
 <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %>
   <%= f.text_field :total_price, input_html: { type: 'number' } %>

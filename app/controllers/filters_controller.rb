@@ -3,7 +3,9 @@ class FiltersController < ApplicationController
   end
 
   def occasion
+    if params[:filter] == "occasion"
     cookies[:filter] = params[:filter]
+    end
     redirect_to filters_budget_path if cookies[:filter] == "budget"
   end
 
@@ -69,6 +71,7 @@ class FiltersController < ApplicationController
     #   cookies[:location] = params[:location]
     # end
     # raise
+    cookies[:filter] = "budget" if params[:filter] == "budget"
 
     if cookies[:filter] == "occasion"
       if cookies[:budget] == "negative"
