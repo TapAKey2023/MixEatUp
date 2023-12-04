@@ -18,7 +18,7 @@
     <div class="card-get-started">
       <%= image_tag "dinner.jpeg", class: "dinner-pic" %>
       <div class="overlay-text">
-        <%= link_to filters_occasion_path(:filter => :event) do %>
+        <%= link_to filters_occasion_path(filter: "occasion") do %>
           Occasion
         <% end %>
       </div>
@@ -27,7 +27,7 @@
     <div class="card-get-started">
       <%= image_tag "budgeting.jpeg", class: "budget-pic" %>
       <div class="overlay-text">
-        <%= link_to filters_budget_path(:filter => :event) do %>
+        <%= link_to filters_budget_path(filter: "occasion") do %>
         Budget
         <% end %>
       </div>
