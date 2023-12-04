@@ -15,6 +15,7 @@
 
 <% if cookies[:filter] == "budget" %>
 <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %>
+<label for="fname">First name:</label><br>
   <%= f.text_field :total_price, input_html: { type: 'number' } %>
   <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
   <%= f.submit "Next" %>
