@@ -69,6 +69,7 @@ class FiltersController < ApplicationController
     #   cookies[:location] = params[:location]
     # end
     # raise
+    cookies[:filter] = "budget" if params[:filter] == "budget"
 
     if cookies[:filter] == "occasion"
       if cookies[:budget] == "negative"

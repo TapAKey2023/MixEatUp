@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 
-<body>
   <header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
@@ -24,6 +17,7 @@
       </div>
     </div>
 
+
     <div class="card-get-started">
       <%= image_tag "budgeting.jpeg", class: "budget-pic" %>
       <div class="overlay-text">
@@ -32,6 +26,14 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-</body>
+
+
+
+<div class="card-get-started">
+  <%= image_tag "budgeting.jpeg", class: "budget-pic" %>
+  <div class="overlay-text">
+    <%= link_to "Budget", filters_budget_path(filter: "budget")%>
+  </div>
+</div>
+
