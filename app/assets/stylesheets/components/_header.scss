@@ -3,33 +3,55 @@
   overflow: hidden;
   top: 0;
   width: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  height: 90px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  // height: 90px;
   padding: 0 5px 5px 5px;
 }
 
 .name-number {
+  // position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  // padding-top: 5px;
+  padding: 5px 10px 0 10px;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  // padding-bottom: 15px;
 }
 
+// .name-number::after {
+//   content: '';
+//   position: absolute;
+//   left: 0; /* Align it to the left */
+//   bottom: 0; /* Position it at the bottom */
+//   width: 100%; /* Set the width to 100% (full-width) */
+//   height: 1px; /* Adjust the height to your desired underline thickness */
+//   // background-color: lightgray; /* Set the background color to light gray */
+//   // box-shadow: 0  1px 10px lightgray;
+// }
 
 .header a {
   color: #0A1128;
   font-family: $font;
   text-decoration: none;
   font-size: 28px;
-  margin-bottom: 12px;
+  // margin-bottom: 12px;
 }
 
 p {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  color: #0A1128;
+  font-family: $font;
+  font-size: 15px;
 }
 
 h1 {
   text-align: center;
   font-size: 40px;
-  padding: 0 0 10px 0;
-  margin-bottom: -10px;
+  // padding: 0 0 10px 0;
+  // margin-bottom: 5px;
+  color: #0A1128;
+  font-family: $font;
+  padding-top: 10px;
+  margin-bottom: 0;
 }
