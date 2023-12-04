@@ -27,50 +27,69 @@
       </div>
     </div>
 
+<%= form_for :user_clarifications, url: filters_location_path, method: :get do |f| %>
+  <div class="d-flex">
+    <div class="card-clarification"
+     style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('wheat.jpg') %>');"
+     data-field="wheat" onclick="toggleCheckbox(this, 'wheat')">
+      <div class="card-content">
+        <%= f.hidden_field :wheat, id: "wheat" %>
+        <%= f.label :wheat, "wheat", class: "text-white"  %>
+      </div>
+    </div>
 
-<div class="d-flex">
-  <div class="background-style">
-    <div class="card-get-started" style="width: 190px;margin: 10px; height:auto; object-fit: cover;">
-      <%= image_tag "wheat.jpeg", class: "dinner-pic" %>
-      <div class="overlay-text">
-        <%= link_to filters_occasion_path(filter: "occasion") do %>
-          Wheat
-        <% end %>
+    <div class="card-clarification"
+      style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('lactose.jpeg') %>')"
+      data-field="lactose" onclick="toggleCheckbox(this, 'lactose')">
+      <div class="card-content">
+        <%= f.hidden_field :lactose, id: "lactose" %>
+        <%= f.label :lactose, "lactose", class: "text-white"  %>
       </div>
     </div>
   </div>
-    <div class="background-style">
-      <div class="card-get-started" style="width: 190px;margin: 10px; height:auto; object-fit: cover;">
-        <%= image_tag "lactose.jpeg", class: "dinner-pic" %>
-        <div class="overlay-text">
-          <%= link_to filters_occasion_path(filter: "occasion") do %>
-            Lactose
-          <% end %>
-        </div>
+  <div class="d-flex">
+    <div class="card-clarification"
+          style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('nuts.jpeg') %>')"
+          data-field="nuts" onclick="toggleCheckbox(this, 'nuts')">
+      <div class="card-content">
+        <%= f.hidden_field :nuts, id: "nuts" %>
+        <%= f.label :nuts, "nuts",  class: "text-white" %>
       </div>
-  </div>
-</div>
+    </div>
 
-<div class="d-flex">
-  <div class="background-style">
-    <div class="card-get-started" style="width: 190px;margin: 10px; height:auto; object-fit: cover;">
-      <%= image_tag "nuts.jpeg", class: "dinner-pic" %>
-      <div class="overlay-text">
-        <%= link_to filters_occasion_path(filter: "occasion") do %>
-          Nuts
-        <% end %>
+       <div class="card-clarification"
+        style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('vegetarian.jpeg') %>')"
+         data-field="vegetarian" onclick="toggleCheckbox(this, 'vegetarian')">
+      <div class="card-content">
+        <%= f.hidden_field :vegetarian, id: "vegetarian" %>
+        <%= f.label :vegetarian, "vegetarian", class: "text-white" %>
       </div>
     </div>
   </div>
+    <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
 
-  <div class="background-style">
-    <div class="card-get-started" style="width: 190px;margin: 10px; height:auto; object-fit: cover;">
-      <%= image_tag "vegetarian.jpeg", class: "dinner-pic" %>
-      <div class="overlay-text">
-        <%= link_to filters_occasion_path(filter: "occasion") do %>
-          Vegetarian
-        <% end %>
-      </div>
-    </div>
-</div>
-</div>
+<% end %>
+
+  <script>
+    function toggleCheckbox(element, field) {
+      const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
+      checkbox.value = !checkbox.value;
+      checkbox.checked = !checkbox.checked;
+      element.classList.toggle('selected', checkbox.checked);
+    }
+  </script>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
