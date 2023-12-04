@@ -1,4 +1,83 @@
-Hello from clarifications
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header class="header">
+    <div class="name-number">
+      <%= link_to "MixEatUp", root_path%>
+      <p> 4 of 4</p>
+    </div>
+    <h1>Final Details</h1>
+  </header>
+
+
+  <div class="label">
+    To place the finishing touches on your dining symphony, are there any crucial last-minute notes to hit the right culinary crescendo?
+  </div>
+
+
+  <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get do |f| %>
+
+    <div class="card-clarification" data-field="budget" onclick="toggleCheckbox(this, 'budget')">
+      <div class="card-content">
+        <%= f.hidden_field :budget, id: "budget" %>
+        <%= f.label :budget, "Budget" %>
+      </div>
+    </div>
+
+    <div class="card-clarification" data-field="preferences" onclick="toggleCheckbox(this, 'preferences')">
+      <div class="card-content">
+        <%= f.hidden_field :preferences, id: "preferences" %>
+        <%= f.label :preferences, "Food Preferences" %>
+      </div>
+    </div>
+
+    <div class="card-clarification" data-field="location" onclick="toggleCheckbox(this, 'location')">
+      <div class="card-content">
+        <%= f.hidden_field :location, id: "location" %>
+        <%= f.label :location, "Location" %>
+      </div>
+    </div>
+
+    <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
+
+  <% end %>
+
+  <script>
+    function toggleCheckbox(element, field) {
+      const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
+      checkbox.value = !checkbox.value;
+      checkbox.checked = !checkbox.checked;
+      element.classList.toggle('selected', checkbox.checked);
+    }
+  </script>
+</body>
+
+
+
+<%# original code %>
+
+<%# <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get  do |f| %>
+  <%# <%= f.label "Budget important?" <br /> %>
+  <%# <%= f.check_box :budget <br />  %>
+
+  <%# <%= f.label "Food preferences important?" <br /> %>
+  <%# <%= f.check_box :preferences <br /> %>
+
+  <%# <%= f.label "Location important?" <br />  %>
+  <%# <%= f.check_box :location <br />  %>
+
+  <%# <%= f.submit "Next" %>
+<%# <% end %>
+
+
+
+<%# # IMPORTANT BELOW????? %>
+
 <%# <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
   <label class="form-check-label" for="flexCheckDefault">
@@ -16,33 +95,18 @@ Hello from clarifications
   <label class="form-check-label" for="flexCheckChecked">
     Is location important?
   </label>
-</div> %>
+</div>
 
-<h1>Cookies to use for the filtering</h1>
-
-
-<%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get  do |f| %>
-  <%= f.label "Budget important?" %> <br />
-  <%= f.check_box :budget %> <br />
-
-  <%= f.label "Food preferences important?" %> <br />
-  <%= f.check_box :preferences %> <br />
-
-  <%= f.label "Location important?" %> <br />
-  <%= f.check_box :location %> <br />
-
-  <%= f.submit "Next" %>
-<% end %>
-
-<%
+<%#
+# IMPORTANT BELOW?????
 =begin%>
 
-<%= simple_form_for :my_method, url: filters_budget_path, method: :get do |f|  %>
-<%= f.input :budget, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.input :preferences, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.input :location, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%= f.button :submit %>
-<% end %>
-<%
-=end%>
+<%# <%= simple_form_for :my_method, url: filters_budget_path, method: :get do |f|  %>
+<%# <%= f.input :budget, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.input :preferences, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.input :location, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+<%# <%= f.button :submit %>
+<%# <% end %>
+<%# <% %>
+<%# =end %>
 <%# use form_for instead %>

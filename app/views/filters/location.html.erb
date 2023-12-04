@@ -1,6 +1,22 @@
-<h1>Location</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-<p>Let's keep the dining drama free. Select your city to unlock a world of culinary delight!</p>
+<body>
+  <header class="header">
+    <div class="name-number">
+      <%= link_to "MixEatUp", root_path%>
+    </div>
+    <h1>Location</h1>
+  </header>
+
+<div class="label">
+  Let's keep the dining drama free. Select your city to unlock a world of culinary delight!
+</div>
+
 
 <div data-controller="map address-autocomplete"
      data-map-markers-value="<%= @markers.to_json %>"
@@ -34,3 +50,4 @@
 
   </div>
 </div>
+</body>
