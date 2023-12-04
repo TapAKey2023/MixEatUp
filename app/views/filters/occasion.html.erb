@@ -1,4 +1,69 @@
-<button><%=link_to "Romantic", filters_meal_path(occasion: "romantic")  %></button>
-<button><%=link_to "Family", filters_meal_path(occasion: "family")  %></button>
-<button><%=link_to "Friends", filters_meal_path(occasion: "friends")  %></button>
-<button><%=link_to "Work", filters_meal_path(occasion: "work")  %></button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header class="header">
+  <div class="name-number">
+    <%= link_to "MixEatUp", root_path%>
+    <p>2 of 4</p>
+  </div>
+  <h1>Occasion</h1>
+  </header>
+
+  <div class="label">
+      <span class ="text-wrapper">Let's make sure we understand your audience.</span>
+      <span class ="span">What's the occasion?</span>
+
+  </div>
+
+  <div class="card-occasion">
+      <%= image_tag "dayte.jpg", class: "occ-style" %>
+    <div class="overlay-text">
+      <%= link_to "Romantic", filters_meal_path(occasion: "romantic")%>
+    </div>
+  </div>
+
+  <div class="card-occasion">
+    <%= image_tag "famdin.jpg", class: "occ-style" %>
+    <div class="overlay-text">
+      <%= link_to "Family", filters_meal_path(occasion: "family")%>
+    </div>
+  </div>
+
+  <div class="card-occasion">
+    <%= image_tag "friends.jpeg", class: "occ-style" %>
+    <div class="overlay-text">
+      <%= link_to "Friends", filters_meal_path(occasion: "friends")%>
+    </div>
+  </div>
+
+  <div class="card-occasion">
+    <%= image_tag "work.jpeg", class: "occ-style" %>
+    <div class="overlay-text">
+      <%= link_to "Work", filters_meal_path(occasion: "work")%>
+    </div>
+  </div>
+
+</body>
+
+<%# <div class="card-occasion" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.soglos.com/images/food-drink/sg-food-drink-date-night-cheltenham-august-2023-hotlist.jpg)">
+
+<%=link_to "Romantic", filters_meal_path(occasion: "romantic")  %>
+<%# </div> %>
+
+<%# <div class="card-occasion" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://theaustinartisan.com/wp-content/uploads/2019/04/Meal-delivery-2.png)">
+  <%=link_to "Family", filters_meal_path(occasion: "family")  %>
+<%# </div> %>
+<%#
+<div class="card-occasion" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://static01.nyt.com/images/2016/12/15/fashion/15DINNER/15DINNER-superJumbo.jpg)">
+
+  <%=link_to "Friends", filters_meal_path(occasion: "friends")  %>
+<%# </div>  %>
+<%#
+<div class="card-occasion" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://imageio.forbes.com/specials-images/imageserve/289049306/960x0.jpg?height=482&width=711&fit=bounds)">
+
+  <%=link_to "Friends", filters_meal_path(occasion: "friends")  %>

@@ -3,7 +3,9 @@ class FiltersController < ApplicationController
   end
 
   def occasion
+    if params[:filter] == "occasion"
     cookies[:filter] = params[:filter]
+    end
     redirect_to filters_budget_path if cookies[:filter] == "budget"
   end
 
@@ -16,9 +18,6 @@ class FiltersController < ApplicationController
     cookies[:occasion] = params[:occasion]
   end
 
-  def evenet
-  end
-
   def clarifications
     cookies[:meal] = params[:meal]
     redirect_to filters_budget_clarifications_path if cookies[:filter] == "budget"
@@ -29,21 +28,20 @@ class FiltersController < ApplicationController
   end
 
   def user_clarification_choice
-
     choices = params[:user_clarifications]
-    if choices[:budget] == "1"
+    if choices[:budget] == "true"
       cookies[:budget] = "positive"
     else
       cookies[:budget] = "negative"
     end
 
-    if choices[:preferences] == "1"
+    if choices[:preferences] == "true"
       cookies[:preferences] = "positive"
     else
       cookies[:preferences] = "negative"
     end
 
-    if choices[:location] == "1"
+    if choices[:location] == "true"
       cookies[:location] = "positive"
     else
       cookies[:location] = "negative"
@@ -53,6 +51,7 @@ class FiltersController < ApplicationController
   end
 
   def budget
+    cookies[:filter] = "budget" if params[:filter] == "budget"
     # if cookies[:budget] == "negative"
     #   redirect_to filters_preferences_path
     #   return
@@ -69,6 +68,7 @@ class FiltersController < ApplicationController
     #   cookies[:location] = params[:location]
     # end
     # raise
+    cookies[:filter] = "budget" if params[:filter] == "budget"
 
     if cookies[:filter] == "occasion"
       if cookies[:budget] == "negative"
