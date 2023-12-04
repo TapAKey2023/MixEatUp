@@ -28,21 +28,20 @@ class FiltersController < ApplicationController
   end
 
   def user_clarification_choice
-
     choices = params[:user_clarifications]
-    if choices[:budget] == "1"
+    if choices[:budget] == "true"
       cookies[:budget] = "positive"
     else
       cookies[:budget] = "negative"
     end
 
-    if choices[:preferences] == "1"
+    if choices[:preferences] == "true"
       cookies[:preferences] = "positive"
     else
       cookies[:preferences] = "negative"
     end
 
-    if choices[:location] == "1"
+    if choices[:location] == "true"
       cookies[:location] = "positive"
     else
       cookies[:location] = "negative"
