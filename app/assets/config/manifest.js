@@ -4,5 +4,3 @@
 //= link_tree ../../../vendor/javascript .js
 //= link popper.js
 //= link bootstrap.min.js
-//= link cards.js
-//= link components/_decisions.scss
