@@ -1,24 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-<div class="header">
-  <div class="name-number">
-    <a href="#home">MixEatUp</a>
-    <p>1 of 5</p>
+<body>
+  <header class="header">
+    <div class="name-number">
+      <%= link_to "MixEatUp", root_path%>
+      <p>1 of 4</p>
+    </div>
+    <h1>Let's Get Started</h1>
+  </header>
+
+  <div class="background-style">
+    <div class="card-get-started">
+      <%= image_tag "dinner.jpeg", class: "dinner-pic" %>
+      <div class="overlay-text">
+        <%= link_to filters_occasion_path(filter: "occasion") do %>
+          Occasion
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card-get-started">
+      <%= image_tag "budgeting.jpeg", class: "budget-pic" %>
+      <div class="overlay-text">
+        <%= link_to filters_budget_path(filter: "occasion") do %>
+        Budget
+        <% end %>
+      </div>
+    </div>
   </div>
-  <h1>Let's Get Started</h1>
-</div>
-<div>
 
-
-<div class="card-get-started">
-  <%= image_tag "dinner.jpeg", class: "dinner-pic" %>
-  <div class="overlay-text">
-    <%= link_to "Occasion", filters_occasion_path(:filter => :event)%>
-  </div>
-</div>
-
-<div class="card-get-started">
-  <%= image_tag "budgeting.jpeg", class: "budget-pic" %>
-  <div class="overlay-text">
-    <%= link_to "Budget", filters_budget_path(:filter => :event)%>
-  </div>
-</div>
+</body>

@@ -1,10 +1,27 @@
-<%= form_for :user_clarifications, url: filters_preferences_path, method: :get  do |f| %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-  <%= f.label "Food preferences important?" %> <br />
-  <%= f.check_box :preferences %> <br />
+<body>
+  <header class="header">
+    <div class="name-number">
+      <%= link_to "MixEatUp", root_path%>
+      <p> 1 of 3</p>
+    </div>
+    <h1>Budget</h1>
+  </header>
 
-  <%= f.label "Location important?" %> <br />
-  <%= f.check_box :location %> <br />
+  <%= form_for :user_clarifications, url: filters_preferences_path, method: :get  do |f| %>
 
-  <%= f.submit "Next" %>
-<% end %>
+    <%= f.label "Food preferences important?" %> <br />
+    <%= f.check_box :preferences %> <br />
+
+    <%= f.label "Location important?" %> <br />
+    <%= f.check_box :location %> <br />
+
+    <%= f.submit "Next" %>
+  <% end %>
+</body>

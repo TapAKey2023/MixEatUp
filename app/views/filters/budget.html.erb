@@ -1,17 +1,36 @@
-Hello from budget
-As we embark on this culinary voyage, what financial parameters should we budget for?As we embark on this culinary voyage, <br>
-what financial parameters should we budget for?<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-<% if cookies[:filter] == "budget" %>
-<%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %>
-  <%= f.text_field :total_price, input_html: { type: 'number' } %>
-  <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-  <%= f.submit "Next" %>
+<body>
+  <header class="header">
+    <div class="name-number">
+      <%= link_to "MixEatUp", root_path%>
+      <p> 1 of 3</p>
+    </div>
+    <h1>Budget</h1>
+  </header>
+
+
+  <div class="label">
+    As we embark on this culinary voyage, what financial parameters should we budget for?
+  </div>
+
+  <% if cookies[:filter] == "budget" %>
+  <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %>
+    <%= f.text_field :total_price, input_html: { type: 'number' } %>
+    <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
+    <%= f.submit "Next" %>
+    <% end %>
+  <% else %>
+  <%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %>
+    <%= f.text_field :total_price, input_html: { type: 'number' } %>
+    <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
+    <%= f.submit "Next" %>
   <% end %>
-<% else %>
-<%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %>
-  <%= f.text_field :total_price, input_html: { type: 'number' } %>
-  <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-  <%= f.submit "Next" %>
-<% end %>
-<% end %>
+  <% end %>
+
+</body>
