@@ -1,21 +1,26 @@
-<h1>Loading...</h1>
+
+<h2>Loading...</h2>
 
 
+<h3>Your choices...</h3>
 
-<p>occasion: <%= cookies[:occasion] %></p>
-<p>meal: <%= cookies[:meal] %></p>
-<p>budget: <%= cookies[:budget] %></p>
-<p>location: <%= cookies[:location] %></p>
-<p>total_price: <%= cookies[:total_price] %></p>
-<p>number of people: <%= cookies[:number_of_people] %></p>
-<p>wheat: <%= cookies[:wheat] %></p>
-<p>lactose: <%= cookies[:lactose] %></p>
-<p>nuts: <%= cookies[:nuts] %></p>
-<p>vegetarian: <%= cookies[:vegetarian] %></p>
-<p>city: <%= cookies[:city] %></p>
-<p>radius: <%= cookies[:radius] %></p>
-<p>allergies</p> <%= cookies[:preferences] %>
-<p>filter: <%= cookies[:filter] %></p>
+<ul>
+<li>Meal: <%= cookies[:meal] %></li>
+<li>Occasion: <%= cookies[:occasion] %></li>
+<li>Budget: <%= cookies[:budget] %> </li>
+<li>Location: <%= cookies[:location] %></li>
+<li>Total price: <%= cookies[:total_price] %></li>
+<li>Number of people: <%= cookies[:number_of_people] %></li>
+<li>Wheat: <%= cookies[:wheat] %></li>
+<li>Lactose: <%= cookies[:lactose] %></li>
+<li>Nuts: <%= cookies[:nuts] %></li>
+<li>Vegetarian: <%= cookies[:vegetarian] %></li>
+<li>City: <%= cookies[:city] %></li>
+<li>Radius: <%= cookies[:radius] %></li>
+<li>Allergies: <%= cookies[:preferences] %></li>
+<li>Filter: <%= cookies[:filter] %></li>
+</ul>
+
 
 <br>
 <br>
@@ -23,8 +28,8 @@
 <br>
 <br>
 <br>
-<button class=>
-<%= link_to "See results", restaurants_path  %>
+<button class= "button">
+  <%=  link_to "See results", restaurants_path  %>
 </button>
 <br>
 <br>
