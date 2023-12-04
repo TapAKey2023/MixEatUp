@@ -4,16 +4,16 @@
       <% if user_signed_in? %>
 <div class="navbar">
 <%= link_to root_path do %>
-<i class="fa-solid fa-house"></i>
+<%= image_tag "home.png", class: "icons"%>
 <% end %>
 <%= link_to filters_path do %>
-<i class="fa-solid fa-utensils"></i>
+<%= image_tag "food.png", class: "icons" %>
 <% end %>
 <%= link_to new_bill_path do %>
-<i class="fa-solid fa-receipt"></i>
+<%= image_tag "receipt.png", class: "icons" %>
 <% end %>
 <%= link_to user_path(current_user) do %>
-<i class="fa-solid fa-user"></i>
+<%= image_tag "profile.png", class: "icons" %>
 <% end %>
 </div>
 <% end %>
@@ -22,3 +22,9 @@
        <%# <button> <%= link_to "Let's Eat", filters_path %>
         <%# <button><%= link_to 'Upload Bill', new_bill_path %>
         <%# <button><%= link_to 'Profile', user_path(user)  %>
+
+
+<%# <i class="fa-solid fa-house"></i> %>
+<%# <i class="fa-solid fa-utensils"></i> %>
+<%# <i class="fa-solid fa-receipt"></i>
+<i class="fa-solid fa-user"></i> %>
