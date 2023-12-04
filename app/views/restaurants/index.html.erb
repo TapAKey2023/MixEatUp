@@ -1,4 +1,13 @@
-<h2>5 Perfect Restaurants</h2>
+<%# <h2>5 Perfect Restaurants</h2> %>
+
+
+  <header class="header">
+    <div class="name-number">
+      <%= link_to "MixEatUp", root_path%>
+      <p> 3 of 3</p>
+    </div>
+    <h1>5 Perfect Restaurants</h1>
+  </header>
 
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-black">
@@ -7,7 +16,7 @@
 </div>
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">Explore the Restaurants:</h3>
+    <h3 class="mb-0 explore">Explore:</h3>
   </div>
 
   <%# <div class="card-grid">
@@ -23,29 +32,55 @@
   <%# </div> %>
 
 
- <% @restaurants.each do |restaurant| %>
-<div class="card-small">
-
-  <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:300px" />
-  <div class="card-small-infos">
-  <div class="title-icon">
-      <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
+  <% @restaurants.each do |restaurant| %>
+  <div class="card-small" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+    <div class="front">
+      <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:300px" />
+      <div class="card-small-infos">
+        <div class="title-icon">
+          <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
+        </div>
+        <div class="info">
+          <div>
+            <p><%= "Why you'll love it: " %> <%= restaurant.about %></p>
+            <p><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></p>
+            <p><%= "How others feel: " %><%= restaurant.rating %></p>
+            </div>
+        </div>
+          <%# <div class="flame-bookmark" style="display:flex; font-size:16px; justify-content: space-between;"> %>
+          <%# <p><%= "🔥" %>
+          <%# <i class="fas fa-location-dot"></i> <p><%= restaurant.address</p>
+          <div style="display:flex"> %>
+        <i class="fa-solid fa-circle-info"></i>
+        <%# </div> %>
+        <%# <div class="back">
+          More Info
+        </div> %>
       </div>
-      <div class="info">
-      <div>
-      <p><%= "Why you'll love it: " %> <%= restaurant.about %></p>
-      <p><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></p>
-      <p><%= "How others feel: " %><%= restaurant.rating %></p>
     </div>
-      </div>
-      <div class="flame-bookmark" style="display:flex; font-size:16px; justify-content: space-between;">
-      <%# <p><%= "🔥" %>
-     <i class="fa-solid fa-circle-info"></i>
-     <div style="display:flex">
-      <i class="fas fa-location-dot"></i> <p><%= restaurant.address %></p>
+    <div class="back">
+    <div class="pic-info">
+    <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
+     <p class= "about">More Info About This Restaurant</p>
      </div>
-      </div>
+     <p><%= "Opening Hours: " %> <%= restaurant.opening_hour - restaurant.closing_hour %></p>
+     <p><%= "What the location is like: " %><%= restaurant.location_details %></p>
+    </div>
     </div>
   </div>
+</div>
+
 <% end %>
+<script>
+  function flipCard(card) {
+    card.classList.toggle("flipped");
+
+     if (card.classList.contains("flipped")) {
+      // Update the content of the back card
+      var backContent = card.querySelector(".back");
+      backContent.innerHTML = `<p>Here is more information</p>`;
+    }
+  }
+</script>
 </div>
