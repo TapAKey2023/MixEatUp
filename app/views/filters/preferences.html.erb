@@ -16,17 +16,6 @@
 
   <div class="card-preferences">
 
-    <div class="preference-item" data-item="wheat">
-      <%# <%= image_tag "wheat.jpg", class: "style-pref", alt: "Wheat"%>
-      <div class="overlay-text3">
-        <%= simple_form_for :my_method, url: filters_location_path, method: :get do |f| %>
-          <%= f.input :wheat, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-          <%= f.button :submit %>
-          <% end %>
-      </div>
-      </div>
-    </div>
-
 <%= form_for :user_clarifications, url: filters_location_path, method: :get do |f| %>
   <div class="d-flex">
     <div class="card-clarification"
@@ -93,3 +82,16 @@
   <br>
   <br>
   <br>
+
+
+
+ <%# <div class="preference-item" data-item="wheat">
+      <%# <%= image_tag "wheat.jpg", class: "style-pref", alt: "Wheat"%>
+      <%# <div class="overlay-text3"> %>
+        <%# <%= simple_form_for :my_method, url: filters_location_path, method: :get do |f| %>
+          <%# <%= f.input :wheat, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
+          <%# <%= f.button :submit %>
+          <%# <% end %>
+      <%# </div> %>
+      <%# </div> %>
+    <%# </div> %>

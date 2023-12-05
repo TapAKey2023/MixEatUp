@@ -40,14 +40,14 @@
 
   <% end %>
 
-  <script>
-    function toggleCheckbox(element, field) {
-      const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
-      checkbox.value = !checkbox.value;
-      checkbox.checked = !checkbox.checked;
-      element.classList.toggle('selected', checkbox.checked);
-    }
-  </script>
+<script>
+  function toggleCheckbox(element, field) {
+    const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
+    checkbox.value = !checkbox.value;
+    checkbox.checked = !checkbox.checked;
+    element.classList.toggle('selected', checkbox.checked);
+  }
+</script>
 
 
 
