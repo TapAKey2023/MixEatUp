@@ -1,29 +1,87 @@
-
-
-  <header class="header">
-    <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
-      <p> 1 of 3</p>
-    </div>
-    <h1>Budget</h1>
-  </header>
-
-
-  <div class="label">
-    As we embark on this culinary voyage, what financial parameters should we budget for?
+<header class="header">
+  <div class="name-number">
+    <%= link_to "MixEatUp", root_path%>
   </div>
+  <h1>Budget</h1>
+</header>
 
-<% if cookies[:filter] == "budget" %>
-<%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %>
-<label for="name">First name:</label><br>
-  <%= f.text_field :total_price, input_html: { type: 'number' } %>
-  <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-  <%= f.submit "Next" %>
-  <% end %>
-<% else %>
-<%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %>
-  <%= f.text_field :total_price, input_html: { type: 'number' } %>
-  <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-  <%= f.submit "Next" %>
-<% end %>
-<% end %>
+<div class="container">
+  <div class="label">As we embark on this culinary voyage, what financial parameters should we budget for?</div>
+
+<div class="indulge-cards-wrapper">
+    <div class="label2">1. What do you plan to indulge in?</div>
+
+    <div class="top-check-boxes d-flex justify-content-between">
+      <input class="custom-checkbox" type="checkbox" id="preferences" name="preferences" value="1">
+      <label class="card-indulge drink-label" for="preferences">
+        Drinks
+      </label>
+
+      <input class="custom-checkbox" type="checkbox" id="location" value="1">
+      <label class="card-indulge food-label" for="location">
+        Food
+      </label>
+    </div>
+    <div>
+      <input class="custom-checkbox drink-or-food-checkbox" type="checkbox" id="drinks-food" value="1">
+      <label class="card-indulge drink-food-label w-100" for="drinks-food">
+        Drinks & Food
+      </label>
+    </div>
+  <%# </div> %>
+
+
+<%# <div class="indulge-cards-wrapper2"> %>
+  <div class="test2">
+    <div class="label2">2. Let's set the perfect budget for your indulgent soiree!</div>
+    <% if cookies[:filter] == "budget" %>
+      <%= form_with url: filters_meal_path, method: :get do |f|  %>
+        <div>
+          <%= f.label :total_price, 'Total Price:' %>
+          <%= f.text_field :total_price, input_html: { type: 'number' } %>
+        </div>
+        <div>
+          <%= f.label :number_of_people, 'Number of People:' %>
+          <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
+        </div>
+
+
+        <input class="custom-checkbox" type="checkbox" id="drink-indulge">
+        <label for="drink-indulge">Drink</label>
+
+
+      <% end %>
+    <% else %>
+      <%= form_with url: filters_preferences_path, method: :get do |f|  %>
+        <div>
+          <%= f.label :total_price, 'Total £:' %>
+          <%= f.text_field :total_price, input_html: { type: 'number' } %>
+        </div>
+        <div>
+          <%= f.label :number_of_people, 'Number of People:' %>
+          <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
+        </div>
+
+        <div class="next">
+          <%= f.submit "Next" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<!-- <% if cookies[:filter] == "budget" %> -->
+<!-- <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %> -->
+<!-- <label for="name">First name:</label><br> -->
+<!--   <%= f.text_field :total_price, input_html: { type: 'number' } %> -->
+<!--   <%= f.text_field :number_of_people, input_html: { type: 'number' } %> -->
+<!--   <%= f.submit "Next" %> -->
+<!--   <% end %> -->
+<!-- <% else %> -->
+<!-- <%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %> -->
+<!--   <%= f.text_field :total_price, input_html: { type: 'number' } %> -->
+<!--   <%= f.text_field :number_of_people, input_html: { type: 'number' } %> -->
+<!--   <%= f.submit "Next" %> -->
+<!-- <% end %> -->
+<!-- <% end %> -->
+
