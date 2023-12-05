@@ -8,13 +8,13 @@
     </div>
     <h1>5 Perfect Restaurants</h1>
   </header>
-
+<%# container py-5 %>
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-black">
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
-<div class="container py-5">
+<div class="card-container">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h3 class="mb-0 explore">Explore:</h3>
   </div>
@@ -40,36 +40,45 @@
       <div class="card-small-infos">
         <div class="title-icon">
           <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
+          <i class="fa-solid fa-circle-info"></i>
         </div>
+        <div class="info-icon">
+
+       </div>
+        <%# <div class="details-icon"> %>
         <div class="info">
           <div>
-            <p><%= "Why you'll love it: " %> <%= restaurant.about %></p>
-            <p><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></p>
-            <p><%= "How others feel: " %><%= restaurant.rating %></p>
+            <h4><%= "Cuisine: " %><%= restaurant.cuisine_type %></h4>
+            <h4><%= "Why you'll love it: " %> <%= restaurant.about %></h4>
+            <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
+            <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
             </div>
+
         </div>
-          <%# <div class="flame-bookmark" style="display:flex; font-size:16px; justify-content: space-between;"> %>
-          <%# <p><%= "🔥" %>
-          <%# <i class="fas fa-location-dot"></i> <p><%= restaurant.address</p>
-          <div style="display:flex"> %>
-        <i class="fa-solid fa-circle-info"></i>
-        <%# </div> %>
-        <%# <div class="back">
-          More Info
-        </div> %>
+       <%# </div> %>
+       <div class="card-nav">
+       <i class="fa-regular fa-bookmark icon"></i>
+       <i class="fa-regular fa-heart icon" ></i>
+       <i class="fa-solid fa-location-dot icon" ></i>
+       </div>
       </div>
     </div>
     <div class="back">
     <div class="pic-info">
     <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
-     <p class= "about">More Info About This Restaurant</p>
+     <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %></p>
      </div>
-     <p><%= "Opening Hours: " %> <%= restaurant.opening_hour - restaurant.closing_hour %></p>
-     <p><%= "What the location is like: " %><%= restaurant.location_details %></p>
+     <p><%= "More information: " %><%= restaurant.location_details %></p>
+     <p><%= "Meals this restaurant is perfect for: " %><%= restaurant.meal_type %></p>
+     <p><%= "Type of occasions this restaurant is perfect for: " %><%= restaurant.other_occasion %></p>
+     <p><%= "Why you'll love it: " %><%= restaurant.location_details %></p>
+     <p><%= "Why you'll tell your friends about us tomorrow: " %><%= restaurant.location_details %></p>
+     <p><%= "The why beind our restaurant choice: " %><%= restaurant.location_details %></p>
+     <p><%= "Why you should bookmark for later: " %><%= restaurant.location_details %></p>
+    </div>
     </div>
     </div>
   </div>
-</div>
 
 <% end %>
 <script>

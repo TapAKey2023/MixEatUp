@@ -1,5 +1,5 @@
 
-  <header class="header">
+   <header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
       <p>1 of 4</p>
@@ -13,21 +13,21 @@
       <div class="overlay-text">
         <%= link_to filters_occasion_path(filter: "occasion") do %>
           Occasion
+            <p class="additional-text">Feeling lost in the quest for the perfect restaurant? Let us be your occasion matchmaker!</p>
+
         <% end %>
       </div>
     </div>
-
 
     <div class="card-get-started">
       <%= image_tag "pay_bill.jpeg", class: "budget-pic" %>
       <div class="overlay-text">
-        <%= link_to filters_budget_path(filter: "occasion") do %>
+        <%= link_to filters_budget_path(filter: "budget") do %>
         Budget
+        <p class="additional-text">Craving a night out but don't want to overspend - let us help you stay in budget and discover a spot quickly! </p>
         <% end %>
       </div>
     </div>
-
-
 
 
 <%# <div class="card-get-started">

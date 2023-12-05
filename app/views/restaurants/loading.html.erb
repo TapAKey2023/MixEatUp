@@ -12,7 +12,7 @@
   <h3>Your choices:</h3>
   <ul>
     <li data-loading-page-target="listItems" class= "d-none">Meal: <%= cookies[:meal].capitalize %></li>
-    <% if cookies[:occasion] != "negative" %>
+    <% if cookies[:occasion] == "positive" %>
     <li data-loading-page-target= "listItems" class= "d-none">Occasion: <%= cookies[:occasion].capitalize %></li>
     <% end %>
     <% if cookies[:location] == "positive"%>

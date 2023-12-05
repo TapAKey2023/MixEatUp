@@ -11,8 +11,8 @@ class FiltersController < ApplicationController
 
   def meal
     if cookies[:filter] == "budget"
-      cookies[:total_price] = params[:my_method][:total_price]
-      cookies[:number_of_people] = params[:my_method][:number_of_people]
+      cookies[:total_price] = params[:total_price]
+      cookies[:number_of_people] = params[:number_of_people]
 
     end
     cookies[:occasion] = params[:occasion]
@@ -69,7 +69,6 @@ class FiltersController < ApplicationController
     # end
     # raise
     cookies[:filter] = "budget" if params[:filter] == "budget"
-
     if cookies[:filter] == "occasion"
       if cookies[:budget] == "negative"
         redirect_to filters_preferences_path
@@ -89,35 +88,34 @@ class FiltersController < ApplicationController
     if cookies[:filter] == "budget"
       cookies[:preferences] = params[:user_clarifications][:preferences]
       cookies[:location] = params[:user_clarifications][:location]
-      redirect_to filters_location_path if cookies[:preferences] == "0"
+      redirect_to filters_location_path if cookies[:preferences] == "0" || cookies[:preferences] != "true"
+      return
     end
 
     if cookies[:budget] == "positive" && cookies[:filter] != "budget"
-      cookies[:total_price] = params[:my_method][:total_price]
-      cookies[:number_of_people] = params[:my_method][:number_of_people]
+      cookies[:total_price] = params[:total_price]
+      cookies[:number_of_people] = params[:number_of_people]
     else
       cookies[:total_price] = "negative"
       cookies[:number_of_people] = "negative"
     end
-
-    redirect_to filters_location_path if cookies[:preferences] == "negative"
+    redirect_to filters_location_path if cookies[:preferences] == "negative" || cookies[:preferences] == "false"
   end
 
   def location
-
     if cookies[:filter] == "budget"
       if cookies[:preferences] == "1"
-        cookies[:wheat] = params[:my_method][:wheat]
-        cookies[:lactose] = params[:my_method][:lactose]
-        cookies[:nuts] = params[:my_method][:nuts]
-        cookies[:vegetarian] = params[:my_method][:vegetarian]
+        cookies[:wheat] = params[:wheat]
+        cookies[:lactose] = params[:lactose]
+        cookies[:nuts] = params[:nuts]
+        cookies[:vegetarian] = params[:vegetarian]
       else
         cookies[:wheat] = "negative"
         cookies[:lactose] = "negative"
         cookies[:nuts] = "negative"
         cookies[:vegetarian] = "negative"
       end
-      if cookies[:location] == "0"
+      if cookies[:location] == "0" || cookies[:location] != "true"
         redirect_to restaurants_loading_path
       end
     end
@@ -138,6 +136,14 @@ class FiltersController < ApplicationController
       if cookies[:location] == "negative"
         redirect_to restaurants_loading_path
       end
+    end
+    @restaurants = Restaurant.geocoded
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        marker_html: render_to_string(partial: "marker") # Pass the restaurant to the partial
+      }
     end
   end
 end

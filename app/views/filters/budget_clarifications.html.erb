@@ -1,27 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <div class="label">
+    To place the finishing touches on your dining symphony, are there any crucial last-minute notes to hit the right culinary crescendo?
+  </div>
 
-<body>
-  <header class="header">
-    <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
-      <p> 1 of 3</p>
+
+  <%= form_for :user_clarifications, url: filters_preferences_path, method: :get do |f| %>
+
+
+    <div class="card-clarification" data-field="preferences" onclick="toggleCheckbox(this, 'preferences')">
+      <div class="card-content">
+        <%= f.hidden_field :preferences, id: "preferences" %>
+        <%= f.label :preferences, "Food Preferences" %>
+      </div>
     </div>
-    <h1>Budget</h1>
-  </header>
 
-  <%= form_for :user_clarifications, url: filters_preferences_path, method: :get  do |f| %>
+    <div class="card-clarification" data-field="location" onclick="toggleCheckbox(this, 'location')">
+      <div class="card-content">
+        <%= f.hidden_field :location, id: "location" %>
+        <%= f.label :location, "Location" %>
+      </div>
+    </div>
 
-    <%= f.label "Food preferences important?" %> <br />
-    <%= f.check_box :preferences %> <br />
+    <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
 
-    <%= f.label "Location important?" %> <br />
-    <%= f.check_box :location %> <br />
-
-    <%= f.submit "Next" %>
   <% end %>
-</body>
+
+<script>
+  function toggleCheckbox(element, field) {
+    const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
+    checkbox.value = !checkbox.value;
+    checkbox.checked = !checkbox.checked;
+    element.classList.toggle('selected', checkbox.checked);
+  }
+</script>
+
+
+
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br>
