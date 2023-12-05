@@ -1,5 +1,5 @@
 .header {
-  background-color: $primary-color;
+  background-color: $secondary-color;
   overflow: hidden;
   top: 0;
   width: 100%;
@@ -32,4 +32,8 @@ h1 {
   font-size: 20px;
   padding: 0 0 10px 0;
   margin-bottom: -10px;
+}
+
+h2{
+  text-align: center;
 }

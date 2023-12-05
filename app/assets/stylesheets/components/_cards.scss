@@ -268,11 +268,11 @@ justify-content: space-between;
   filter: brightness(40%);
 }
 
-.drink-or-food {
+.card-indulge {
   background-size: cover;
   background-position: center;
-  width: 150px;
-  height: 150px;
+  width: 165px;
+  height: 165px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -281,13 +281,8 @@ justify-content: space-between;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 15px;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
             0 6px 6px rgba(0, 0, 0, 0.1);
-}
-
-.drink-or-food img {
-  filter: brightness(50%);
 }
 
 
