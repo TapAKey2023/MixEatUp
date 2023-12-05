@@ -1,5 +1,4 @@
 class BillsController < ApplicationController
-
   def create
     @bill = Bill.new(bill_params)
     @restaurant = Restaurant.find_by(name: params[:bill][:restaurant])
@@ -25,5 +24,4 @@ class BillsController < ApplicationController
   def bill_params
     params.require(:bill).permit(:number_of_people, :total_price, :restaurant_id, :user_id, :average_price_per_person)
   end
-
 end
