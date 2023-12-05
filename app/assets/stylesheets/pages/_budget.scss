@@ -35,8 +35,8 @@
 }
 
 .top-check-boxes {
-  margin: 12px 0;
-  gap: 5px;
+  margin: 16px 0;
+  gap: 18px;
 }
 
 .margin-pics {
@@ -45,15 +45,16 @@
 
 .label2 {
   font-family: $font;
-  font-size: 22px;
+  font-size: 23.5px;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .indulge-cards-wrapper {
   background-size: cover;
   background-position: center;
-  height: 440px;
+  height: 650px;
 
   padding: 15px;
   justify-content: center;
@@ -71,12 +72,22 @@
   }
 
   label {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     font-family: $font;
   }
 }
 
+.test2{
+  padding-top: 22px;
+
+  label {
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-family: $font;
+  }
+}
 .indulge-cards-wrapper2 {
 
   padding: 15px;
@@ -91,22 +102,13 @@
     width: 175px;
   }
 
-  label {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: $font;
-  }
 
-  p {
-    font-size: 12px;
-    opacity: 0.7;
-    margin: 0;
-  }
 }
 
 .next {
   position: fixed;
-  bottom: 100px;
+  bottom:auto;
+  margin-left: 150px;
 }
 
   // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

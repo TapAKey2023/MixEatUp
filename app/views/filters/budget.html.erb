@@ -9,7 +9,7 @@
   <div class="label">As we embark on this culinary voyage, what financial parameters should we budget for?</div>
 
 <div class="indulge-cards-wrapper">
-    <div class="label2">What are you planning to indulge in?</div>
+    <div class="label2">1. What do you plan to indulge in?</div>
 
     <div class="top-check-boxes d-flex justify-content-between">
       <input class="custom-checkbox" type="checkbox" id="preferences" name="preferences" value="1">
@@ -28,11 +28,12 @@
         Drinks & Food
       </label>
     </div>
-  </div>
+  <%# </div> %>
 
 
-<div class="indulge-cards-wrapper2">
-    <div class="label2">Let's set the perfect budget for your indulgent soiree!</div>
+<%# <div class="indulge-cards-wrapper2"> %>
+  <div class="test2">
+    <div class="label2">2. Let's set the perfect budget for your indulgent soiree!</div>
     <% if cookies[:filter] == "budget" %>
       <%= form_with url: filters_meal_path, method: :get do |f|  %>
         <div>
