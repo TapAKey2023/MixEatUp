@@ -1,6 +1,25 @@
 .bill {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://i.pinimg.com/474x/98/e7/31/98e7316b50ed00524db128ccd14956a8.jpg");
-  color: white;
+  color: white !important;
   font-weight: bold;
-  font-size: medium;
+  font-size: large;
+}
+.set-height-bills {
+  height: 5vh;
+}
+
+.bill-text {
+  font-size: 20px;
+}
+
+.new_bill {
+  .submit-btn {
+    color: white !important;
+    background: none;
+  }
+
+  .form-select,
+  .form-control {
+    opacity: 80% !important;
+  }
 }

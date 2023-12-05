@@ -12,14 +12,14 @@
 
 .custom-checkbox + label {
   cursor: pointer;
-  opacity: 0.65;
-  transition: opacity 200ms ease-in-out;
+  color: $secondary-color;
+  opacity: 1;
 }
 
 .custom-checkbox:checked + label {
   cursor: pointer;
-  color: $secondary-color;
-  opacity: 1;
+  opacity: 0.65;
+  transition: opacity 200ms ease-in-out;
 }
 
 .custom-checkbox + label.drink-label {
