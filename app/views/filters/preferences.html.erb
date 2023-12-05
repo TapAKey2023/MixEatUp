@@ -14,61 +14,35 @@
     </p>
   </div>
 
-  <div class="card-preferences">
-
-<%= form_for :user_clarifications, url: filters_location_path, method: :get do |f| %>
   <div class="d-flex">
-    <div class="card-clarification"
-     style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('wheat.jpg') %>');"
-     data-field="wheat" onclick="toggleCheckbox(this, 'wheat')">
-      <div class="card-content">
-        <%= f.hidden_field :wheat, id: "wheat" %>
-        <%= f.label :wheat, "wheat", class: "text-white"  %>
-      </div>
+    <div class="card-preferences">
+      <div class="top-check-boxes d-flex justify-content-between">
+        <input class="custom-checkbox" type="checkbox" id="wheat" name="wheat" value="0">
+        <label class="card-indulge wheat-label test-preferences" for="wheat">
+          Wheat
+        </label>
+
+
+        <input class="custom-checkbox" type="checkbox" id="lactose" name="lactose" value="1">
+        <label class="card-indulge lactose-label test-preferences" for="lactose">
+          Milk
+        </label>
+        </div>
+
+      <div class="top-check-boxes d-flex justify-content-between">
+        <input class="custom-checkbox" type="checkbox" id="nuts" name="nuts" value="1">
+        <label class="card-indulge nuts-label test-preferences" for="nuts">
+          Nuts
+        </label>
+
+        <input class="custom-checkbox" type="checkbox" id="vegetarian" name="vegetarian" value="1">
+        <label class="card-indulge vegetarian-label test-preferences" for="vegetarian">
+          Vegetarian
+        </label>
     </div>
-
-    <div class="card-clarification"
-      style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('lactose.jpeg') %>')"
-      data-field="lactose" onclick="toggleCheckbox(this, 'lactose')">
-      <div class="card-content">
-        <%= f.hidden_field :lactose, id: "lactose" %>
-        <%= f.label :lactose, "lactose", class: "text-white"  %>
-      </div>
-    </div>
-  </div>
-  <div class="d-flex">
-    <div class="card-clarification"
-          style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('nuts.jpeg') %>')"
-          data-field="nuts" onclick="toggleCheckbox(this, 'nuts')">
-      <div class="card-content">
-        <%= f.hidden_field :nuts, id: "nuts" %>
-        <%= f.label :nuts, "nuts",  class: "text-white" %>
-      </div>
-    </div>
-
-       <div class="card-clarification"
-        style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('vegetarian.jpeg') %>')"
-         data-field="vegetarian" onclick="toggleCheckbox(this, 'vegetarian')">
-      <div class="card-content">
-        <%= f.hidden_field :vegetarian, id: "vegetarian" %>
-        <%= f.label :vegetarian, "vegetarian", class: "text-white" %>
-      </div>
-    </div>
-  </div>
-    <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
-
-<% end %>
-
-  <script>
-    function toggleCheckbox(element, field) {
-      const checkbox = element.querySelector(`input[name="user_clarifications[${field}]"]`);
-      checkbox.value = !checkbox.value;
-      checkbox.checked = !checkbox.checked;
-      element.classList.toggle('selected', checkbox.checked);
-    }
-  </script>
-
-
+    <button><%= link_to "Next", filters_location_path %></button>
+</div>
+</div>
   <br>
   <br>
   <br>
@@ -95,3 +69,5 @@
       <%# </div> %>
       <%# </div> %>
     <%# </div> %>
+
+<%# onclick="toggleCheckbox(this, 'lactose')" %>
