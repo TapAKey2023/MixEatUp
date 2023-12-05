@@ -14,6 +14,18 @@
   z-index: 999;
 }
 
+.explore {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.card-container {
+  padding: 20px 0 20px 0;
+}
+
+h3 {
+  color: $primary-color;
+}
 
 .card-inner {
   position: relative;
@@ -39,7 +51,9 @@
   transform: rotateY(180deg);
 }
 
-
+.back-title {
+  font-size: 25px;
+}
 
 .back-image {
   width: 50%;
@@ -55,9 +69,9 @@
   margin: 10px 0 0 30px;
 }
 
-
-
-
+h4 {
+  font-size: 18px;
+}
 
 
 
@@ -79,13 +93,15 @@ justify-content: space-between;
 }
 
 .title {
-  font-size: 38px;
+  font-size: 35px;
   font-weight: bold;
+  text-align: left;
+  padding: 5px;
 }
 
  .info {
   display: flex;
-  font-size: 20px;
+  padding: 5px 0 0 5px;
  }
 
 .title-icon {
@@ -100,11 +116,13 @@ justify-content: space-between;
 }
 
 .fa-circle-info {
-  font-size: 23px;
-  margin-top: 10px;
-  margin-left: 180px;
+  font-size: 25px;
+  color: $primary-color;
+  // margin-top: 10px;
+  // margin-left: 180px;
   // margin-top: -20px;
   float: right;
+  padding: 0 5px 0 0;
 }
 
 .answers {
@@ -119,6 +137,38 @@ justify-content: space-between;
   backface-visibility: hidden;
 }
 
+.back-image {
+  padding: 0 5px 5px 0;
+}
+
+
+.card-nav {
+  overflow: hidden;
+  position: fixed;
+  bottom: 5px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid rgba(10, 17, 40, 0.2);
+  padding: 0 10px 0 10px;
+}
+
+.icon {
+  font-size: 38px;
+  padding: 5px 42px 0 42px;
+  color:#0A1128;
+  text-align: center;
+}
+
+// .details-icon {
+//   justify-content: space-between;
+//   display: flex;
+//   margin-top: 10px;
+// }
+
+// .fa-circle-info {
+//   font-size: 25px;
+//   margin-top: 30px;
+// }
 
 
 // .card.flipped .front {
