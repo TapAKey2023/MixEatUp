@@ -45,6 +45,7 @@
           <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
         </div>
 
+
         <input class="custom-checkbox" type="checkbox" id="drink-indulge">
         <label for="drink-indulge">Drink</label>
 
@@ -68,3 +69,19 @@
     <% end %>
   </div>
 </div>
+
+<!-- <% if cookies[:filter] == "budget" %> -->
+<!-- <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %> -->
+<!-- <label for="name">First name:</label><br> -->
+<!--   <%= f.text_field :total_price, input_html: { type: 'number' } %> -->
+<!--   <%= f.text_field :number_of_people, input_html: { type: 'number' } %> -->
+<!--   <%= f.submit "Next" %> -->
+<!--   <% end %> -->
+<!-- <% else %> -->
+<!-- <%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %> -->
+<!--   <%= f.text_field :total_price, input_html: { type: 'number' } %> -->
+<!--   <%= f.text_field :number_of_people, input_html: { type: 'number' } %> -->
+<!--   <%= f.submit "Next" %> -->
+<!-- <% end %> -->
+<!-- <% end %> -->
+

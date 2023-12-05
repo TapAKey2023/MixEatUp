@@ -125,17 +125,16 @@ class FiltersController < ApplicationController
 
     if cookies[:filter] == "occasion"
       if cookies[:preferences] == "positive"
-        cookies[:wheat] = params[:my_method][:wheat]
-        cookies[:lactose] = params[:my_method][:lactose]
-        cookies[:nuts] = params[:my_method][:nuts]
-        cookies[:vegetarian] = params[:my_method][:vegetarian]
+        cookies[:wheat] = params[:wheat]
+        cookies[:lactose] = params[:lactose]
+        cookies[:nuts] = params[:nuts]
+        cookies[:vegetarian] = params[:vegetarian]
       else
         cookies[:wheat] = "negative"
         cookies[:lactose] = "negative"
         cookies[:nuts] = "negative"
         cookies[:vegetarian] = "negative"
       end
-
       if cookies[:location] == "negative"
         redirect_to restaurants_loading_path
       end
