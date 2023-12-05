@@ -2,5 +2,17 @@
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://i.pinimg.com/474x/98/e7/31/98e7316b50ed00524db128ccd14956a8.jpg");
   color: white;
   font-weight: bold;
-  font-size: medium;
+  font-size: large;
+}
+.set-height-bills {
+  height: 5vh;
+}
+
+.submit-btn {
+  color: white !important;
+  background: none;
+}
+
+.form-control {
+  opacity: 80%;
 }

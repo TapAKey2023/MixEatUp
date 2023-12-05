@@ -303,7 +303,7 @@ justify-content: space-between;
 }
 .card-clarification {
   width: 400px;
-  height: 190px;
+  height: 170px;
   border: 1px solid #ccc;
   border-radius: 15px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -311,15 +311,17 @@ justify-content: space-between;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
             0 6px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 10px;
+  // margin: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
+
+
   &.selected {
     background-color: $primary-color;
-    label {
-      color: $secondary-color !important;
-    }
+    // label {
+    //   color: $secondary-color !important;
+    // }
   }
 
   .card-content {
@@ -332,17 +334,26 @@ justify-content: space-between;
     padding: 15px;
 
 
+
     label {
       display: block;
       margin-bottom: 8px;
       font-family: $font;
-      color: $primary-color;
+      color: $secondary-color !important;
       font-size: 30px;
     }
+
+
   }
 }
 
-
+.clarifications-submit {
+  display: block;
+  margin-bottom: 8px;
+  font-family: $font;
+  color: $primary-color;
+  font-size: 30px;
+}
 .card-get-started {
   background-size: cover;
   background-position: center;
