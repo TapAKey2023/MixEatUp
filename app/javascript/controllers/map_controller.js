@@ -6,7 +6,7 @@ import MapboxCircle from 'mapbox-gl-circle'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array | null,
+    markers: Array || null,
     latitude: Number,
     longitude: Number,
     address: String
@@ -14,6 +14,7 @@ export default class extends Controller {
   static targets = [ "map", "radiusInput" ]
 
   connect() {
+    console.log(this.markersValue)
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -21,7 +22,7 @@ export default class extends Controller {
       style: "mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb" // <-- use your own!
     });
 
-    // this.#addMarkersToMap()
+
     // this.#fitMapToMarkers()
   }
 
@@ -29,18 +30,27 @@ export default class extends Controller {
     event.preventDefault();
 
     const popup = new mapboxgl.Popup().setHTML(this.addressValue)
-    const marker = document.createElement("div")
-    const radius = this.radiusInputTarget.value || 5
-    marker.style = {
-      background: "white",
-      borderRadius: "4px",
-      padding: "8px 4px",
-      color: "black",
-      boxShadow: "0 1px 2px rgba(0,0,0,0.10)"
-    }
-    marker.innerHTML = this.addressValue
+    // const marker = document.createElement("div")
 
-    new mapboxgl.Marker()
+    // Create a HTML element for your custom marker
+    const customMarker = document.createElement("div")
+    customMarker.innerHTML = this.markersValue[0].marker_html
+
+    const radius = this.radiusInputTarget.value || 5
+    // marker.style = {
+    //   background: "white",
+    //   borderRadius: "4px",
+    //   padding: "8px 4px",
+    //   color: "black",
+    //   boxShadow: "0 1px 2px rgba(0,0,0,0.10)"
+    // }
+    // marker.innerHTML = this.addressValue
+
+    // new mapboxgl.Marker()
+    //   .setLngLat([ this.longitudeValue, this.latitudeValue ])
+    //   .setPopup(popup)
+    //   .addTo(this.map)
+    new mapboxgl.Marker(customMarker)
       .setLngLat([ this.longitudeValue, this.latitudeValue ])
       .setPopup(popup)
       .addTo(this.map)
@@ -52,7 +62,7 @@ export default class extends Controller {
     if (this.circle) this.circle.remove()
     this.circle = new MapboxCircle({lat: this.latitudeValue, lng: this.longitudeValue}, radius * 1000, {
       editable: false,
-      fillColor: '#29AB87',
+      fillColor: '#081128',
       fillOpacity: 0.3,
       strokeColor: '#007cbf',
     })
@@ -64,9 +74,7 @@ export default class extends Controller {
   //   (this.markersValue || []).forEach((marker) => {
   //     const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
 
-  //     // Create a HTML element for your custom marker
-  //     const customMarker = document.createElement("div")
-  //     customMarker.innerHTML = marker.marker_html
+
 
   //     // Pass the element as an argument to the new marker
   //     new mapboxgl.Marker(customMarker)

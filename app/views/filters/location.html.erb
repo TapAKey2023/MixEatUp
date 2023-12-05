@@ -1,23 +1,23 @@
-
-  <header class="header">
+<header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
     </div>
     <h1>Location</h1>
-  </header>
+</header>
 
-<div class="label">
-  Let's keep the dining drama free. Select your city to unlock a world of culinary delight!
-</div>
+<div class="location_container">
+  <div class="label">
+    Let's keep the dining drama free. Select your city to unlock a world of culinary delight!
+  </div>
 
 
-<div data-controller="map address-autocomplete"
-     data-map-markers-value="<%= @markers.to_json %>"
-     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-     data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-     data-map-latitude-value=""
-     data-map-longitude-value=""
-     data-map-radius-value="">
+  <div data-controller="map address-autocomplete"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-map-latitude-value=""
+      data-map-longitude-value=""
+      data-map-radius-value="">
   <%= simple_form_for :geolocation, url: restaurants_loading_path, method: :get do |f| %>
     <%= f.input :city, label: "Neighborhood:", input_html: {
       data: {
@@ -33,10 +33,14 @@
                 collection: [1, 5, 10, 15],
                 label: 'Radius (in km) from Neighborhood:',
                 prompt: "Select Radius",
-                input_html: { data: { map_target: "radiusInput" } } %>
-    <button data-action="click->map#search">See Location</button>
-    <%= f.button :submit, 'Next' %>
+                input_html: { data: { map_target: "radiusInput", action: "change->map#search" } } %>
+    <%# <button data-action="click->map#search">See Location</button> %>
+  <br>
+  <br>
+  <br>
+  <button class="corner-button"><%= f.button :submit, 'Next' %></button>
   <% end %>
-  <div style="width: 100%; height: 600px;" data-map-target="map">
-  </div>
+
+  <div style="width: 100%; height: 600px;" data-map-target="map"></div>
+
 </div>
