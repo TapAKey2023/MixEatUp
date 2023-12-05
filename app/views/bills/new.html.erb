@@ -7,7 +7,7 @@
   </header>
 
 <div class="container pt-4 pb-5">
-<p>“Thanks for keeping us honest for uploading bill. This helps users stay up to date on restaurant pricing to fight your next bill split with friends!”</p>
+<p class= "bill-text">“Thanks for keeping us honest for uploading bill. This helps users stay up to date on restaurant pricing to fight your next bill split with friends!”</p>
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
      <div class= "bill rounded-4 p-3 shadow">
@@ -20,7 +20,8 @@
         <%= simple_form_for @bill do |f| %>
           <%= f.input :date_of_visit%>
           <%= f.input :restaurant.name, class: "restaurant-name" %>
-          <%= f.input :number_of_people %>
+          <%= f.input :number_of_people,
+                      collection: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
           <%= f.input :food_price %>
           <%= f.input :drink_price %>
           <%= f.input :total_price %>
