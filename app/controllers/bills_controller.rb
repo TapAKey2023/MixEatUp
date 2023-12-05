@@ -2,8 +2,8 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
-    raise
-
+    @restaurant = Restaurant.find_by(name: params[:bill][:restaurant])
+    @bill.restaurant = @restaurant
     @bill.user = current_user
     if @bill.save
       redirect_to root_path
@@ -23,7 +23,7 @@ class BillsController < ApplicationController
   end
 
   def bill_params
-    params.require(:bill).permit(:number_of_people, :total_price, :restaurant_id, :user_id, :average_price_per_person )
+    params.require(:bill).permit(:number_of_people, :total_price, :restaurant_id, :user_id, :average_price_per_person)
   end
 
 end
