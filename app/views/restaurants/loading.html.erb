@@ -1,62 +1,53 @@
 
- <header class="header">
+  <header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
+      <p> 4 of 4</p>
     </div>
+    <h1>Summary</h1>
   </header>
-<div data-controller="loading-page">
+
+<div class="label" data-controller="loading-page">
 <br>
-<br>
-  <h2>Calculating Your Perfect Matches</h2>
-  <br>
-  <h3>Your choices:</h3>
-  <ul>
-    <li data-loading-page-target="listItems" class= "d-none">Meal: <%= cookies[:meal].capitalize %></li>
+<h2 class= "calc">Calculating Your Perfect Matches</h2>
+  <img class= "load" src="https://t3.ftcdn.net/jpg/04/44/58/26/360_F_444582608_qDpK9F0g0lPUtnvxe5ndlkRLIgZM8S45.jpg" alt="menu">
+  <h2 class= "choice-bold">Your Choices:</h2>
+  <ul class="container ml-5 mr-5 loading-list">
+    <li data-loading-page-target="listItems" class= "d-none"><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
     <% if cookies[:occasion] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">Occasion: <%= cookies[:occasion].capitalize %></li>
+    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
     <% end %>
     <% if cookies[:location] == "positive"%>
-    <li data-loading-page-target ="listItems" class= "d-none">Location: <%= cookies[:city] %></li>
+    <li data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Location: </span><%= cookies[:city] %></li>
     <% end %>
     <% if cookies[:total_price] == "positive" %>
-    <li data-loading-page-target ="listItems" class= "d-none">Total price: <%= cookies[:total_price] %></li>
+    <li data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Total price: </span><%= cookies[:total_price] %></li>
     <% end %>
     <% if cookies[:number_of_people] =="positive" %>
-    <li data-loading-page-target ="listItems" class= "d-none">Number of people: <%= cookies[:number_of_people] %></li>
+    <li data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Number of people: </span><%= cookies[:number_of_people] %></li>
     <% end %>
     <% if cookies[:wheat] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">Wheat: <%= cookies[:wheat] %></li>
+    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Sensitivity: </span>Wheat</li>
     <% end %>
     <% if cookies[:lactose] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">Lactose: <%= cookies[:lactose] %></li>
+    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Sensitivity: </span>Lactose</li>
     <% end %>
     <% if cookies[:nuts] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">Nuts: <%= cookies[:nuts] %></li>
+    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Sensitivity: </span>Nuts</li>
     <% end %>
     <% if cookies[:vegetarian] == "positive" %>
-    <li data-loading-page-target = "listItems" class= "d-none">Vegetarian: <%= cookies[:vegetarian] %></li>
-    <% end %>
-    <% if cookies[:city] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">City: <%= cookies[:city] %></li>
-    <% end %>
-    <% if cookies[:radius] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">Radius: <%= cookies[:radius] %></li>
-    <% end %>
-    <% if cookies[:allergies] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none">Allergies: <%= cookies[:preferences] %></li>
+    <li data-loading-page-target = "listItems" class= "d-none"><span class="loading-bold">Preferences: </span> Vegetarian</li>
     <% end %>
   </ul>
 
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <h2 data-loading-page-target ="listItems" class= "d-none">Loading</h2>
+  <h2 data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Loading </span>
+    <span data-loading-page-target ="listItems" class= "d-none">.</span>
+    <span data-loading-page-target ="listItems" class= "d-none">.</span>
+    <span data-loading-page-target ="listItems" class= "d-none">.</span>
+  </h2>
 
-  <h2 data-loading-page-target ="listItems" class= "d-none">.</h2>
-  <h2 data-loading-page-target ="listItems" class= "d-none">.</h2>
-  <h2 data-loading-page-target ="listItems" class= "d-none">.</h2>
   <br>
   <div class="col-md-12 text-center">
   <button data-loading-page-target ="listItems" class= "button d-none" >
