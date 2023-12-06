@@ -34,9 +34,9 @@ Rails.application.routes.draw do
   get "users/:id/edit", to: "users#edit", as: :edit_user
   patch "users/:id", to: "users#update"
 
-  get "saved_restaurants", to: "restaurants#saved"
+  # get "saved_restaurants", to: "restaurants#saved"
 
-
-  get "test_page", to: "pages#test_page"
-  get "2_test_page", to: "pages#2_test_page"
+  resources :saved_restaurants, only: :create
+  # get "test_page", to: "pages#test_page"
+  # get "2_test_page", to: "pages#2_test_page"
 end
