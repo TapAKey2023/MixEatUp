@@ -14,6 +14,11 @@
     <div>
       <%= link_to "edit profile", edit_user_path(@user)%>
     </div>
+
+    <% current_user.restaurants.each do |restaurant| %>
+    <%= restaurant.name %>
+
+<% end %>
   <%# </div> %>
   <%# <div class="row my-2"> %>
   </div>

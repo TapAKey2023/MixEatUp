@@ -43,7 +43,9 @@
                 <div class="card-small-infos">
                   <div class="title-icon">
                   <div class="card-nav">
+                  <%= link_to saved_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
                     <i class="fa-regular fa-bookmark icon"></i>
+                    <% end %>
                     <i class="fa-regular fa-heart icon" ></i>
                   </div>
                     <i class="fa-solid fa-circle-info"></i>
