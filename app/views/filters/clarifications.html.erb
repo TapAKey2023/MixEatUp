@@ -15,7 +15,7 @@
 
   <%=  form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"})  do |f| %>
 
-    <div class="card-clarification" style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://cdn.hswstatic.com/gif/paying-bills-original.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
+    <div class="card-clarification" style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://i2-prod.mirror.co.uk/incoming/article30930935.ece/ALTERNATES/s615/0_Hands-with-bill-food-service-and-people-in-restaurant-customer-with-receipt-and-payment-with-cashi.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
       <div class="card-content">
         <%= f.hidden_field :budget, id: "budget" %>
          <%# <p class= "clarifications-submit">Budget</p> %>

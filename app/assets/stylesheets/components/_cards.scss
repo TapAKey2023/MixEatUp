@@ -310,6 +310,7 @@ h4 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
             0 6px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  text-align: center;
 }
 
 
@@ -395,12 +396,12 @@ h4 {
 .card-preferences{
   width: 400px;
   height: 610px;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   border-radius: 15px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
-            0 6px 6px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+  //           0 6px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
@@ -422,7 +423,7 @@ h4 {
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 15px;
+    padding: 12px;
 
 
     label {
