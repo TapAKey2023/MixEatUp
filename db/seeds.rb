@@ -93,7 +93,7 @@ chain_options = [true, false]
 budget_options = (10..200)
 opening_hours = ["12:00", "11:00", "10:00"]
 closing_hours = ["22:00", "23:00", "00:00"]
-meal_types = ["lunch", "dinner", "breakfast", "drinks"]
+meal_types = ["Lunch", "Dinner", "Breakfast", "Drinks"]
 latitudes = [51.527820, 51.539926, 51.551706]
 longitudes = [-0.081650, -0.102520, -0.123490]
 reasons = ["It's nice.", "Great atmosphere.", "Excellent service."]
@@ -104,7 +104,7 @@ facebooks = ["STK London", "Luna's Diner", "The Rustic Kitchen"]
 resys = ['stk_london.resy.com', 'lunas_diner.resy.com', 'rustic_kitchen.resy.com']
 abouts = ["It's the best", "A wonderful experience", "Highly recommended"]
 location_details = ['The food is delicious.', 'A charming place.', 'Incredible ambiance.']
-other_occasions = ["family", "work", "friends","date"]
+other_occasions = ["romantic", "family", "friends","work"]
 
 50.times do |i|
   address = addresses.sample
