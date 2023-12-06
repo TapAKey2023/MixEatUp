@@ -67,9 +67,15 @@ map.addControl(new mapboxgl.AttributionControl(), 'top-left');
                   input_html: { data: { map_target: "radiusInput", action: "change->map#search" } } %>
       <%# <button data-action="click->map#search">See Location</button> %>
     <div style="width: 100%; height: 390px; border-radius: 15px;" class="mt-4" data-map-target="map"></div>
-    <button class="corner-button"><%= f.button :submit, 'Next' %></button>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <button class="corner-button fa-solid fa-circle-check enlarged-icon"><%= f.button :submit, 'Next' %></button>
     <% end %>
 
 
   </div>
 </div>
+
+<a href="https://www.facebook.com/alexandra.young.9028" target= "_blank">
+    <i class="fa-brands fa-facebook"></i></a>
