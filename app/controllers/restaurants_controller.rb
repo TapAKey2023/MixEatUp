@@ -1,56 +1,48 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
-    if cookies[:location]
+    if cookies[:location] == "positive" && cookies[:city].present? && cookies[:radius].present?
       # TODO: filter by location
       @restaurants = @restaurants.where(address: cookies[:city])
     end
 
-    if cookies[:wheat]
+    # Checking to see if preferences was selected
+    if cookies[:preferences] == "positive"
+
+        # TODO: filter by wheat allergy
+      @restaurants = @restaurants.where(wheat: cookies[:wheat]) if cookies[:wheat] == "positive"
+
+        # TODO: filter by lactose allergy
+      @restaurants = @restaurants.where(lactose: cookies[:lactose]) if cookies[:lactose] == "positive"
+
+
+        # TODO: filter by nut allergy
+      @restaurants = @restaurants.where(nuts: cookies[:nuts]) if cookies[:nuts] == "positive"
+
+
+        # TODO: filter by vegetarian
+      @restaurants = @restaurants.where(vegetarian: cookies[:vegetarian]) if cookies[:vegetarian] == "positive"
+    end
+
+
+    # TODO: filter by occasion
+    @restaurants = @restaurants.where(other_occasion: cookies[:occasion]) if cookies[:occasion].present?
+
+
+
+      # TODO: filter by meal
+      @restaurants = @restaurants.where(meal_type: cookies[:meal]) if cookies[:meal].present?
+
+
+    if cookies[:budget] == "positive" && cookies[:total_price].present? && cookies[:number_of_people].present?
       # TODO: filter by location
-      @restaurants = @restaurants.where(wheat: cookies[:wheat])
+      @restaurants = @restaurants.where("(SELECT AVG(value::numeric) FROM UNNEST(budget) value) < ?", (cookies[:total_price].to_i / cookies[:number_of_people].to_i))
     end
 
-    if cookies[:lactose]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(lactose: cookies[:lactose])
-    end
-
-    if cookies[:nuts]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(nuts: cookies[:nuts])
-    end
-
-    if cookies[:vegetarian]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(vegetarian: cookies[:vegetarian])
-    end
-
-    if cookies[:occasion]
-    # TODO: filter by location
-    @restaurants = @restaurants.where(other_occasion: cookies[:occasion])
-    end
-
-    if cookies[:meal]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(meal_type: cookies[:meal])
-    end
-
-    # if cookies[:total_price]
-    #   # TODO: filter by location
-    #   @restaurants = @restaurants.where("? > ALL(budget)", cookies[:total_price])
-    # end
 
     @user = current_user
-    # @restaurants = Restaurant.geocoded
-    # @markers = @restaurants.map do |restaurant|
-    #   {
-    #     lat: restaurant.latitude,
-    #     lng: restaurant.longitude,
-    #     marker_html: render_to_string(partial: "marker") # Pass the restaurant to the partial
-    #   }
-    # end
-    @restaurants = @restaurants.sample(5)
+
+
   end
 
   def show
@@ -66,6 +58,7 @@ class RestaurantsController < ApplicationController
         cookies[:radius] = params[:geolocation][:radius]
       end
     end
+    raise
     # if params[:my_method][:wheat] == "positive"
     #   cookies[:wheat] = params[:my_method][:wheat]
     # end

@@ -13,12 +13,12 @@
       <span class ="span">budget for?</span>
     </p>
   </div>
-  <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get do |f| %>
+  <%= form_for :user_clarifications, url: filters_location_path, method: :get do |f| %>
 
   <div class="d-flex">
     <div class="card-preferences">
       <div class="top-check-boxes d-flex justify-content-between">
-        <input class="custom-checkbox" type="checkbox" id="wheat" name="wheat" value="1">
+        <input class="custom-checkbox" type="checkbox" id="wheat" name="wheat" value="positive">
         <label class="card-indulge wheat-label test-preferences" for="wheat">
 
         <% f.hidden_field :wheat, id: "wheat" %>
@@ -27,7 +27,7 @@
         </label>
 
 
-        <input class="custom-checkbox" type="checkbox" id="lactose" name="lactose" value="1">
+        <input class="custom-checkbox" type="checkbox" id="lactose" name="lactose" value="positive">
         <label class="card-indulge lactose-label test-preferences" for="lactose">
         <% f.hidden_field :lactose, id: "lactose" %>
         <%=f.label :lactose, "Lactose" %>
@@ -37,14 +37,14 @@
         </div>
 
       <div class="top-check-boxes d-flex justify-content-between">
-        <input class="custom-checkbox" type="checkbox" id="nuts" name="nuts" value="1">
+        <input class="custom-checkbox" type="checkbox" id="nuts" name="nuts" value="positive">
         <label class="card-indulge nuts-label test-preferences" for="nuts">
 
         <% f.hidden_field :nuts, id: "nuts" %>
         <%=f.label :nuts, "Nuts" %>
         </label>
 
-        <input class="custom-checkbox" type="checkbox" id="vegetarian" name="vegetarian" value="1">
+        <input class="custom-checkbox" type="checkbox" id="vegetarian" name="vegetarian" value="positive">
         <label class="card-indulge vegetarian-label test-preferences" for="vegetarian">
         <% f.hidden_field :vegetarian, id: "vegetarian" %>
         <%=f.label :vegetarian, "Vegetarian" %>
