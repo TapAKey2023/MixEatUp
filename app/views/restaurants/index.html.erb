@@ -46,7 +46,9 @@
                   <%= link_to saved_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
                     <i class="fa-regular fa-bookmark icon"></i>
                     <% end %>
+                  <%= link_to liked_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
                     <i class="fa-regular fa-heart icon" ></i>
+                    <% end %>
                   </div>
                     <i class="fa-solid fa-circle-info"></i>
                   </div>

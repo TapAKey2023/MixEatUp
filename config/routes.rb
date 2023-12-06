@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
   post "restaurants/:id", to: "saved_restaurants#create"
 
+  resources :liked_restaurants, only: :create
+
   get "bills/new", to: "bills#new",  as: :new_bill
   post "bills", to: "bills#create"
 
