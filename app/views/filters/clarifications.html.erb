@@ -1,24 +1,22 @@
+<header class="header">
+  <div class="name-number">
+    <%= link_to "MixEatUp", root_path%>
+    <p> 4 of 4</p>
+  </div>
+  <h1>Final Details</h1>
+</header>
 
-  <header class="header">
-    <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
-      <p> 4 of 4</p>
-    </div>
-    <h1>Final Details</h1>
-  </header>
-
-
+<div class="container">
   <div class="label">
     To place the finishing touches on your dining symphony, are there any crucial last-minute notes to hit the right culinary crescendo?
   </div>
 
 
-  <%=  form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"})  do |f| %>
+  <%= form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"})  do |f| %>
 
     <div class="card-clarification" style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://i2-prod.mirror.co.uk/incoming/article30930935.ece/ALTERNATES/s615/0_Hands-with-bill-food-service-and-people-in-restaurant-customer-with-receipt-and-payment-with-cashi.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
       <div class="card-content">
         <%= f.hidden_field :budget, id: "budget" %>
-         <%# <p class= "clarifications-submit">Budget</p> %>
         <%= f.label :budget, "Budget"%>
       </div>
     </div>
@@ -36,10 +34,9 @@
         <%= f.label :location, "Location" %>
       </div>
     </div>
-
     <%= f.submit "Non-selected, skip to the next step", class: "styled-button ", id: "submit-button", data: {buttons_target: "submit"} %>
-
   <% end %>
+</div>
 
 <script>
   function toggleCheckbox(element, field) {
@@ -50,13 +47,3 @@
 
   }
 </script>
-
-
-
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br>

@@ -1,6 +1,5 @@
-
 .navbar {
-  background-color: #FDFDFF;
+  background-color: #fdfdff;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -22,4 +21,8 @@
   height: 40px;
   // width: 35px;
   // padding: 5px;
+}
+
+.navbar-spacer {
+  height: 90px;
 }

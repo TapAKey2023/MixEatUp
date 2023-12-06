@@ -7,23 +7,29 @@
   // margin: 0px;
   // padding: 1em;
   position: relative;
-
 }
 
 .block {
-  background-color: #D25A1E;
-  height: 90.5vh;
-  width: 100%;
+  background-color: #d25a1e;
+  height: 100dvh;
+  width: 100dvw;
   position: absolute;
   // width: calc(50% + 2rem);
-
 }
 
 .block--left {
   background-image: url('https://images.unsplash.com/photo-1556742521-9713bf272865?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-position: center;
   background-size: cover;
-  clip-path: polygon(0% 100%, 0% 0%, 20% 20%, 30% 30%, 40% 40%, 70% 70%, 100% 100%);
+  clip-path: polygon(
+    0% 100%,
+    0% 0%,
+    20% 20%,
+    30% 30%,
+    40% 40%,
+    70% 70%,
+    100% 100%
+  );
   // cursor: pointer;
   // transition: background-color 0.3s ease;
 
@@ -33,46 +39,49 @@
   //     color: $secondary-color !important;
   //   }
   // }
-   h1{
+  h1 {
     position: absolute;
     bottom: 160px;
     left: 50px;
     color: $secondary-color;
     font-weight: bold;
   }
-
-
 }
 
 .block--right {
   background-image: url('https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-position: center;
   background-size: cover;
-  clip-path: polygon(100% 100%, 70% 70%, 40% 40%, 30% 30%, 20% 20%, 0% 0%, 100% 0%);
+  clip-path: polygon(
+    100% 100%,
+    70% 70%,
+    40% 40%,
+    30% 30%,
+    20% 20%,
+    0% 0%,
+    100% 0%
+  );
 
   // https://static.onecms.io/wp-content/uploads/sites/19/2019/03/04/pasta-with-italian-sunday-sauce-1812-p29-2000.jpg
 
-
-   h1{
+  h1 {
     position: absolute;
     top: 160px;
     right: 50px;
     // text-align: center;
     color: $secondary-color;
     font-weight: bold;
+  }
 
-
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.25); // Adjust the alpha value for opacity
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25); // Adjust the alpha value for opacity
+  }
 }
 
 // background-image: url('https://media.licdn.com/dms/image/C5112AQEsEvnzHSaZ4w/article-cover_image-shrink_600_2000/0/1525673908614?e=2147483647&v=beta&t=qgXoQx05t9pX6RJwt57XAlGsadWlq6gIV3j4vk97Cko') center/cover no-repeat;

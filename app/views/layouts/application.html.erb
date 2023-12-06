@@ -16,11 +16,11 @@
   </head>
 
   <body>
-    <%unless current_page?(root_path)%>
-    <%= render "shared/navbar" %>
-    <%end%>
     <%= render "shared/flashes" %>
     <%= render "shared/header" %>
     <%= yield %>
+    <%unless current_page?(root_path)%>
+      <%= render "shared/navbar" %>
+    <%end%>
   </body>
 </html>

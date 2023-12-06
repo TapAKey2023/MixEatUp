@@ -4,8 +4,12 @@
   <div class="block block--left">
     <h1>Upload Bill</h1>
   </div> %>
-  <%= link_to '<h1>Upload Bill</h1>'.html_safe, new_bill_path, class: 'block block--left' %>
-  <%= link_to "<h1>Let's Eat</h1>".html_safe, filters_path, class: 'block block--right' %>
+  <%= link_to new_bill_path, class: 'block block--left' do %>
+    <h1>Upload Bill</h1>
+  <% end %>
+  <%= link_to filters_path, class: 'block block--right' do %>
+    <h1>Let's Eat</h1>
+  <% end %>
 <%#
   <div class="block block--right">
     <h1>Let's Eat</h1>
