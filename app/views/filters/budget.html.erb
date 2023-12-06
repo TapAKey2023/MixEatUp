@@ -11,7 +11,7 @@
 <div class="indulge-cards-wrapper" style="height:auto; padding: 8px;">
 <div class="label2">1. What do you plan to indulge in?</div>
 
- <%= simple_form_for(:budget_form, url: filters_meal_path, method: :get, label_html: { style: "padding-left:0px !important;" }) do |f| %>
+ <%= simple_form_for :budget_form, url: filters_meal_path, method: :get do |f| %>
     <div class="top-check-boxes d-flex justify-content-between pl-0">
 
     <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"},input_html: {class: "d-none"} %>
