@@ -1,20 +1,30 @@
 <div class="position-relative">
   <div class="card-category card-large">
-    <h1>My Profile</h1>
-    <p>Name : <%= @user.name %></p>
-    <p>email: <%= @user.email %></p>
-    <p>Age: <%= @user.age %></p>
-    <p>Gender: <%= @user.gender %></p>
-    <p>Address(latitude): <%= @user.latitude %></p>
-    <p>Address(longitude): <%= @user.longitude %></p>
+  <div class="profile-info">
+    <h1 class="my-profile">My Profile</h1>
+    <p class="profile-details">Name : <%= @user.name %></p>
+    <p class="profile-details">Email: <%= @user.email %></p>
+    <p class="profile-details">Age: <%= @user.age %></p>
+    <p class="profile-details">Gender: <%= @user.gender %></p>
+  </div>
   </div>
 </div>
-<div class="container mb-5">
-  <div class="d-flex justify-content-between my-4">
+<div class="edit-profile">
+
     <div>
       <%= link_to "edit profile", edit_user_path(@user)%>
     </div>
-  </div>
-  <div class="row my-2">
+  <%# </div> %>
+  <%# <div class="row my-2"> %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+<%# <p>Address(latitude):  @user.latitude</p> %>
+    <%# <p>Address(longitude): @user.longitude</p> %>

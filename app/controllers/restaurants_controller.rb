@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+
     if cookies[:location] == "positive" && cookies[:city].present? && cookies[:radius].present?
       # TODO: filter by location
       @restaurants = @restaurants.where(address: cookies[:city])
@@ -40,6 +41,7 @@ class RestaurantsController < ApplicationController
     end
 
 
+
     @user = current_user
 
 
@@ -58,7 +60,7 @@ class RestaurantsController < ApplicationController
         cookies[:radius] = params[:geolocation][:radius]
       end
     end
-    raise
+   
     # if params[:my_method][:wheat] == "positive"
     #   cookies[:wheat] = params[:my_method][:wheat]
     # end
