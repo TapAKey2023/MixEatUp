@@ -52,70 +52,61 @@ class FiltersController < ApplicationController
 
   def budget
     cookies[:filter] = "budget" if params[:filter] == "budget"
-    # if cookies[:budget] == "negative"
-    #   redirect_to filters_preferences_path
-    #   return
-    # end
-    # redirect_to filters_preferences_path if cookies[:filter] == "budget"
 
-    # if params[:budget] == "positive"
-    #   cookies[:budget] = params[:budget]
-    # end
-    # if params[:preferences] == "positive"
-    #   cookies[:preferences] = params[:preferences]
-    # end
-    # if params[:location] == "positive"
-    #   cookies[:location] = params[:location]
-    # end
+    redirect_to filters_preferences_path if cookies[:filter] == "occasion" && cookies[:budget] == "negative"
 
-    cookies[:filter] = "budget" if params[:filter] == "budget"
-    if cookies[:filter] == "occasion"
-      if cookies[:budget] == "negative"
-        redirect_to filters_preferences_path
-      end
-    end
+    # Need to check what these are doing
     if cookies[:meal] == false
       redirect_to filters_preferences_path
       return
     end
-
+    # Need to check what these are doing
     if cookies[:filter] == "budget"
       cookies[:meal] = false
     end
   end
 
+
   def preferences
+    cookies.delete :total_price
+    cookies.delete :number_of_people
+    cookies.delete :drink_or_food_choice
+    # This is only done when the user selects Budget at the beginning
     if cookies[:filter] == "budget"
       cookies[:preferences] = params[:user_clarifications][:preferences]
       cookies[:location] = params[:user_clarifications][:location]
       redirect_to filters_location_path if cookies[:preferences] == "0" || cookies[:preferences] != "true"
       return
     end
+    if cookies[:budget] == "positive"
+      cookies[:drink_or_food_choice] = "drinks" if params[:budget_form][:drinks] == "positive"
+      cookies[:drink_or_food_choice] = "food" if params[:budget_form][:food] == "positive"
+      cookies[:drink_or_food_choice] = "drinks and food" if params[:budget_form][:drink_and_food] == "positive"
+    end
 
     if cookies[:budget] == "positive" && cookies[:filter] != "budget"
-      cookies[:total_price] = params[:total_price]
-      cookies[:number_of_people] = params[:number_of_people]
-    else
-      cookies[:total_price] = "negative"
-      cookies[:number_of_people] = "negative"
+      cookies[:total_price] = params[:budget_form][:total_price]
+      cookies[:number_of_people] = params[:budget_form][:number_of_people]
+    # else
+    #   cookies[:total_price] = "negative"
+    #   cookies[:number_of_people] = "negative"
     end
     redirect_to filters_location_path if cookies[:preferences] == "negative" || cookies[:preferences] == "false"
   end
 
   def location
-
+    cookies.delete :wheat
+    cookies.delete :vegetarian
+    cookies.delete :lactose
+    cookies.delete :nuts
     if cookies[:filter] == "budget"
-      if cookies[:preferences] == "1"
-        cookies[:wheat] = params[:wheat]
-        cookies[:lactose] = params[:lactose]
-        cookies[:nuts] = params[:nuts]
-        cookies[:vegetarian] = params[:vegetarian]
-      else
-        cookies[:wheat] = "negative"
-        cookies[:lactose] = "negative"
-        cookies[:nuts] = "negative"
-        cookies[:vegetarian] = "negative"
+      if cookies[:preferences] == "positive"
+        cookies[:wheat] = params[:wheat] if params[:wheat] == "positive"
+        cookies[:lactose] = params[:lactose] if params[:lactose] == "positive"
+        cookies[:nuts] = params[:nuts] if params[:nuts] == "positive"
+        cookies[:vegetarian] = params[:vegetarian] if params[:vegetarian] == "positive"
       end
+
       if cookies[:location] == "0" || cookies[:location] != "true"
         redirect_to restaurants_loading_path
       end
@@ -124,15 +115,10 @@ class FiltersController < ApplicationController
 
     if cookies[:filter] == "occasion"
       if cookies[:preferences] == "positive"
-        cookies[:wheat] = params[:wheat]
-        cookies[:lactose] = params[:lactose]
-        cookies[:nuts] = params[:nuts]
-        cookies[:vegetarian] = params[:vegetarian]
-      else
-        cookies[:wheat] = "negative"
-        cookies[:lactose] = "negative"
-        cookies[:nuts] = "negative"
-        cookies[:vegetarian] = "negative"
+        cookies[:wheat] = params[:wheat] if params[:wheat] == "positive"
+        cookies[:lactose] = params[:lactose] if params[:lactose] == "positive"
+        cookies[:nuts] = params[:nuts] if params[:nuts] == "positive"
+        cookies[:vegetarian] = params[:vegetarian] if params[:vegetarian] == "positive"
       end
       if cookies[:location] == "negative"
         redirect_to restaurants_loading_path
