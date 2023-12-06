@@ -2,7 +2,7 @@
   width: 400px;
   overflow: hidden;
   background: #FDFDFF;
-  border-radius: 4px;
+  border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
@@ -53,11 +53,19 @@ h3 {
 
 .back-title {
   font-size: 25px;
+  padding-top: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .back-image {
   width: 50%;
   height: 50%;
+}
+
+.small-image {
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
 .pic-info {
@@ -70,9 +78,22 @@ h3 {
 }
 
 h4 {
-
   font-size: 20px;
+}
 
+.back-info {
+  padding: 30px 8px 8px 8px;
+}
+
+.information {
+  font-size: 18px;
+  font-family: $font;
+}
+
+.contact-socials {
+  font-size: 18px;
+  padding: 0 8px 0 8px;
+  margin: 0;
 }
 
 
@@ -125,15 +146,7 @@ h4 {
 
   font-size: 25px;
   color: $primary-color;
-
-  // margin-top: 10px;
-  // margin-left: 180px;
-  // margin-top: -20px;
-
-  // float: right;
-
-  padding: 0 5px 0 0;
-
+  padding: 0 0 0px 0;
 }
 
 .answers {
@@ -150,16 +163,6 @@ h4 {
 
 .back-image {
   padding: 0 5px 5px 0;
-}
-
-
-.card-nav {
-  overflow: hidden;
-  position: fixed;
-  // justify-content: space-between;
-  align-items: left;
-  // border-top: 2px solid rgba(10, 17, 40, 0.2);
-  // padding: 0 10px 0 10px;
 }
 
 .icon {
@@ -182,16 +185,15 @@ h4 {
 
 .card-nav {
   overflow: hidden;
-  position: fixed;
-  bottom: 5px;
+  // position: fixed;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid rgba(10, 17, 40, 0.2);
+  // border-top: 2px solid rgba(10, 17, 40, 0.2);
 }
 
 .icon {
   font-size: 35px;
-  padding: 10px 50px 10px 50px;
+  padding: 10px 10px 10px 10px;
   color:#0A1128;
 
 }
@@ -206,7 +208,12 @@ h4 {
   margin-top: 30px;
 }
 
-
+#refresh-link {
+  text-decoration: none;
+  color: #0A1128;
+  font-size: 30px;
+  padding: 30px 18px 18px 18px;
+}
 // .card.flipped .front {
 //   transform: rotateY(180deg);
 // }
@@ -573,4 +580,53 @@ h4 {
 
 .card-whole-meal img {
   filter: brightness(50%);
+}
+
+#dine-time {
+  font-family: $font;
+  color: $primary-color;
+  font-size: 18px;
+}
+
+
+
+
+
+// PROFILE CARDS:
+
+// .name-email {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .age-gender {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+.card-large {
+  padding: 12px;
+}
+
+.my-profile {
+  padding: 0 0 18px 0;
+}
+
+.profile-info {
+  padding: 10px 10px 10px 10px;
+}
+
+.profile-details {
+  font-size: 26px;
+  font-family: $font;
+  color: $primary-color;
+}
+
+.edit-profile {
+  margin: 0;
+}
+
+.edit-link {
+  padding: 10px;
+  border-radius: 2px solid $primary-color;
 }

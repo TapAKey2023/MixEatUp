@@ -3,9 +3,9 @@ class SavedRestaurantsController < ApplicationController
     @saved_restaurant = SavedRestaurant.new
     @saved_restaurant.restaurant = Restaurant.find(params[:restaurant_id])
     @saved_restaurant.user = current_user
-    current_user.bookmarked_restaurants << restaurant
+    # current_user.bookmarked_restaurants << restaurant
     @saved_restaurant.save
-    redirect_to restaurant_path(@saved_restaurant.restaurant)
+    redirect_to restaurants_path
   end
 
   def destroy

@@ -7,11 +7,11 @@ export default class extends Controller {
   static targets = ["listItems"]
 
   connect() {
-    this.counter = 2000
+    this.counter = 1000
     this.listItemsTargets.forEach((listItem) => {
       console.dir(listItem)
       this.loadItem(listItem)
-      this.counter += 2000
+      this.counter += 1000
     })
 
   }

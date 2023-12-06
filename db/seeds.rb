@@ -23,6 +23,8 @@ user_3.save!
 
 
 
+
+
 # nuts = [
 #   "positive", "negative"
 # ]

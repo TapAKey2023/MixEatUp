@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2023_12_06_172116) do
+=======
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_102507) do
+>>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -107,7 +111,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_172116) do
     t.string "cuisine_type"
     t.string "phone_no"
     t.boolean "chain", default: false
-    t.string "budget", default: [], array: true
     t.time "opening_hour"
     t.time "closing_hour"
     t.string "meal_type"
@@ -128,7 +131,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_172116) do
     t.string "nuts"
     t.string "vegetarian"
     t.string "lactose"
+<<<<<<< HEAD
     t.string "pic_url"
+=======
+    t.integer "budget", array: true
+>>>>>>> master
   end
 
   create_table "saved_restaurants", force: :cascade do |t|

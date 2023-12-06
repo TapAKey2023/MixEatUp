@@ -7,8 +7,59 @@
 
 <div class="container">
   <div class="label">Bonjour! What budget parameters would you like to plan for in your culinary voyage?</div>
+  <div class="indulge-cards-wrapper" style="height:auto; padding: 8px;">
+    <% if cookies[:filter] == "budget" %>
+      <div class="label2">1. What do you plan to indulge in?</div>
+      <%= simple_form_for :budget_form, url: filters_meal_path, method: :get, data: {turbo: false} do |f| %>
+          <div class="top-check-boxes d-flex justify-content-between pl-0">
+            <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"},input_html: {class: "d-none"} %>
+            <%= f.input :food , as: :boolean,checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"food-image card-indulge food-label"},input_html: {class: "d-none"} %>
+          </div>
+          <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image w-100 card-indulge drink-food-label"},input_html: {class: "d-none"}%>
 
-<div class="indulge-cards-wrapper">
+          <div class="label2">2. Let's set the perfect budget for your indulgent soiree!</div>
+          <%= f.input :total_price, label: "What's your budget per person?", input_html: { type: 'number' } %>
+          <%= f.input :number_of_people,label: "How many people will be attending?", input_html: { type: 'number' } %>
+          <%= f.submit "Next" %>
+      <% end %>
+    <% else %>
+      <div class="label2">1. What do you plan to indulge in?</div>
+      <%= simple_form_for :budget_form, url: filters_preferences_path, method: :get do |f|  %>
+        <div class="top-check-boxes d-flex justify-content-between">
+          <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"},input_html: {class: "d-none"} %>
+          <%= f.input :food , as: :boolean,checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"food-image card-indulge food-label"},input_html: {class: "d-none"} %>
+        </div>
+        <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image w-100 card-indulge drink-food-label"},input_html: {class: "d-none"} %>
+        <%= f.input :total_price, input_html: { type: 'number' } %>
+        <%= f.input :number_of_people, input_html: { type: 'number' } %>
+        <%= f.submit "Next" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%# <div class="indulge-cards-wrapper">
     <div class="label2">1. What do you plan to indulge in?</div>
 
     <div class="top-check-boxes d-flex justify-content-between">
@@ -43,8 +94,8 @@
         <div>
           <%= f.label :number_of_people, 'Number of People:' %>
           <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-          <%= f.submit "Next" %>
         </div>
+        <%= f.submit "Next" %>
 
 
         <input class="custom-checkbox" type="checkbox" id="drink-indulge">
@@ -61,27 +112,13 @@
         <div>
           <%= f.label :number_of_people, 'Number of People:' %>
           <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-          <%= f.submit "Next" %>
         </div>
+        <%= f.submit "Next" %>
 
         <%# <div class="next"> %>
+          <%# <%= f.submit "Next" %>
         <%# </div> %>
       <% end %>
     <% end %>
   </div>
 </div>
-
-<!-- <% if cookies[:filter] == "budget" %> -->
-<!-- <%= form_for :my_method, url: filters_meal_path, method: :get do |f|  %> -->
-<!-- <label for="name">First name:</label><br> -->
-<!--   <%= f.text_field :total_price, input_html: { type: 'number' } %> -->
-<!--   <%= f.text_field :number_of_people, input_html: { type: 'number' } %> -->
-<!--   <%= f.submit "Next" %> -->
-<!--   <% end %> -->
-<!-- <% else %> -->
-<!-- <%= form_for :my_method, url: filters_preferences_path, method: :get do |f|  %> -->
-<!--   <%= f.text_field :total_price, input_html: { type: 'number' } %> -->
-<!--   <%= f.text_field :number_of_people, input_html: { type: 'number' } %> -->
-<!--   <%= f.submit "Next" %> -->
-<!-- <% end %> -->
-<!-- <% end %> -->
