@@ -37,23 +37,15 @@ class RestaurantsController < ApplicationController
     end
 
 
-
-    if cookies[:total_price]
+    if cookies[:budget] == "positive" && cookies[:total_price].present? && cookies[:number_of_people].present?
       # TODO: filter by location
-      @restaurants = @restaurants.where(budget: cookies[:total_price])
+      @restaurants = @restaurants.where("(SELECT AVG(value::numeric) FROM UNNEST(budget) value) < ?", (cookies[:total_price].to_i / cookies[:number_of_people].to_i))
     end
+
 
     @user = current_user
-    @restaurants = Restaurant.geocoded
-    @markers = @restaurants.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
-        marker_html: render_to_string(partial: "marker", locals: {restaurant: restaurant}) # Pass the restaurant to the partial
-      }
-    end
-    @restaurants = @restaurants.sample(5)
+
+
   end
 
   def show

@@ -103,7 +103,6 @@ class FiltersController < ApplicationController
   end
 
   def location
-    raise
     if cookies[:filter] == "budget"
       if cookies[:preferences] == "1"
         cookies[:wheat] = params[:wheat]
