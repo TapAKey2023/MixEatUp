@@ -13,61 +13,61 @@
       <span class ="span">budget for?</span>
     </p>
   </div>
+  <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get do |f| %>
 
   <div class="d-flex">
     <div class="card-preferences">
       <div class="top-check-boxes d-flex justify-content-between">
-        <input class="custom-checkbox" type="checkbox" id="wheat" name="wheat" value="0">
+        <input class="custom-checkbox" type="checkbox" id="wheat" name="wheat" value="1">
         <label class="card-indulge wheat-label test-preferences" for="wheat">
-          Wheat
+
+        <% f.hidden_field :wheat, id: "wheat" %>
+        Wheat
+
         </label>
 
 
         <input class="custom-checkbox" type="checkbox" id="lactose" name="lactose" value="1">
         <label class="card-indulge lactose-label test-preferences" for="lactose">
-          Milk
+        <% f.hidden_field :lactose, id: "lactose" %>
+        <%=f.label :lactose, "Lactose" %>
+
+
         </label>
         </div>
 
       <div class="top-check-boxes d-flex justify-content-between">
         <input class="custom-checkbox" type="checkbox" id="nuts" name="nuts" value="1">
         <label class="card-indulge nuts-label test-preferences" for="nuts">
-          Nuts
+
+        <% f.hidden_field :nuts, id: "nuts" %>
+        <%=f.label :nuts, "Nuts" %>
         </label>
 
         <input class="custom-checkbox" type="checkbox" id="vegetarian" name="vegetarian" value="1">
         <label class="card-indulge vegetarian-label test-preferences" for="vegetarian">
-          Vegetarian
+        <% f.hidden_field :vegetarian, id: "vegetarian" %>
+        <%=f.label :vegetarian, "Vegetarian" %>
+
         </label>
     </div>
-    <button><%= link_to "Next", filters_location_path %></button>
+    <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
 </div>
 </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 
 
+  <% end %>
 
- <%# <div class="preference-item" data-item="wheat">
-      <%# <%= image_tag "wheat.jpg", class: "style-pref", alt: "Wheat"%>
-      <%# <div class="overlay-text3"> %>
-        <%# <%= simple_form_for :my_method, url: filters_location_path, method: :get do |f| %>
-          <%# <%= f.input :wheat, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-          <%# <%= f.button :submit %>
-          <%# <% end %>
-      <%# </div> %>
-      <%# </div> %>
-    <%# </div> %>
-
-<%# onclick="toggleCheckbox(this, 'lactose')" %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
