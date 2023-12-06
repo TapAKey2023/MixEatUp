@@ -1,40 +1,40 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
-    if cookies[:location]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(address: cookies[:city])
-    end
+    # if cookies[:location]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where(address: cookies[:city])
+    # end
 
-    if cookies[:wheat]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(wheat: cookies[:wheat])
-    end
+    # if cookies[:wheat]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where(wheat: cookies[:wheat])
+    # end
 
-    if cookies[:lactose]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(lactose: cookies[:lactose])
-    end
+    # if cookies[:lactose]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where(lactose: cookies[:lactose])
+    # end
 
-    if cookies[:nuts]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(nuts: cookies[:nuts])
-    end
+    # if cookies[:nuts]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where(nuts: cookies[:nuts])
+    # end
 
-    if cookies[:vegetarian]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(vegetarian: cookies[:vegetarian])
-    end
+    # if cookies[:vegetarian]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where(vegetarian: cookies[:vegetarian])
+    # end
 
-    if cookies[:occasion]
-    # TODO: filter by location
-    @restaurants = @restaurants.where(other_occasion: cookies[:occasion])
-    end
+    # if cookies[:occasion]
+    # # TODO: filter by location
+    # @restaurants = @restaurants.where(other_occasion: cookies[:occasion])
+    # end
 
-    if cookies[:meal]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(meal_type: cookies[:meal])
-    end
+    # if cookies[:meal]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where(meal_type: cookies[:meal])
+    # end
 
     # if cookies[:total_price]
     #   # TODO: filter by location
