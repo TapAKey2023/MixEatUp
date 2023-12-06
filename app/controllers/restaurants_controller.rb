@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
     if cookies[:occasion]
     # TODO: filter by location
-    @restaurants = @restaurants.where(occasion: cookies[:occasion])
+    @restaurants = @restaurants.where(other_occasion: cookies[:occasion])
     end
 
     if cookies[:meal]

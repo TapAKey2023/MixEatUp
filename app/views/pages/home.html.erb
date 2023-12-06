@@ -1,64 +1,48 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-    }
-    .split-container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      position: relative; /* Added this line for positioning */
-    }
-    .split-left,
-    .split-right {
-      flex: 1;
-      overflow: hidden;
-      position: relative; /* Added this line for positioning */
-    }
-    .split-left {
-      background: url('https://media.licdn.com/dms/image/C5112AQEsEvnzHSaZ4w/article-cover_image-shrink_600_2000/0/1525673908614?e=2147483647&v=beta&t=qgXoQx05t9pX6RJwt57XAlGsadWlq6gIV3j4vk97Cko') center/cover no-repeat;
-    }
-    .split-right {
-      background: url('https://static.onecms.io/wp-content/uploads/sites/19/2019/03/04/pasta-with-italian-sunday-sauce-1812-p29-2000.jpg') center/cover no-repeat;
-    }
-    .overlay-img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 100%; /* Ensure the image doesn't exceed its container */
-      max-height: 100%; /* Ensure the image doesn't exceed its container */
-    }
-     .header-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      text-align: center;
-      font-size: 24px;
-    }
-  </style>
-</head>
-<body>
-  <div class="split-container">
-    <%=  link_to new_bill_path, class:"split-left" do %>
-    <div class="split-left"></div>
-          <h1 class="header-text">Upload Your Bill</h1>
-        <% end %>
-    <%= link_to filters_path, class:"split-right" do %>
-    <div class="split-right"></div>
-    <h1 class="header-text">Let's Eat</h1>
-    <% end %>
+
+<div class="home-blocks">
+<%#
+  <div class="block block--left">
+    <h1>Upload Bill</h1>
+  </div> %>
+  <%= link_to '<h1>Upload Bill</h1>'.html_safe, new_bill_path, class: 'block block--left' %>
+  <%= link_to "<h1>Let's Eat</h1>".html_safe, filters_path, class: 'block block--right' %>
+<%#
+  <div class="block block--right">
+    <h1>Let's Eat</h1>
+  </div> %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <%# <img class="overlay-img" src="Logos.png" "> %>
-    <%= image_tag 'Logos.png', class: 'overlay-img', height: '200 px' %>
-  </div>
-</body>
-</html>

@@ -1,0 +1,94 @@
+// .location_container {
+  // position: relative;
+  // width: 500px; /* You can adjust the container size as needed */
+  // height: 500px; /* You can adjust the container size as needed */
+// }
+
+.corner-button {
+  position: absolute;
+  bottom: 100px;
+  right: 25px;
+}
+
+#location-wrapper-modifier {
+  height: 100% !important;
+  width: 410px;
+
+  label {
+    font-size: 18px;
+    font-family: $font;
+    color: $primary-color;
+  }
+  //   font-weight: bold;
+  //   font-family: $font;
+  // }
+}
+
+.location-indulge-cards-wrapper {
+  background-size: cover;
+  background-position: center;
+  height: 610px;
+
+  padding: 15px;
+  // justify-content: center;
+  // color: $primary-color;
+  font-size: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  // border-radius: 15px;
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  // margin-top: 15px;
+  overflow: hidden;
+
+  .card-indulge{
+    width: 190px;
+  }
+
+
+}
+////
+// /// zzz
+// .card-trip {
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   background-size: cover;
+//   background-position: center;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: black;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
+
+// .card-trip h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-trip p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
+
+
+// .card-trip .card-trip-infos {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }

@@ -67,7 +67,7 @@ class FiltersController < ApplicationController
     # if params[:location] == "positive"
     #   cookies[:location] = params[:location]
     # end
-    # raise
+
     cookies[:filter] = "budget" if params[:filter] == "budget"
     if cookies[:filter] == "occasion"
       if cookies[:budget] == "negative"
@@ -103,6 +103,7 @@ class FiltersController < ApplicationController
   end
 
   def location
+
     if cookies[:filter] == "budget"
       if cookies[:preferences] == "1"
         cookies[:wheat] = params[:wheat]
@@ -136,6 +137,14 @@ class FiltersController < ApplicationController
       if cookies[:location] == "negative"
         redirect_to restaurants_loading_path
       end
+    end
+    @restaurants = Restaurant.geocoded
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        marker_html: render_to_string(partial: "marker") # Pass the restaurant to the partial
+      }
     end
   end
 end

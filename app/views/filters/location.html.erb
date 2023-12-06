@@ -1,42 +1,75 @@
+<%# <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Change the default position for attribution</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
 
-  <header class="header">
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoieml0YTU5NiIsImEiOiJjbG9tcnp1OGQzMjNsMnFuMGg2Y3BwbDFxIn0.T8ZV8JG_JICSigwvW26S9A';
+const map = new mapboxgl.Map({
+container: 'map',
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+style: 'mapbox://styles/mapbox/light-v11',
+center: [-0.1276, 51.5072],
+zoom: 11.15,
+attributionControl: false
+});
+map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+</script> %>
+
+</body>
+</html>
+
+<header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
     </div>
     <h1>Location</h1>
-  </header>
-
+</header>
 <div class="label">
   Let's keep the dining drama free. Select your city to unlock a world of culinary delight!
 </div>
+<div class="location-indulge-cards-wrapper" id= "location-wrapper-modifier">
 
 
-<div data-controller="map address-autocomplete"
-     data-map-markers-value="<%= @markers.to_json %>"
-     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-     data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-     data-map-latitude-value=""
-     data-map-longitude-value=""
-     data-map-radius-value="">
-  <%= simple_form_for :geolocation, url: restaurants_loading_path, method: :get do |f| %>
-    <%= f.input :city, label: "Neighborhood:", input_html: {
-      data: {
-        address_autocomplete_target: "address"
-      },
-      class: "d-none"
-    }, wrapper_html: {
+  <div class="location_container" data-controller="map address-autocomplete"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-map-latitude-value=""
+      data-map-longitude-value=""
+      data-map-radius-value="">
+    <%= simple_form_for :geolocation, html: { class: "flex-column align-items-end"}, url: restaurants_loading_path, method: :get do |f| %>
+      <%= f.input :city, label: "Where would you like to dine?", input_html: {
         data: {
-          address_autocomplete_target: "wrapper"
-        }
-      } %>
-    <%= f.input :radius,
-                collection: [1, 5, 10, 15],
-                label: 'Radius (in km) from Neighborhood:',
-                prompt: "Select Radius",
-                input_html: { data: { map_target: "radiusInput" } } %>
-    <button data-action="click->map#search">See Location</button>
-    <%= f.button :submit, 'Next' %>
-  <% end %>
-  <div style="width: 100%; height: 600px;" data-map-target="map">
+          address_autocomplete_target: "address"
+        },
+        class: "d-none"
+      }, wrapper_html: {
+          data: {
+            address_autocomplete_target: "wrapper"
+          }
+        } %>
+      <%= f.input :radius,
+                  collection: [1, 5, 10, 15],
+                  label: 'How far are you willing to travel?',
+                  prompt: "Select Radius",
+                  input_html: { data: { map_target: "radiusInput", action: "change->map#search" } } %>
+      <%# <button data-action="click->map#search">See Location</button> %>
+    <div style="width: 100%; height: 365px; border-radius: 15px;" class="mt-4" data-map-target="map"></div>
+    <button class="corner-button"><%= f.button :submit, 'Next' %></button>
+    <% end %>
+
+
   </div>
 </div>
