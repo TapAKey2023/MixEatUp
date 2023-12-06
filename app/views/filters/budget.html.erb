@@ -43,8 +43,8 @@
         <div>
           <%= f.label :number_of_people, 'Number of People:' %>
           <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-          <%= f.submit "Next" %>
         </div>
+        <%= f.submit "Next" %>
 
 
         <input class="custom-checkbox" type="checkbox" id="drink-indulge">
@@ -61,10 +61,11 @@
         <div>
           <%= f.label :number_of_people, 'Number of People:' %>
           <%= f.text_field :number_of_people, input_html: { type: 'number' } %>
-          <%= f.submit "Next" %>
         </div>
+        <%= f.submit "Next" %>
 
         <%# <div class="next"> %>
+          <%# <%= f.submit "Next" %>
         <%# </div> %>
       <% end %>
     <% end %>
