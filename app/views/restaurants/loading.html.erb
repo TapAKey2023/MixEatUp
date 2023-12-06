@@ -12,14 +12,11 @@
   <h3>Your choices:</h3>
   <ul>
     <li data-loading-page-target="listItems" class= "d-none">Meal: <%= cookies[:meal].capitalize %></li>
-    <% if cookies[:occasion] != "negative" %>
+    <% if cookies[:occasion] == "positive" %>
     <li data-loading-page-target= "listItems" class= "d-none">Occasion: <%= cookies[:occasion].capitalize %></li>
     <% end %>
-    <% if cookies[:budget] == "positive"%>
-    <li data-loading-page-target="listItems" class= "d-none">Budget: <%= cookies[:budget]   %> </li>
-    <% end %>
     <% if cookies[:location] == "positive"%>
-    <li data-loading-page-target ="listItems" class= "d-none">Location: <%= cookies[:location].capitalize %></li>
+    <li data-loading-page-target ="listItems" class= "d-none">Location: <%= cookies[:city] %></li>
     <% end %>
     <% if cookies[:total_price] == "positive" %>
     <li data-loading-page-target ="listItems" class= "d-none">Total price: <%= cookies[:total_price] %></li>

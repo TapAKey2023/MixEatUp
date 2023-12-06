@@ -8,13 +8,14 @@
     </div>
     <h1>5 Perfect Restaurants</h1>
   </header>
-
+<%# container py-5 %>
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-black">
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
-<div class="container py-5">
+<div class="stimulus-container" data-controller="swipe-restaurants">
+<div class="card-container" data-swipe-restaurants-target="mainCarousel">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h3 class="mb-0 explore">Explore:</h3>
   </div>
@@ -30,48 +31,102 @@
       <%# </div> %>
       <%# <% end %>
   <%# </div> %>
-
-
-  <% @restaurants.each do |restaurant| %>
-  <div class="card-small" onclick="this.classList.toggle('flipped')">
-    <div class="card-inner">
-    <div class="front">
-      <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:300px" />
-      <div class="card-small-infos">
-        <div class="title-icon">
-          <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
-        </div>
-        <div class="info">
-          <div>
-            <p><%= "Why you'll love it: " %> <%= restaurant.about %></p>
-            <p><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></p>
-            <p><%= "How others feel: " %><%= restaurant.rating %></p>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <% @restaurants.each_with_index do |restaurant, index| %>
+      <% active = index == 0 ? "active": "" %>
+        <div class="carousel-item <%= active %>" id="<%= index %>" data-swipe-restaurants-target="carouselItem">
+          <div class="card-small" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+              <div class="front">
+                <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:300px" />
+                <div class="card-small-infos">
+                  <div class="title-icon">
+                  <div class="card-nav">
+                    <i class="fa-regular fa-bookmark icon"></i>
+                    <i class="fa-regular fa-heart icon" ></i>
+                  </div>
+                    <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
+                  <%# <div class="info-icon"> %>
+                </div>
+                  <%# <div class="details-icon"> %>
+                <div class="info">
+                  <div>
+                    <h4><%= "Cuisine: " %><%= restaurant.cuisine_type %></h4>
+                    <h4><%= "Why you'll love it: " %> <%= restaurant.about %></h4>
+                    <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
+                    <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
+                  </div>
+                </div>
+                <%# </div> %>
+              </div>
+            <div class="back">
+              <div class="pic-info">
+                <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
+                <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %></p>
+              </div>
+              <p><%= "More information: " %><%= restaurant.location_details %></p>
+              <p><%= "Meals this restaurant is perfect for: " %><%= restaurant.meal_type %></p>
+              <p><%= "Type of occasions this restaurant is perfect for: " %><%= restaurant.other_occasion %></p>
+              <p><%= "Why you'll love it: " %><%= restaurant.location_details %></p>
+              <p><%= "Why you'll tell your friends about us tomorrow: " %><%= restaurant.location_details %></p>
+              <p><%= "The why beind our restaurant choice: " %><%= restaurant.location_details %></p>
+              <p><%= "Why you should bookmark for later: " %><%= restaurant.location_details %></p>
             </div>
+          </div>
         </div>
-          <%# <div class="flame-bookmark" style="display:flex; font-size:16px; justify-content: space-between;"> %>
-          <%# <p><%= "🔥" %>
-          <%# <i class="fas fa-location-dot"></i> <p><%= restaurant.address</p>
-          <div style="display:flex"> %>
-        <i class="fa-solid fa-circle-info"></i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="filter: invert(100%);">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="filter: invert(100%);" data-action="click->swipe-restaurants#swipe">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="card-container d-none" data-swipe-restaurants-target="hiddenCarousel">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h3 class="mb-0 explore">Explore:</h3>
+    </div>
+
+    <%# <div class="card-grid">
+        <% @restaurants.each do |restaurant| %>
+        <%# <div class="card"> %>
+            <%# <%= link_to restaurant_path(restaurant), class:"text-decoration-none card-class" do %>
+                <%# <div class="card-class-infos"> %>
+                  <%# <h3><%= restaurant.name</h3>  %>
+                <%# </div> %>
+            <%# <% end %>
         <%# </div> %>
-        <%# <div class="back">
-          More Info
-        </div> %>
+        <%# <% end %>
+    <%# </div> %>
+      <div id="carouselExample1" class="carousel slide">
+        <div class="carousel-inner">
+        <div class="carousel-item"></div>
+        <div class="carousel-item active">
+          <h1>Not found what you're looking for..click here for another 5</h1>
+        </div>
+        <div class="carousel-item"></div>
       </div>
-    </div>
-    <div class="back">
-    <div class="pic-info">
-    <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
-     <p class= "about">More Info About This Restaurant</p>
-     </div>
-     <p><%= "Opening Hours: " %> <%= restaurant.opening_hour - restaurant.closing_hour %></p>
-     <p><%= "What the location is like: " %><%= restaurant.location_details %></p>
-    </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev" style="filter: invert(100%);" data-action="click->swipe-restaurants#swipeLeft">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next" style="filter: invert(100%);">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </div>
 
-<% end %>
 <script>
   function flipCard(card) {
     card.classList.toggle("flipped");
@@ -83,4 +138,3 @@
     }
   }
 </script>
-</div>

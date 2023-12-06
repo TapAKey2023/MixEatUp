@@ -13,30 +13,31 @@
   </div>
 
 
-  <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get do |f| %>
+  <%=  form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"})  do |f| %>
 
-    <div class="card-clarification" data-field="budget" onclick="toggleCheckbox(this, 'budget')">
+    <div class="card-clarification" style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://i2-prod.mirror.co.uk/incoming/article30930935.ece/ALTERNATES/s615/0_Hands-with-bill-food-service-and-people-in-restaurant-customer-with-receipt-and-payment-with-cashi.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
       <div class="card-content">
         <%= f.hidden_field :budget, id: "budget" %>
-        <%= f.label :budget, "Budget" %>
+         <%# <p class= "clarifications-submit">Budget</p> %>
+        <%= f.label :budget, "Budget"%>
       </div>
     </div>
 
-    <div class="card-clarification" data-field="preferences" onclick="toggleCheckbox(this, 'preferences')">
-      <div class="card-content">
+    <div class="card-clarification " style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://img.livestrong.com/640/cme-data/getty%2F999a2db907c849b6a162d2c843a8173d.jpg') %>');" data-field="preferences" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'preferences')">
+      <div class="card-content ">
         <%= f.hidden_field :preferences, id: "preferences" %>
         <%= f.label :preferences, "Food Preferences" %>
       </div>
     </div>
 
-    <div class="card-clarification" data-field="location" onclick="toggleCheckbox(this, 'location')">
+    <div class="card-clarification" style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://images.france.fr/zeaejvyq9bhj/ic0lFVDFxxEKOycVSGLCO/a631fd4f1249538c53d5aaaa0f32078c/Header_Image_-Credit_-_Adobe_Ekaterina_Belova_v1.jpg') %>');"  data-field="location" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'location')">
       <div class="card-content">
         <%= f.hidden_field :location, id: "location" %>
         <%= f.label :location, "Location" %>
       </div>
     </div>
 
-    <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
+    <%= f.submit "Non-selected, skip to the next step", class: "styled-button ", id: "submit-button", data: {buttons_target: "submit"} %>
 
   <% end %>
 
@@ -46,60 +47,16 @@
     checkbox.value = !checkbox.value;
     checkbox.checked = !checkbox.checked;
     element.classList.toggle('selected', checkbox.checked);
+
   }
 </script>
 
 
 
-
-<%# original code %>
-
-<%# <%= form_for :user_clarifications, url: filters_user_clarification_choice_path, method: :get  do |f| %>
-  <%# <%= f.label "Budget important?" <br /> %>
-  <%# <%= f.check_box :budget <br />  %>
-
-  <%# <%= f.label "Food preferences important?" <br /> %>
-  <%# <%= f.check_box :preferences <br /> %>
-
-  <%# <%= f.label "Location important?" <br />  %>
-  <%# <%= f.check_box :location <br />  %>
-
-  <%# <%= f.submit "Next" %>
-<%# <% end %>
-
-
-
-<%# # IMPORTANT BELOW????? %>
-
-<%# <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
-  <label class="form-check-label" for="flexCheckDefault">
-    Is budget important?
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-  <label class="form-check-label" for="flexCheckChecked">
-    Food preferences?
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-  <label class="form-check-label" for="flexCheckChecked">
-    Is location important?
-  </label>
-</div>
-
-<%#
-# IMPORTANT BELOW?????
-=begin%>
-
-<%# <%= simple_form_for :my_method, url: filters_budget_path, method: :get do |f|  %>
-<%# <%= f.input :budget, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%# <%= f.input :preferences, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%# <%= f.input :location, as: :boolean, checked_value: "positive", unchecked_value: "negative" %>
-<%# <%= f.button :submit %>
-<%# <% end %>
-<%# <% %>
-<%# =end %>
-<%# use form_for instead %>
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br>
