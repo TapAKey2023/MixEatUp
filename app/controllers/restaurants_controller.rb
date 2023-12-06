@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
     if cookies[:occasion]
     # TODO: filter by location
-    @restaurants = @restaurants.where(occasion: cookies[:occasion])
+    @restaurants = @restaurants.where(other_occasion: cookies[:occasion])
     end
 
     if cookies[:meal]
@@ -36,23 +36,20 @@ class RestaurantsController < ApplicationController
       @restaurants = @restaurants.where(meal_type: cookies[:meal])
     end
 
-
-
-    if cookies[:total_price]
-      # TODO: filter by location
-      @restaurants = @restaurants.where(budget: cookies[:total_price])
-    end
+    # if cookies[:total_price]
+    #   # TODO: filter by location
+    #   @restaurants = @restaurants.where("? > ALL(budget)", cookies[:total_price])
+    # end
 
     @user = current_user
-    @restaurants = Restaurant.geocoded
-    @markers = @restaurants.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
-        marker_html: render_to_string(partial: "marker", locals: {restaurant: restaurant}) # Pass the restaurant to the partial
-      }
-    end
+    # @restaurants = Restaurant.geocoded
+    # @markers = @restaurants.map do |restaurant|
+    #   {
+    #     lat: restaurant.latitude,
+    #     lng: restaurant.longitude,
+    #     marker_html: render_to_string(partial: "marker") # Pass the restaurant to the partial
+    #   }
+    # end
     @restaurants = @restaurants.sample(5)
   end
 

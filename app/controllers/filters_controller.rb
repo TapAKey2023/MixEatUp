@@ -138,5 +138,13 @@ class FiltersController < ApplicationController
         redirect_to restaurants_loading_path
       end
     end
+    @restaurants = Restaurant.geocoded
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        marker_html: render_to_string(partial: "marker") # Pass the restaurant to the partial
+      }
+    end
   end
 end
