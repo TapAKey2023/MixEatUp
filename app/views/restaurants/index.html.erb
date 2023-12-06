@@ -64,16 +64,19 @@
               </div>
             <div class="back">
               <div class="pic-info">
-                <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
+                <img class="small-image" src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
                 <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %></p>
               </div>
-              <p><%= "More information: " %><%= restaurant.location_details %></p>
-              <p><%= "Meals this restaurant is perfect for: " %><%= restaurant.meal_type %></p>
-              <p><%= "Type of occasions this restaurant is perfect for: " %><%= restaurant.other_occasion %></p>
-              <p><%= "Why you'll love it: " %><%= restaurant.location_details %></p>
-              <p><%= "Why you'll tell your friends about us tomorrow: " %><%= restaurant.location_details %></p>
-              <p><%= "The why beind our restaurant choice: " %><%= restaurant.location_details %></p>
-              <p><%= "Why you should bookmark for later: " %><%= restaurant.location_details %></p>
+                <p class="contact-socials"><%= "How to contact: " %> <i class="fa-regular fa-envelope"></i> <i class="fa-solid fa-phone"></i> </p>
+                <p class="contact-socials"><%= "Socials: " %> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i> </p>
+              <div class="back-info">
+                <p class="information"><%= "Address: " %><%= restaurant.address %></p>
+                <p class="information"><%= "Meals this restaurant is perfect for: " %><%= restaurant.meal_type %></p>
+                <p class="information"><%= "Why you'll love it: " %><%= restaurant.reason %></p>
+                <p class="information"><%= "Why you'll tell your friends about us tomorrow: " %><%= restaurant.about %></p>
+                <p class="information"><%= "The WHY beind our restaurant choice: " %><%= restaurant.location_details %></p>
+                <p class="information"><%= "Why you should bookmark me for later: " %><%= restaurant.other_occasion %></p>
+              </div>
             </div>
           </div>
         </div>
@@ -107,11 +110,17 @@
         <%# </div> %>
         <%# <% end %>
     <%# </div> %>
+
+      <%# <p class="information"><%= "Type of occasions this restaurant is perfect for: " restaurant.other_occasion</p>  %>
+
       <div id="carouselExample1" class="carousel slide">
         <div class="carousel-inner">
         <div class="carousel-item"></div>
         <div class="carousel-item active">
-          <h1>Not found what you're looking for..click here for another 5</h1>
+        <!-- Example link to trigger page reload -->
+<%= link_to "Not found what you're looking for..click here for another 5", '#', id: 'refresh-link', onclick: 'refreshPage();' %>
+
+          <%# <h1>Not found what you're looking for..click here for another 5</h1> %>
         </div>
         <div class="carousel-item"></div>
       </div>
@@ -127,6 +136,7 @@
   </div>
 </div>
 
+
 <script>
   function flipCard(card) {
     card.classList.toggle("flipped");
@@ -136,5 +146,11 @@
       var backContent = card.querySelector(".back");
       backContent.innerHTML = `<p>Here is more information</p>`;
     }
+  }
+</script>
+<script>
+  function refreshPage() {
+    // You can add additional logic here to customize the page reload behavior
+    location.reload();
   }
 </script>
