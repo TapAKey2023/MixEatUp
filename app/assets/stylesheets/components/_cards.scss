@@ -184,6 +184,7 @@ h4 {
 // }
 
 .card-nav {
+  margin-left: 8px;
   overflow: hidden;
   // position: fixed;
   justify-content: space-between;
@@ -195,13 +196,8 @@ h4 {
   font-size: 35px;
   padding: 10px 10px 10px 10px;
   color:#0A1128;
-
 }
 
-.details-icon {
-  justify-content: space-between;
-  display: flex;
-}
 
 .fa-circle-info {
   font-size: 25px;

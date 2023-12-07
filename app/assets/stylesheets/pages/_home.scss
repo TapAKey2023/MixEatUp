@@ -11,8 +11,8 @@
 }
 
 .block {
-  background-color: #D25A1E;
-  height: 90.5vh;
+  background-color: $primary-color;
+  height: 100vh;
   width: 100%;
   position: absolute;
   // width: calc(50% + 2rem);
@@ -35,7 +35,7 @@
   // }
    h1{
     position: absolute;
-    bottom: 160px;
+    bottom: 157px;
     left: 50px;
     color: $secondary-color;
     font-weight: bold;
@@ -55,7 +55,7 @@
 
    h1{
     position: absolute;
-    top: 160px;
+    top: 115px;
     right: 50px;
     // text-align: center;
     color: $secondary-color;

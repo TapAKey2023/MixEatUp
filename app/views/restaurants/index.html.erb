@@ -46,7 +46,9 @@
                   <%= link_to saved_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
                     <i class="fa-regular fa-bookmark icon"></i>
                     <% end %>
+                  <%= link_to liked_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
                     <i class="fa-regular fa-heart icon" ></i>
+                    <% end %>
                   </div>
                     <i class="fa-solid fa-circle-info"></i>
                   </div>
@@ -120,7 +122,7 @@
         <div class="carousel-item"></div>
         <div class="carousel-item active">
         <!-- Example link to trigger page reload -->
-<%= link_to "Not found what you're looking for..click here for another 5", '#', id: 'refresh-link', onclick: 'refreshPage();' %>
+<%= link_to "Not found what you're looking for..click here for another 5", restaurants_path({next_5: true}), id: 'refresh-link' %>
 
           <%# <h1>Not found what you're looking for..click here for another 5</h1> %>
         </div>
@@ -138,7 +140,6 @@
   </div>
 </div>
 
-
 <script>
   function flipCard(card) {
     card.classList.toggle("flipped");
@@ -150,9 +151,9 @@
     }
   }
 </script>
-<script>
+<%# <script>
   function refreshPage() {
     // You can add additional logic here to customize the page reload behavior
     location.reload();
   }
-</script>
+</script> %>

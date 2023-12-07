@@ -2,14 +2,13 @@
   <header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
-      <p> 4 of 4</p>
     </div>
     <h1>Final Details</h1>
   </header>
 
 
   <div class="label">
-    To place the finishing touches on your dining symphony, are there any crucial last-minute notes to hit the right culinary crescendo?
+    To place the finishing touches on your dining symphony, are there any crucial last-minute notes to <b>hit the right culinary crescendo?</b>
   </div>
 
 
@@ -39,9 +38,17 @@
         <%= f.label :location, "Location" %>
       </div>
     </div>
+    <div class="two-buttons">
+    <%= f.button :button, type: :submit, class: "left-button", data: { buttons_target: "submit" } do %>
+      <i class="fa-solid fa-arrow-left"></i>
+    <% end %>
 
-    <%= f.submit "Non-selected, skip to the next step", class: "styled-button ", id: "submit-button", data: {buttons_target: "submit"} %>
+      <p>4 of 4</p>
 
+    <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+      <i class="fa-solid fa-arrow-right"></i>
+    <% end %>
+    </div>
   <% end %>
 
 <script>
@@ -54,12 +61,3 @@
   }
 </script>
 
-
-
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br>
