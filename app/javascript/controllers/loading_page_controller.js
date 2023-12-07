@@ -4,15 +4,16 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = ["listItems"]
+  static targets = ["listItems", "loadPage"]
 
   connect() {
     this.counter = 1000
     this.listItemsTargets.forEach((listItem) => {
-      console.dir(listItem)
       this.loadItem(listItem)
-      this.counter += 1000
+      this.counter += 800
     })
+
+    this.nextPage()
 
   }
 
@@ -20,6 +21,11 @@ export default class extends Controller {
     setTimeout(function() {
       listItem.classList.toggle("d-none");
     }, this.counter)
-    console.log(this.counter)
+  }
+
+  nextPage() {
+    setTimeout(function() {
+      window.location.href = '/restaurants'}, 4000)
+
   }
 }

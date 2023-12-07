@@ -1,7 +1,8 @@
 <header class="header flex-shrink-0">
   <div class="name-number">
-    <%# <%= link_to "MixEatUp", root_path%>
-    <p>1 of 4</p>
+
+    <%= link_to "MixEatUp", root_path%>
+
   </div>
   <h1>Let's Get Started</h1>
 </header>
@@ -22,7 +23,23 @@
       <%= link_to filters_budget_path(filter: "budget") do %>
         Budget
         <p class="additional-text">Craving a night out but don't want to overspend - let us help you stay in budget and discover a spot quickly! </p>
+
       <% end %>
+
+    </div>
+
+    </div>
+
+<div class="d-flex align-items-center justify-content-center gap-4 my-2">
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+
+      <p class="mb-0">1 of 4</p>
+
+      <%= button_tag type: 'button', class: "right-button", disabled: true do %>
+        <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+
     </div>
   </div>
-</div>

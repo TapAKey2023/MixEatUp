@@ -40,6 +40,20 @@
     <%= image_tag "work.jpeg", class: "occ-style" %>
     <div class="overlay-text">
       <%= link_to "Work", filters_meal_path(occasion: "work")%>
+
     </div>
+
   </div>
+<div class="d-flex align-items-center justify-content-center gap-4 my-2">
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+
+      <p class="mb-0">4 of 4</p>
+
+      <%= button_tag type: 'button', class: "right-button", disabled: true do %>
+        <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+
+    </div>
 </div>

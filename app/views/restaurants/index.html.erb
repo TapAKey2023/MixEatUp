@@ -1,8 +1,6 @@
 <header class="header flex-shrink-0">
   <div class="name-number">
-
-    <%# <%= link_to "MixEatUp", root_path%>
-
+    <%= link_to "MixEatUp", root_path %>
     <p> 3 of 3</p>
   </div>
   <h1>5 Perfect Restaurants</h1>
@@ -15,9 +13,9 @@
   </div> -->
   <div class="stimulus-container flex-grow-1 w-100" data-controller="swipe-restaurants">
     <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-between gap-3" data-swipe-restaurants-target="mainCarousel">
-      <div class="d-flex align-items-center justify-content-between">
+      <%# <div class="d-flex align-items-center justify-content-between">
         <h3 class="mb-0 explore text-black">Explore</h3>
-      </div>
+      </div> %>
       <div id="carouselExample" class="carousel slide w-100 h-100 px-5" data-swipe-restaurants-target="mainCarousel">
         <div class="carousel-inner h-100 w-100 py-3">
           <% @restaurants.each_with_index do |restaurant, index| %>
@@ -26,6 +24,12 @@
               <div class="card-small h-100 w-100" onclick="this.classList.toggle('flipped')">
                 <div class="card-inner">
                   <div class="front d-flex flex-column align-items-center justify-content-between">
+
+
+
+
+
+
                     <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" class="carousel-card-img" />
                     <div class="card-small-infos flex-grow-1">
                       <div class="d-flex align-items-center justify-content-between">
@@ -37,25 +41,30 @@
                             <i class="fa-regular fa-heart icon"></i>
                           <% end %>
                         </div>
-                        <i class="fa-solid fa-circle-info"></i>
+                        <i class="fa-solid fa-circle-info" style="font-size: 34px; padding-right:10px;"></i>
+                        <%# <i class="fa-solid fa-circle-info"></i> %>
                       </div>
-                      <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %></p>
+                      <div></div>
+                      <p class="back-title"><strong><%= restaurant.name  %></strong> <%= restaurant.trending %></p>
                       <div class="row">
                         <div class="col-6">
                           <h4><%= "Cuisine: " %><%= restaurant.cuisine_type %></h4>
+                          <h4><%= "Price: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %>pp</h4>
+                          <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
                         </div>
                         <div class="col-6">
                           <h4><%= "Why you'll love it: " %> <%= restaurant.about %></h4>
-
                         </div>
                         <div class="col-6">
-                          <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
-                        </div>
-                        <div class="col-6">
-                          <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
                         </div>
                       </div>
                     </div>
+
+
+
+
+
+
                   </div>
                   <div class="back d-flex flex-column align-items-center justify-content-between">
                     <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" class="carousel-card-img" />
