@@ -29,6 +29,7 @@ class FiltersController < ApplicationController
 
   def user_clarification_choice
     choices = params[:user_clarifications]
+
     if choices[:budget] == "true"
       cookies[:budget] = "positive"
     else
@@ -47,19 +48,21 @@ class FiltersController < ApplicationController
       cookies[:location] = "negative"
 
     end
-    redirect_to filters_budget_path
+
+      redirect_to filters_budget_path
+
   end
 
   def budget
     cookies[:filter] = "budget" if params[:filter] == "budget"
-
     redirect_to filters_preferences_path if cookies[:filter] == "occasion" && cookies[:budget] == "negative"
-
     # Need to check what these are doing
     if cookies[:meal] == false
       redirect_to filters_preferences_path
       return
     end
+
+
     # Need to check what these are doing
     if cookies[:filter] == "budget"
       cookies[:meal] = false

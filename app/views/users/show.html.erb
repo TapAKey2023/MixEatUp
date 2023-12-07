@@ -1,48 +1,89 @@
-<div class="card-trip">
-  <div class="position-relative">
-    <div class="card-category card-large">
-    <div class="profile-info">
+<div class="container">
       <i class="fa-duotone fa-font-case"></i>
       <h1 class="my-profile-word">My Profile</h1>
       <p class="profile-details">Name : <%= @user.name %></p>
       <p class="profile-details">Email: <%= @user.email %></p>
       <p class="profile-details">Age: <%= @user.age %></p>
       <p class="profile-details">Gender: <%= @user.gender %></p>
-      <p class="profile-details">Address: <%= @user.address %></p>
-    </div>
-    </div>
-  </div>
-  <div class="edit-profile">
-
+      <%# <p class="profile-details">Address: <%= @user.address %>
       <div class="flex-centered">
         <button type="button" class="btn btn-light">
-        <%= link_to "Edit My Profile", edit_user_path(@user)%>
+        <%# <%= link_to "Edit My Profile", edit_user_path(@user)%>
         </button>
       </div>
 
-      <h3 class="my-profile-word flex-centered">My Saved Restaurants</h3>
-      <% current_user.restaurants.each do |restaurant| %>
-      <%= restaurant.name %>
+      <h3 class="my-profile-text flex-centered">My Saved Restaurants</h3>
+      <% if current_user.restaurants.any? %>
+      <div id="carouselExample" class="carousel slide" style="text-align:center;">
+        <div class="carousel-inner">
+          <% current_user.restaurants.each_with_index do |restaurant, index| %>
 
+          <% active = index == 0 ? "active" : "" %>
+            <div class="carousel-item <%= active %>" >
+            <div class="d-flex align-items-center bill-info py-3">
+              <div style="border:solid;height:100px;width:100px;"></div>
+                <div style="text-align:left;">
+                  <p style="padding-left:20px; margin:0px;">Restaurant: <%= restaurant.name %></p>
+                  <p style="padding-left:20px; margin:0px;">Cuisine: <%= restaurant.cuisine_type %></p>
+                  <p style="padding-left:20px; margin:0px;">£<%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %>pp</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <% else %>
+      <div class="card">
+      <h3>No restaurants added - liked restaurants will be found here!</h3>
+      </div>
       <% end %>
-    </div>
-  </div>
 
-  <% if user_signed_in? %>
-<div class="navbar">
-  <%= link_to root_path do %>
-    <%= image_tag "new-house.png", class: "icons"%>
-  <% end %>
-  <%= link_to filters_path do %>
-    <%= image_tag "cutlery-option.png", class: "icons" %>
-  <% end %>
-  <%= link_to new_bill_path do %>
-    <%= image_tag "receipt-nav.png", class: "icons" %>
-  <% end %>
-  <%= link_to user_path(current_user) do %>
-    <%= image_tag "user-icon.png", class: "icons" %>
-  <% end %>
-
-</div>
-<% end %>
+    <h3 class="my-profile-text flex-centered">Your uploaded bills</h3>
+      <% if current_user.bills.any? %>
+        <div id="carouselExample" class="carousel slide" style="text-align:center;">
+        <div class="carousel-inner">
+            <% current_user.bills.each_with_index do |bill, index|  %>
+                <% active = index == 0 ? "active" : "" %>
+                <div class="carousel-item <%= active %>">
+                  <div class="bill-info">
+                  <h4 style="padding-top:10px;">Your Bill</h4>
+                  <hr>
+                  <p><%= bill.restaurant.name %></p>
+                  <p><%= bill.date_of_visit %></p>
+                  <hr>
+                  <% unless bill.food_price.nil? %>
+                  <p>£<%= bill.food_price %></p>
+                  <% end %>
+                    <% unless bill.drink_price.nil? %>
+                  <p>£<%= bill.drink_price %></p>
+                  <% end %>
+                  <% unless bill.total_price.nil? %>
+                  <p>£<%= bill.total_price %></p>
+                  <% end %>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+          <% else %>
+          <div class="card">
+            <h3>No bills uploaded yet... upload one now!</h3>
+          </div>
+        <% end %>
 </div>

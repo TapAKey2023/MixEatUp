@@ -7,8 +7,9 @@
 
 .my-profile-word {
   padding: 0 0 18px 0;
+  font-family: $font;
   font-weight: bold;
-  color: #87a8c8;
+  color: $primary-color;
 }
 
 .flex-centered {
@@ -16,4 +17,34 @@
   justify-content: center;
   margin-bottom: 20px;
   text-decoration: none;
+}
+
+.my-profile-text {
+  // padding: 0 0 px 0;
+  font-family: $font;
+  font-weight: bold;
+  color: $primary-color;
+  padding-top: 15px;
+}
+
+.profile-details {
+  margin-left: 15px;
+  font-family: $font;
+  color: $primary-color;
+}
+
+.card {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.bill-info {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 5px 20px 5px 20px;
+  margin: 0 20px 0 20px;
 }
