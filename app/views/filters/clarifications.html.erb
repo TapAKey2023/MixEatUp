@@ -38,13 +38,18 @@
         <%= f.label :location, "Location" %>
       </div>
     </div>
+
+
     <div class="d-flex align-items-center justify-content-center gap-4">
-      <%= f.button :button, type: :submit, class: "left-button", data: { buttons_target: "submit" } do %>
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
         <i class="fa-solid fa-arrow-left"></i>
       <% end %>
+      
       <p class="mb-0">4 of 4</p>
+
       <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
-        <i class="fa-solid fa-arrow-right"></i>
+      <i class="fa-solid fa-arrow-right"></i>
+
       <% end %>
     </div>
   <% end %>
