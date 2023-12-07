@@ -1,22 +1,39 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/bootstrap_variables';
 
 // External libraries
-@import "bootstrap";
-@import "font-awesome";
+@import 'bootstrap';
+@import 'font-awesome';
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
+@import 'components/index';
+@import 'pages/index';
 
-@import "pages/labels";
-@import "config/fonts";
-@import "pages/budget";
-@import "pages/preferences";
-
+@import 'pages/labels';
+@import 'config/fonts';
+@import 'pages/budget';
+@import 'pages/preferences';
 
 .body {
-  background: $secondary-color
+  background: $secondary-color;
+}
+
+@for $i from 1 through 100 {
+  .dvh-#{$i} {
+    height: #{$i}vh;
+  }
+  .dvw-#{$i} {
+    width: #{$i}vw;
+  }
+}
+
+.max-container-height {
+  height: calc(100dvh - 200px);
+  overflow: scroll;
+}
+
+.margin-bottom-0-important {
+  margin-bottom: 0 !important;
 }

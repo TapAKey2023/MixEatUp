@@ -1,28 +1,29 @@
+<header class="header">
+  <div class="name-number">
+    <%= link_to "MixEatUp", root_path%>
+    <p> 4 of 4</p>
+  </div>
+  <h1>Final Details</h1>
+</header>
 
-  <header class="header">
-    <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
-    </div>
-    <h1>Final Details</h1>
-  </header>
-
-
+<div class="container d-flex flex-column align-items-center justify-content-between row-gap-3 max-container-height my-3">
   <div class="label">
     To place the finishing touches on your dining symphony, are there any crucial last-minute notes to <b>hit the right culinary crescendo?</b>
   </div>
 
 
-  <%=  form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"})  do |f| %>
+  <%= form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"}, class: 'w-100 my-3 d-flex flex-column align-items-center justify-content-center row-gap-3 flex-grow-1')  do |f| %>
 
-    <div class="card-clarification " style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://i2-prod.mirror.co.uk/incoming/article30930935.ece/ALTERNATES/s615/0_Hands-with-bill-food-service-and-people-in-restaurant-customer-with-receipt-and-payment-with-cashi.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
+
+    <div class="card-clarification w-100" style="background-size:cover; background-position: center; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://i2-prod.mirror.co.uk/incoming/article30930935.ece/ALTERNATES/s615/0_Hands-with-bill-food-service-and-people-in-restaurant-customer-with-receipt-and-payment-with-cashi.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
+
       <div class="card-content">
         <%= f.hidden_field :budget, id: "budget" %>
-         <%# <p class= "clarifications-submit">Budget</p> %>
         <%= f.label :budget, "Budget"%>
       </div>
     </div>
 
-    <div class="card-clarification " style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://img.livestrong.com/640/cme-data/getty%2F999a2db907c849b6a162d2c843a8173d.jpg') %>');" data-field="preferences" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'preferences')">
+    <div class="card-clarification w-100" style="background-size:cover; background-position: center; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://img.livestrong.com/640/cme-data/getty%2F999a2db907c849b6a162d2c843a8173d.jpg') %>');" data-field="preferences" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'preferences')">
       <div class="card-content ">
         <%= f.hidden_field :preferences, id: "preferences" %>
         <%= f.label :preferences, "Food Preferences" %>
@@ -30,26 +31,24 @@
     </div>
 
 
+    <div class="card-clarification w-100" style="background-size:cover; background-position: center; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://images.france.fr/zeaejvyq9bhj/ic0lFVDFxxEKOycVSGLCO/a631fd4f1249538c53d5aaaa0f32078c/Header_Image_-Credit_-_Adobe_Ekaterina_Belova_v1.jpg') %>');"  data-field="location" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'location')">
 
-
-    <div class="card-clarification" style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://images.france.fr/zeaejvyq9bhj/ic0lFVDFxxEKOycVSGLCO/a631fd4f1249538c53d5aaaa0f32078c/Header_Image_-Credit_-_Adobe_Ekaterina_Belova_v1.jpg') %>');"  data-field="location" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'location')">
       <div class="card-content">
         <%= f.hidden_field :location, id: "location" %>
         <%= f.label :location, "Location" %>
       </div>
     </div>
-    <div class="two-buttons">
-    <%= f.button :button, type: :submit, class: "left-button", data: { buttons_target: "submit" } do %>
-      <i class="fa-solid fa-arrow-left"></i>
-    <% end %>
-
-      <p>4 of 4</p>
-
-    <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
-      <i class="fa-solid fa-arrow-right"></i>
-    <% end %>
+    <div class="d-flex align-items-center justify-content-center gap-4">
+      <%= f.button :button, type: :submit, class: "left-button", data: { buttons_target: "submit" } do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+      <p class="mb-0">4 of 4</p>
+      <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+        <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
     </div>
   <% end %>
+</div>
 
 <script>
   function toggleCheckbox(element, field) {
@@ -60,4 +59,3 @@
 
   }
 </script>
-
