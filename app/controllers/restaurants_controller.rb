@@ -3,19 +3,6 @@ class RestaurantsController < ApplicationController
     restaurants = Restaurant.all
     @restaurants = restaurants.first(5)
 
-<<<<<<< HEAD
-    # if cookies[:location] == "positive" && cookies[:city].present? && cookies[:radius].present?
-    #   # TODO: filter by location
-    #   @restaurants = @restaurants.where(address: cookies[:city])
-    # end
-
-    # # Checking to see if preferences was selected
-    # if cookies[:preferences] == "positive"
-
-    #     # TODO: filter by wheat allergy
-    #   @restaurants = @restaurants.where(wheat: cookies[:wheat]) if cookies[:wheat] == "positive"
-
-=======
     if params[:next_5].present?
       restaurants = restaurants.drop(5)
       @restaurants = restaurants
@@ -33,7 +20,6 @@ class RestaurantsController < ApplicationController
     #     # TODO: filter by wheat allergy
     #   @restaurants = @restaurants.where(wheat: cookies[:wheat]) if cookies[:wheat] == "positive"
 
->>>>>>> master
     #     # TODO: filter by lactose allergy
     #   @restaurants = @restaurants.where(lactose: cookies[:lactose]) if cookies[:lactose] == "positive"
 
@@ -60,11 +46,6 @@ class RestaurantsController < ApplicationController
     #   # TODO: filter by location
     #   @restaurants = @restaurants.where("(SELECT AVG(value::numeric) FROM UNNEST(budget) value) < ?", (cookies[:total_price].to_i / cookies[:number_of_people].to_i))
     # end
-<<<<<<< HEAD
-
-=======
->>>>>>> master
-
 
     @user = current_user
 

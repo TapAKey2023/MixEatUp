@@ -1,38 +1,28 @@
-
-   <header class="header">
-    <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
-      <p>1 of 4</p>
+<header class="header flex-shrink-0">
+  <div class="name-number">
+    <%= link_to "MixEatUp", root_path%>
+    <p>1 of 4</p>
+  </div>
+  <h1>Let's Get Started</h1>
+</header>
+<div class="container d-flex flex-column align-items-center justify-content-between row-gap-3 max-container-height my-3">
+  <div class="card-get-started">
+    <%= image_tag "dinner.jpeg", class: "dinner-pic" %>
+    <div class="overlay-text">
+      <%= link_to filters_occasion_path(filter: "occasion") do %>
+        Occasion
+        <p class="additional-text">Feeling lost in the quest for the perfect restaurant? Let us be your occasion matchmaker!</p>
+      <% end %>
     </div>
-    <h1>Let's Get Started</h1>
-  </header>
+  </div>
 
-  <div class="background-style">
-    <div class="card-get-started">
-      <%= image_tag "dinner.jpeg", class: "dinner-pic" %>
-      <div class="overlay-text">
-        <%= link_to filters_occasion_path(filter: "occasion") do %>
-          Occasion
-            <p class="additional-text">Feeling lost in the quest for the perfect restaurant? Let us be your occasion matchmaker!</p>
-
-        <% end %>
-      </div>
-    </div>
-
-    <div class="card-get-started">
-      <%= image_tag "pay_bill.jpeg", class: "budget-pic" %>
-      <div class="overlay-text">
-        <%= link_to filters_budget_path(filter: "budget") do %>
+  <div class="card-get-started">
+    <%= image_tag "pay_bill.jpeg", class: "budget-pic" %>
+    <div class="overlay-text">
+      <%= link_to filters_budget_path(filter: "budget") do %>
         Budget
         <p class="additional-text">Craving a night out but don't want to overspend - let us help you stay in budget and discover a spot quickly! </p>
-        <% end %>
-      </div>
+      <% end %>
     </div>
-
-
-<%# <div class="card-get-started">
-  <%= image_tag "budgeting.jpeg", class: "budget-pic" %>
-  <%# <div class="overlay-text"> %>
-    <%# <%= link_to "Budget", filters_budget_path(filter: "budget")%>
-  <%# </div> %>
-<%# </div> %>
+  </div>
+</div>

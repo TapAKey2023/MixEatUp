@@ -35,33 +35,3 @@
 // <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
 //       <i class="fa-solid fa-arrow-right"></i>
 //     <% end %>
-<<<<<<< HEAD
-
-
-
-
-
-// LEFT BUTTON READY TO ADD TO EACH PAGE:
-
-// LB Occasion:
-// <%= link_to filters_path do %>
-// <i class="fa-solid fa-arrow-left"></i>
-// <% end %>
-
-// LB Meal:
-// <%= link_to filters_occasion_path do %>
-// <i class="fa-solid fa-arrow-left"></i>
-// <% end %>
-
-
-// LB Clarification:
-// <%= link_to filters_meal_path do %>
-// <i class="fa-solid fa-arrow-left"></i>
-// <% end %>
-
-// LB Loading:
-// <%= link_to filters_clarifications_path do %>
-// <i class="fa-solid fa-arrow-left"></i>
-// <% end %>
-=======
->>>>>>> master

@@ -1,35 +1,30 @@
-<div class="position-relative">
-  <div class="card-category card-large">
-  <div class="profile-info">
-    <h1 class="my-profile">My Profile</h1>
-    <p class="profile-details">Name : <%= @user.name %></p>
-    <p class="profile-details">Email: <%= @user.email %></p>
-    <p class="profile-details">Age: <%= @user.age %></p>
-    <p class="profile-details">Gender: <%= @user.gender %></p>
-  </div>
-  </div>
-</div>
-<div class="edit-profile">
-
-    <div>
-      <%= link_to "edit profile", edit_user_path(@user)%>
+<div class="card-trip">
+  <div class="position-relative">
+    <div class="card-category card-large">
+    <div class="profile-info">
+      <i class="fa-duotone fa-font-case"></i>
+      <h1 class="my-profile-word">My Profile</h1>
+      <p class="profile-details">Name : <%= @user.name %></p>
+      <p class="profile-details">Email: <%= @user.email %></p>
+      <p class="profile-details">Age: <%= @user.age %></p>
+      <p class="profile-details">Gender: <%= @user.gender %></p>
+      <p class="profile-details">Address: <%= @user.address %></p>
     </div>
+    </div>
+  </div>
+  <div class="edit-profile">
 
-    <% current_user.restaurants.each do |restaurant| %>
-    <%= restaurant.name %>
+      <div class="flex-centered">
+        <button type="button" class="btn btn-light">
+        <%= link_to "Edit My Profile", edit_user_path(@user)%>
+        </button>
+      </div>
 
-<% end %>
-  <%# </div> %>
-  <%# <div class="row my-2"> %>
+      <h3 class="my-profile-word flex-centered">My Saved Restaurants</h3>
+      <% current_user.restaurants.each do |restaurant| %>
+      <%= restaurant.name %>
+
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-<%# <p>Address(latitude):  @user.latitude</p> %>
-    <%# <p>Address(longitude): @user.longitude</p> %>
