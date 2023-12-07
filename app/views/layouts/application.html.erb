@@ -16,9 +16,9 @@
 
   <body>
     <%= render "shared/flashes" %>
-    <div class="d-flex align-items-center justify-content-between flex-column dvh-100 flex-grow-1">
+    <div class="d-flex align-items-center justify-content-between flex-column flex-grow-1 <%= 'dvh-100' unless current_page?(new_bill_path) %> ">
       <%= yield %>
-      <%unless current_page?(root_path)%>
+      <%unless current_page?(root_path) %>
         <%= render "shared/navbar" %>
       <%end%>
     </div>
