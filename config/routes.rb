@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get "bills/new", to: "bills#new",  as: :new_bill
   post "bills", to: "bills#create"
 
+  # resources :users, only: [:create, :new, :edit, :show, :update]
+  get "users", to: "users#index"
   get "users/:id", to: "users#show", as: :user
   get "users/:id/edit", to: "users#edit", as: :edit_user
   patch "users/:id", to: "users#update"

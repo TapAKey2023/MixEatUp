@@ -33,8 +33,8 @@
                   <%# <div class="details-icon"> %>
                 <div class="info">
                   <div>
-                    <h4><%= "Cuisine: " %><%= restaurant.cuisine_type %></h4>
-                    <h4><%= "Why you'll love it: " %> <%= restaurant.about %></h4>
+                    <h4><i class="fa-solid fa-utensils"><%= " : " %></i><%= restaurant.cuisine_type %></h4>
+                    <h4><%= "Why you'll love it: " %> <%= restaurant.about %> <%= " " %> <i class="fa-solid fa-wand-magic-sparkles"></i></h4>
                     <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
                     <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
                   </div>
