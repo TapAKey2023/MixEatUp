@@ -35,16 +35,17 @@
         <%= f.label :location, "Location" %>
       </div>
     </div>
+
     <div class="two-buttons">
-    <%= f.button :button, type: :submit, class: "left-button", data: { buttons_target: "submit" } do %>
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
       <i class="fa-solid fa-arrow-left"></i>
-    <% end %>
+      <% end %>
 
       <p>4 of 4</p>
 
-    <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+      <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
       <i class="fa-solid fa-arrow-right"></i>
-    <% end %>
+      <% end %>
     </div>
   <% end %>
 
@@ -57,4 +58,3 @@
 
   }
 </script>
-
