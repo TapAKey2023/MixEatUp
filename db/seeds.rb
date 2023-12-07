@@ -8,17 +8,17 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 
 
-# puts "Creating user 1..."
-# user_1 = User.new(email: "Visar@hotmail.com", password: "Visar123", name: "Visar")
-# user_1.save!
+puts "Creating user 1..."
+user_1 = User.new(email: "Visar@hotmail.com", password: "Visar123", name: "Visar")
+user_1.save!
 
-# puts "Creating user 2..."
-# user_2 = User.new(email: "Jess@hotmail.com", password: "Jess123", name: "Jess")
-# user_2.save!
+puts "Creating user 2..."
+user_2 = User.new(email: "Jess@hotmail.com", password: "Jess123", name: "Jess")
+user_2.save!
 
-# puts "Creating user 3..."
-# user_3 = User.new(email: "Alex@hotmail.com", password: "Alex123", name: "Alex")
-# user_3.save!
+puts "Creating user 3..."
+user_3 = User.new(email: "Alex@hotmail.com", password: "Alex123", name: "Alex")
+user_3.save!
 
 # nuts = [
 #   "positive", "negative"

@@ -9,28 +9,12 @@
     <h1>5 Perfect Restaurants</h1>
   </header>
 <%# container py-5 %>
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-black">
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
-</div>
-<div class="stimulus-container" data-controller="swipe-restaurants">
-<div class="card-container" data-swipe-restaurants-target="mainCarousel">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0 explore">Explore:</h3>
-  </div>
 
-  <%# <div class="card-grid">
-      <% @restaurants.each do |restaurant| %>
-      <%# <div class="card"> %>
-          <%# <%= link_to restaurant_path(restaurant), class:"text-decoration-none card-class" do %>
-              <%# <div class="card-class-infos"> %>
-                <%# <h3><%= restaurant.name</h3>  %>
-              <%# </div> %>
-          <%# <% end %>
-      <%# </div> %>
-      <%# <% end %>
-  <%# </div> %>
+<div class="stimulus-container" data-controller="swipe-restaurants">
+<div class="card-container " data-swipe-restaurants-target="mainCarousel">
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <% @restaurants.each_with_index do |restaurant, index| %>
