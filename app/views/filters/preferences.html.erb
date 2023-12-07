@@ -3,20 +3,10 @@
 
   <header class="header flex-shrink-0">
     <div class="name-number">
-      <%# <%= link_to "MixEatUp", root_path%>
-      <% if cookies[:filter] == "occasion" && cookies[:budget] == "positive" && cookies[:location] == "positive" %>
-     <p> 2 of 3</p>
-     <% elsif cookies[:filter] == "occasion" &&  cookies[:location] == "positive" %>
-     <p> 1 of 2</p>
-      <% elsif cookies[:filter] == "occasion" && cookies[:budget] == "positive"  %>
-     <p> 2 of 2</p>
-     <% elsif cookies[:filter] == "occasion" %>
-     <p> 1 of 1</p>
-     <% elsif cookies[:filter] == "budget" %>
-     <p>1 of 1</p>
-     <% elsif cookies[:filter] == "budget" && cookies[:location] == "positive" %>
-     <p>1 of 2</p>
-     <% end %>
+
+      <%= link_to "MixEatUp", root_path%>
+
+
     </div>
     <h1>Food Preferences</h1>
   </header>
@@ -30,7 +20,7 @@
       <span class ="span">budget for?</span>
     </p>
   </div>
-  <%= form_for :user_clarifications, url: filters_location_path, method: :get, class: 'w-100 flex-grow-1 d-flex flex-column align-items-center justify-content-between' do |f| %>
+  <%= form_for :user_clarifications, url: filters_location_path, method: :get, class: 'w-100 flex-grow-1 d-flex flex-column gap-3  align-items-center justify-content-between' do |f| %>
     <div class="d-flex w-100 flex-grow-1">
       <div class="card-preferences d-flex flex-column align-items-center justify-content-center h-100 w-100 flex-grow-1 gap-3">
         <div class="top-check-boxes d-flex justify-content-between flex-grow-1 w-100">
@@ -59,8 +49,32 @@
             <%=f.label :vegetarian, "Vegetarian" %>
           </label>
         </div>
-        <%= f.submit "Next", class: "styled-button", id: "submit-button" %>
+
+
       </div>
     </div>
+
+    <div class="d-flex align-items-center justify-content-center gap-4 my-2">
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+      <% if cookies[:filter] == "occasion" && cookies[:budget] == "positive" && cookies[:location] == "positive" %>
+        <p class="mb-0"> 2 of 3</p>
+     <% elsif cookies[:filter] == "occasion" &&  cookies[:location] == "positive" %>
+      <p class="mb-0"> 1 of 2</p>
+    <% elsif cookies[:filter] == "occasion" && cookies[:budget] == "positive"  %>
+      <p class="mb-0"> 2 of 2</p>
+     <% elsif cookies[:filter] == "occasion" %>
+      <p class="mb-0"> 1 of 1</p>
+     <% elsif cookies[:filter] == "budget" %>
+      <p class="mb-0">1 of 1</p>
+     <% elsif cookies[:filter] == "budget" && cookies[:location] == "positive" %>
+      <p class="mb-0">1 of 2</p>
+     <% end %>
+      <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+      <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+    </div>
+
   <% end %>
 </div>
