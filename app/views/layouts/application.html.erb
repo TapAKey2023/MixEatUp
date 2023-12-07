@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-
   </head>
 
   <body>
     <%= render "shared/flashes" %>
-    <div class="d-flex align-items-center justify-content-between flex-column dvh-100 flex-grow-1">
+    <div class="d-flex align-items-center justify-content-between flex-column flex-grow-1 <%= 'dvh-100' unless current_page?(new_bill_path) %> ">
       <%= yield %>
-      <%unless current_page?(root_path)%>
+      <%unless current_page?(root_path) %>
         <%= render "shared/navbar" %>
       <%end%>
     </div>

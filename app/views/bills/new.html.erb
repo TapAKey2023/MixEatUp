@@ -1,23 +1,22 @@
   <header class="header">
     <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
-      <p>1 of 2</p>
+      <%# <%= link_to "MixEatUp", root_path%>
     </div>
     <h1>Upload a Bill</h1>
   </header>
 
-<div class="container pt-4 pb-5">
+<div class="container pt-4 pb-4">
 <p class= "label">Uploading your bill helps fellow foodies stay savvy on menu pricing tomorrow!</p>
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-     <div class= "bill rounded-4 p-3 shadow">
+  <%# <div class="row"> %>
+    <div class="col-12">
+     <div class= "bill">
       <div  class= "rounded-4 p-3 shadow">
 
       <%# <div > %>
       <div class="text2">
         <h3>Add Bill:</h3>
         <%= simple_form_for @bill do |f| %>
-          <%= f.input :date_of_visit%>
+          <%= f.input :date_of_visit, order: [:month, :day, :year], as: :date %>
           <%= f.input :restaurant.name, class: "restaurant-name" %>
           <%= f.input :number_of_people,
                       collection: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
@@ -31,7 +30,7 @@
 
       </div>
     </div>
-  </div>
+  <%# </div> %>
   </div>
 </div>
 <div class="set-height-bills"></div>
