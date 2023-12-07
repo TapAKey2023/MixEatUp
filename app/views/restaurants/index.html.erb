@@ -15,8 +15,8 @@
     <div class="d-flex align-items-center justify-content-between">
       <h3 class="mb-0 explore text-black">Explore</h3>
     </div>
-    <div id="carouselExample" class="carousel slide w-100 h-100">
-      <div class="carousel-inner h-100 w-100 px-5 py-3">
+    <div id="carouselExample" class="carousel slide w-100 h-100 px-5">
+      <div class="carousel-inner h-100 w-100 py-3">
         <% @restaurants.each_with_index do |restaurant, index| %>
           <% active = index == 0 ? "active": "" %>
           <div class="carousel-item h-100 w-100 <%= active %>" id="<%= index %>" data-swipe-restaurants-target="carouselItem">

@@ -1,6 +1,7 @@
 .card-small {
   width: 100%;
   overflow: hidden;
+  height: 100%;
   background: #fdfdff;
   border-radius: 15px;
   margin-left: auto;
@@ -11,8 +12,9 @@
   z-index: 999;
 
   .carousel-card-img {
-    height: 400px;
+    flex: 30%;
     width: 100%;
+    flex: 30%;
     object-fit: cover;
     object-position: center;
     border-radius: 15px 15px 0 0;
