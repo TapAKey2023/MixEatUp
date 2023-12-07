@@ -54,6 +54,9 @@
 
 .top-check-boxes {
   gap: 16px;
+  .form-check {
+    height: 100%;
+  }
 }
 
 .margin-pics {
@@ -130,5 +133,12 @@
   .budget_form_drinks,
   .budget_form_food {
     flex: 50%;
+  }
+}
+
+.budget_form_drinks_and_food {
+  .form-check {
+    height: 100%;
+    width: 100%;
   }
 }

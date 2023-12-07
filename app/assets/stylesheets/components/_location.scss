@@ -1,18 +1,6 @@
-// .location_container {
-// position: relative;
-// width: 500px; /* You can adjust the container size as needed */
-// height: 500px; /* You can adjust the container size as needed */
-// }
-
-.corner-button {
-  position: absolute;
-  bottom: 100px;
-  right: 25px;
-}
-
 #location-wrapper-modifier {
   height: 100% !important;
-  width: 410px;
+  width: 100%;
 
   label {
     font-size: 18px;
@@ -27,16 +15,12 @@
 .location-indulge-cards-wrapper {
   background-size: cover;
   background-position: center;
-  height: 610px;
-
-  padding: 15px;
   // justify-content: center;
   // color: $primary-color;
   font-size: 15px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   // border-radius: 15px;
   // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px auto;
   // margin-top: 15px;
   overflow: hidden;
 }
