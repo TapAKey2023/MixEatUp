@@ -12,6 +12,10 @@
   </div>
 
 
+<br>
+  <%=  form_for(:user_clarifications, url: filters_preferences_path, method: :get, data: {controller: "buttons"})  do |f| %>
+
+
   <%= form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"}, class: 'w-100  d-flex flex-column align-items-center justify-content-center row-gap-3 flex-grow-1')  do |f| %>
 
 
