@@ -2,7 +2,13 @@
   <header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
-      <p> 4 of 4</p>
+      <% if cookies[:filter] == "occasion" && cookies[:budget] == "positive" && cookies[:location] == "positive" && cookies[:preferences] == "positive" %>
+     <p> 4 of 4</p>
+     <% elsif cookies[:filter] == "occasion" && (cookies[:budget] == "positive" || cookies[:location] == "positive") %>
+     <p> 3 of 3</p>
+     <% elsif cookies[:filter] == "occasion" %>
+     <p> 1 of 1</p>
+     <% end %>
     </div>
     <h1>Summary</h1>
   </header>
@@ -14,7 +20,7 @@
   <h2 class= "choice-bold">Your Choices:</h2>
   <ul class="container ml-5 mr-5 loading-list">
     <li data-loading-page-target="listItems" class= "d-none"><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
-    <% if cookies[:occasion] == "positive" %>
+    <% if cookies[:occasion] != "negative" %>
     <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
     <% end %>
     <% if cookies[:location] == "positive"%>
