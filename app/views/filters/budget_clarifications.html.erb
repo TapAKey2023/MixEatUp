@@ -1,6 +1,6 @@
    <header class="header">
     <div class="name-number">
-      <%= link_to "MixEatUp", root_path%>
+      <%# <%= link_to "MixEatUp", root_path%>
     </div>
     <h1>Final Details</h1>
   </header>
@@ -13,10 +13,10 @@
 
 
 <br>
-  <%=  form_for(:user_clarifications, url: filters_preferences_path, method: :get, data: {controller: "buttons"})  do |f| %>
+  <%# <%=  form_for(:user_clarifications, url: filters_preferences_path, method: :get, data: {controller: "buttons"})  do |f| %>
 
 
-  <%= form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"}, class: 'w-100  d-flex flex-column align-items-center justify-content-center row-gap-3 flex-grow-1')  do |f| %>
+  <%= form_for(:user_clarifications, url: filters_preferences_path, method: :get, data: {controller: "buttons"}, class: 'w-100  d-flex flex-column align-items-center justify-content-center row-gap-3 flex-grow-1')  do |f| %>
 
 
     <div class="card-clarification w-100" style="background-size:cover; background-position: center; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://img.livestrong.com/640/cme-data/getty%2F999a2db907c849b6a162d2c843a8173d.jpg') %>');" data-field="preferences" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'preferences')">

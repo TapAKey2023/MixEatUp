@@ -149,7 +149,7 @@ user_3.save!
 #           "Take Me to Boston",
 #           "Hong-Kong's Dim Sum",
 #           "Turkish Delight",
-#           "American Diner",
+#           "American Diner",rails
 #           "Italiano",
 #           "Sushi Sushi",
 #           "Indian Palace",
@@ -531,10 +531,10 @@ restaurant_11 = Restaurant.create(
   about: "Our tortillas are made in-house using traditional methods and heritage corn. To bring the flavours of Mexico, fresh ingredients are used, with a wide variety of chillies and spices.",
   location_details: "Walkable to countless restaurants, theatrical venues and timeless nightlife in London",
   other_occasion: "Work",
-  wheat: "no",
-  lactose: "no",
-  nuts: "no",
-  vegetarian:"yes",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true,
   pic_url: "https://zapote.co.uk/wp-content/uploads/2023/01/Food-pics-06-1.jpg"
 )
 puts "Created restaurant 11..."
@@ -558,7 +558,11 @@ restaurant_12 = Restaurant.create(
  about: "Providing the best of Italian cuisine",
  location_details: "Central so great for those busy work lunches",
  other_occasion: "Work",
- pic_url: "https://www.caldesi.com/wp-content/uploads/2021/10/marylbone-1.jpg"
+ pic_url: "https://www.caldesi.com/wp-content/uploads/2021/10/marylbone-1.jpg",
+ wheat: true,
+ lactose: true,
+ nuts: true,
+ vegetarian: true
 )
 puts "Created restaurant 12..."
 
@@ -581,7 +585,11 @@ restaurant_13 = Restaurant.create(
   about: "Variety of choices for your lunch",
   location_details: "The location is fantastic, plenty to do",
   other_occasion: "Work",
-  pic_url: "https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2018/10/18120453/wisteria-covered-restaurant-selfridges-aubaine.jpg"
+  pic_url: "https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2018/10/18120453/wisteria-covered-restaurant-selfridges-aubaine.jpg",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 13..."
 
@@ -605,7 +613,11 @@ restaurant_14 = Restaurant.create(
   about: "Fantastic vibe and food!",
   location_details: "Great shops and fun bars nearby",
   other_occasion: "Work",
-  pic_url: "https://cdn.squaremeal.co.uk/restaurants/10605/images/ivy-cafe-address_31012020045132.jpg?w=928&h=522&fit=crop&auto=format%2Ccompress"
+  pic_url: "https://cdn.squaremeal.co.uk/restaurants/10605/images/ivy-cafe-address_31012020045132.jpg?w=928&h=522&fit=crop&auto=format%2Ccompress",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 14..."
 
@@ -628,7 +640,11 @@ restaurant_15 = Restaurant.create(
   about: "The best burgers in London",
   location_details: "Buzzing nightlife around the area",
   other_occasion: "Work",
-  pic_url: "https://www.honestburgers.co.uk/wp-content/uploads/2021/11/we-re-just-being-honest-really-great-burgers.jpg"
+  pic_url: "https://www.honestburgers.co.uk/wp-content/uploads/2021/11/we-re-just-being-honest-really-great-burgers.jpg",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 15..."
 
@@ -651,7 +667,11 @@ restaurant_16 = Restaurant.create(
   about: "Service is fantastic, food even better",
   location_details: "Museums and parks nearby",
   other_occasion: "Work",
-  pic_url: "https://www.doylecollection.com/var/doyle/storage/images/media/doyle-redesign/images/hotels/marylebone/club-bar-restaurant/the-salon/578129-3-eng-US/the-salon_rect719.jpg"
+  pic_url: "https://www.doylecollection.com/var/doyle/storage/images/media/doyle-redesign/images/hotels/marylebone/club-bar-restaurant/the-salon/578129-3-eng-US/the-salon_rect719.jpg",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 16..."
 
@@ -675,7 +695,11 @@ restaurant_17 = Restaurant.create(
   about: "Brings a taste of Spain to London",
   location_details: "Surrounded by bars and different events",
   other_occasion: "Work",
-  pic_url: "https://qul.imgix.net/9da98666-a6d8-445f-b354-be04a99c8565/531995_sld.jpg"
+  pic_url: "https://qul.imgix.net/9da98666-a6d8-445f-b354-be04a99c8565/531995_sld.jpg",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 17..."
 
@@ -698,7 +722,11 @@ restaurant_18 = Restaurant.create(
   about: "Tasty, filling food",
   location_details: "In the heart of London",
   other_occasion: "Work",
-  pic_url: "https://www.hot-dinners.com/images/stories/blog/2023/hawksmoorsunday.jpg"
+  pic_url: "https://www.hot-dinners.com/images/stories/blog/2023/hawksmoorsunday.jpg",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 18..."
 
@@ -721,7 +749,11 @@ restaurant_19 = Restaurant.create(
   about: "Famous for the best sushi",
   location_details: "Incredible view on the 39th floor",
   other_occasion: "Work",
-  pic_url: "https://1.bp.blogspot.com/-lZqxHvayV_s/YK1FlD_sy_I/AAAAAAAAOnI/Qh_fH7FpP-c0BzHj5oPVWZP8bl2aFwUCQCLcBGAsYHQ/s2048/sushi%2Bsamba%2Bfood.jpeg"
+  pic_url: "https://1.bp.blogspot.com/-lZqxHvayV_s/YK1FlD_sy_I/AAAAAAAAOnI/Qh_fH7FpP-c0BzHj5oPVWZP8bl2aFwUCQCLcBGAsYHQ/s2048/sushi%2Bsamba%2Bfood.jpeg",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
 puts "Created restaurant 19..."
 
@@ -744,7 +776,11 @@ restaurant_20 = Restaurant.create(
     about: "Perfect lunch spot in London",
     location_details: "Lots to discover nearby",
     other_occasion: "Work",
-    pic_url: "https://www.hot-dinners.com/images/stories/features/2020/sandwiches/keu2.jpg"
+    pic_url: "https://www.hot-dinners.com/images/stories/features/2020/sandwiches/keu2.jpg",
+    wheat: true,
+    lactose: true,
+    nuts: true,
+    vegetarian: true
 )
 puts "Created restaurant 20..."
 

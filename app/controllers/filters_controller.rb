@@ -50,18 +50,14 @@ class FiltersController < ApplicationController
     end
 
       redirect_to filters_budget_path
-
   end
 
   def budget
     cookies[:filter] = "budget" if params[:filter] == "budget"
     redirect_to filters_preferences_path if cookies[:filter] == "occasion" && cookies[:budget] == "negative"
     # Need to check what these are doing
-    if cookies[:meal] == false
-      redirect_to filters_preferences_path
-      return
-    end
 
+    redirect_to filters_preferences_path if cookies[:meal] == false
 
     # Need to check what these are doing
     if cookies[:filter] == "budget"
