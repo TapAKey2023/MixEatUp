@@ -7,92 +7,89 @@
   </div>
   <h1>5 Perfect Restaurants</h1>
 </header>
-<div class="container d-flex flex-column align-items-center justify-content-between row-gap-3 max-container-height my-3">
-  <!-- <div class="cover mb-4 d-flex align-items-center justify-content-center">
-    <div class="text-center text-black">
-      <h3 class="typed-js" data-controller="typed-js"></h3>
-    </div>
-  </div> -->
-  <div class="stimulus-container flex-grow-1 w-100" data-controller="swipe-restaurants">
-    <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-between gap-3" data-swipe-restaurants-target="mainCarousel">
-      <div class="d-flex align-items-center justify-content-between">
-        <h3 class="mb-0 explore text-black">Explore</h3>
-      </div>
-      <div id="carouselExample" class="carousel slide w-100 h-100 px-5" data-swipe-restaurants-target="mainCarousel">
-        <div class="carousel-inner h-100 w-100 py-3">
-          <% @restaurants.each_with_index do |restaurant, index| %>
-            <% active = index == 0 ? "active": "" %>
-            <div class="carousel-item h-100 w-100 px-3 <%= active %>" id="<%= index %>" data-swipe-restaurants-target="carouselItem">
-              <div class="card-small h-100 w-100" onclick="this.classList.toggle('flipped')">
-                <div class="card-inner">
-                  <div class="front d-flex flex-column align-items-center justify-content-between">
-                    <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" class="carousel-card-img" />
-                    <div class="card-small-infos flex-grow-1">
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="card-nav">
-                          <%= link_to saved_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}, class: 'text-decoration-none' do %>
-                            <i class="fa-regular fa-bookmark icon"></i>
-                          <% end %>
-                          <%= link_to liked_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}, class: 'text-decoration-none' do %>
-                            <i class="fa-regular fa-heart icon"></i>
-                          <% end %>
-                        </div>
-                        <i class="fa-solid fa-circle-info"></i>
-                      </div>
-                      <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %></p>
-                      <div class="row">
-                        <div class="col-6">
-                          <h4><%= "Cuisine: " %><%= restaurant.cuisine_type %></h4>
-                        </div>
-                        <div class="col-6">
-                          <h4><%= "Why you'll love it: " %> <%= restaurant.about %></h4>
 
-                        </div>
-                        <div class="col-6">
-                          <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
-                        </div>
-                        <div class="col-6">
-                          <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="back d-flex flex-column align-items-center justify-content-between">
-                    <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" class="carousel-card-img" />
-                    <div class="card-small-infos flex-grow-1">
-                      <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %></p>
-                      <div class="row">
-                        <div class="col-12">
-                          <p class="contact-socials mb-0"><%= "How to contact: " %> <i class="fa-regular fa-envelope"></i> <i class="fa-solid fa-phone"></i> </p>
-                        </div>
-                        <div class="col-12">
-                          <p class="contact-socials mb-0"><%= "Socials: " %> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i> </p>
-                        </div>
-                        <div class="col-12">
-                          <p class="information mb-0"><%= "Address: " %><%= restaurant.address %></p>
-                        </div>
-                        <div class="col-12">
-                          <p class="information mb-0"><%= "Meals this restaurant is perfect for: " %><%= restaurant.meal_type %></p>
-                        </div>
-                        <div class="col-12">
-                          <p class="information mb-0"><%= "Why you'll love it: " %><%= restaurant.reason %></p>
-                        </div>
-                        <div class="col-12">
-                          <p class="information mb-0"><%= "Why you'll tell your friends about us tomorrow: " %><%= restaurant.about %></p>
-                        </div>
-                        <div class="col-12">
-                          <p class="information mb-0"><%= "The WHY beind our restaurant choice: " %><%= restaurant.location_details %></p>
-                        </div>
-                        <div class="col-12">
-                          <p class="information mb-0"><%= "Why you should bookmark me for later: " %><%= restaurant.other_occasion %></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+<%# container py-5 %>
+<div class="cover d-flex align-items-center justify-content-center">
+  <%# <div class="text-center text-black">
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div> %>
+</div>
+<div class="stimulus-container" data-controller="swipe-restaurants">
+<div class="card-container" data-swipe-restaurants-target="mainCarousel">
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <% @restaurants.each_with_index do |restaurant, index| %>
+      <% active = index == 0 ? "active": "" %>
+        <div class="carousel-item <%= active %>" id="<%= index %>" data-swipe-restaurants-target="carouselItem">
+          <div class="card-small" data-controller='card'>
+            <div class="card-inner">
+              <div class="front">
+                <%# <img src="https://www.hot-dinners.com/images/stories/features/2020/sandwiches/keu2.jpg" style="height:300px" /> %>
+                <%= cl_image_tag restaurant.pic_url, style:"height:300px" %>
+                <div class="card-small-infos">
+
+                  <h2 class="title"><%= restaurant.name  %> </h2>
+                  <%# <div class="info-icon"> %>
                 </div>
+                  <%# <div class="details-icon"> %>
+                <div class="info">
+                  <div>
+                    <h4><i class="fa-solid fa-utensils"><%= " : " %></i><%= restaurant.cuisine_type %></h4>
+                    <h4><%= "Why you'll love it: " %> <%= restaurant.about %> <%= " " %> <i class="fa-solid fa-wand-magic-sparkles"></i></h4>
+                    <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
+                    <% if restaurant.rating == ':smile:' %>
+                    <div class="reaction">
+                    <h4><%= "How others feel:" %></h4>
+                    <%= image_tag 'smile.svg' %>
+                    </div>
+                    <% else %>
+                     <h4><%= "How others feel: n/a" %></h4>
+                    <% end %>
+                  </div>
+
+                </div>
+                  <div class="title-icon">
+                  <div class="card-nav">
+                  <%= link_to saved_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
+                    <i class="fa-regular fa-bookmark icon"></i>
+                    <% end %>
+                  <%= link_to liked_restaurants_path( {restaurant_id: restaurant.id}), data: {turbo_method: :post}   do  %>
+                    <i class="fa-regular fa-heart icon" ></i>
+                    <% end %>
+                  </div>
+                    <i class="fa-solid fa-circle-info"  style='margin-right: 8px;' data-action='click->card#flip'></i>
+                  </div>
+                <%# </div> %>
+              </div>
+            <div class="back">
+              <div class="pic-info">
+                <img class="small-image" src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
+                <p class="back-title"><%= restaurant.name  %>
+                <br>
+                <br>
+                <br>
+                <i class="fa-regular fa-envelope"></i> <i class="fa-solid fa-phone">     |</i>
+                <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i>
+
+                </p>
+                </p>
+                </p>
+
+
+              </div>
+
+              <div class="back-info">
+                <p class="information"><%= "Address: " %><%= restaurant.address %></p>
+                <p class="information"><%= "Meals this restaurant is perfect for: " %><%= restaurant.meal_type %></p>
+                <p class="information"><%= "Why you'll love it: " %><%= restaurant.reason %></p>
+                <p class="information"><%= "Why you'll tell your friends about us tomorrow: " %><%= restaurant.about %></p>
+                <p class="information"><%= "The WHY beind our restaurant choice: " %><%= restaurant.location_details %></p>
+                <p class="information"><%= "Why you should bookmark me for later: " %><%= restaurant.other_occasion %></p>
               </div>
             </div>
-          <% end %>
+          </div>
+
+
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="filter: invert(100%);">
@@ -128,6 +125,13 @@
     </div>
   </div>
 </div>
+
+<%# <script>
+  function refreshPage() {
+    // You can add additional logic here to customize the page reload behavior
+    location.reload();
+  }
+</script> %>
 
 <script>
   function flipCard(card) {
