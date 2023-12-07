@@ -4,10 +4,16 @@
       <%= link_to "MixEatUp", root_path%>
       <% if cookies[:filter] == "occasion" && cookies[:budget] == "positive" && cookies[:location] == "positive" %>
      <p> 2 of 3</p>
-     <% elsif cookies[:filter] == "occasion" && (cookies[:budget] == "positive" || cookies[:location] == "positive") %>
+     <% elsif cookies[:filter] == "occasion" &&  cookies[:location] == "positive" %>
+     <p> 1 of 2</p>
+      <% elsif cookies[:filter] == "occasion" && cookies[:budget] == "positive"  %>
      <p> 2 of 2</p>
      <% elsif cookies[:filter] == "occasion" %>
      <p> 1 of 1</p>
+     <% elsif cookies[:filter] == "budget" %>
+     <p>1 of 1</p>
+     <% elsif cookies[:filter] == "budget" && cookies[:location] == "positive" %>
+     <p>1 of 2</p>
      <% end %>
     </div>
     <h1>Food Preferences</h1>

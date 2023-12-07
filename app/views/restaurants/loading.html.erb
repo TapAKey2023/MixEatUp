@@ -2,17 +2,9 @@
   <header class="header">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
-      <% if cookies[:filter] == "occasion" && cookies[:budget] == "positive" && cookies[:location] == "positive" && cookies[:preferences] == "positive" %>
-     <p> 4 of 4</p>
-     <% elsif cookies[:filter] == "occasion" && (cookies[:budget] == "positive" || cookies[:location] == "positive") %>
-     <p> 3 of 3</p>
-     <% elsif cookies[:filter] == "occasion" %>
-     <p> 1 of 1</p>
-     <% end %>
     </div>
     <h1>Summary</h1>
   </header>
-
 <div class="label" data-controller="loading-page">
 <br>
 <h2 class= "calc">Calculating Your Perfect Matches</h2>

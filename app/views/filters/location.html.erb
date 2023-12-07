@@ -39,6 +39,10 @@ map.addControl(new mapboxgl.AttributionControl(), 'top-left');
      <p> 2 of 2</p>
      <% elsif cookies[:filter] == "occasion" %>
      <p> 1 of 1</p>
+      <% elsif cookies[:filter] == "budget" %>
+     <p>1 of 1</p>
+     <% elsif cookies[:filter] == "budget" && cookies[:preferences] == "positive" %>
+     <p>2 of 2</p>
      <% end %>
     </div>
     <h1>Location</h1>
