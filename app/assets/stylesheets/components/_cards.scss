@@ -1,26 +1,29 @@
 .card-small {
-  width: 400px;
+  width: 100%;
   overflow: hidden;
+  height: 100%;
   background: #fdfdff;
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
-  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  height: 600px;
   z-index: 999;
+
+  .carousel-card-img {
+    flex: 25%;
+    width: 100%;
+    flex: 30%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px 15px 0 0;
+  }
 }
 
 .explore {
   font-size: 30px;
   margin-bottom: 0;
-}
-
-.card-container {
-  padding: 20px 0 20px 0;
 }
 
 h3 {
@@ -51,9 +54,7 @@ h3 {
 
 .back-title {
   font-size: 25px;
-  padding-top: 12px;
-  padding-left: 8px;
-  padding-right: 8px;
+  margin-bottom: 0;
 }
 
 .back-image {
@@ -62,8 +63,8 @@ h3 {
 }
 
 .small-image {
-  border-radius: 15px;
-  margin-bottom: 15px;
+  border-radius: 15px 15px 0 0;
+  width: 100%;
 }
 
 .pic-info {
@@ -79,10 +80,6 @@ h4 {
   font-size: 20px;
 }
 
-.back-info {
-  padding: 30px 8px 8px 8px;
-}
-
 .information {
   font-size: 18px;
   font-family: $font;
@@ -90,7 +87,6 @@ h4 {
 
 .contact-socials {
   font-size: 18px;
-  padding: 0 8px 0 8px;
   margin: 0;
 }
 
@@ -118,8 +114,8 @@ h4 {
 
 .info {
   display: flex;
-
-  padding: 5px 0 0 5px;
+  width: 100%;
+  padding: 5px;
 }
 
 .title-icon {
@@ -131,12 +127,6 @@ h4 {
   font-size: 30px;
   padding-right: 10px;
   // padding: 10px 20px 0 20px;
-}
-
-.fa-circle-info {
-  font-size: 25px;
-  color: $primary-color;
-  padding: 0 0 0px 0;
 }
 
 .answers {
@@ -162,19 +152,7 @@ h4 {
   text-align: center;
 }
 
-// .details-icon {
-//   justify-content: space-between;
-//   display: flex;
-//   margin-top: 10px;
-// }
-
-// .fa-circle-info {
-//   font-size: 25px;
-//   margin-top: 30px;
-// }
-
 .card-nav {
-  margin-left: 8px;
   overflow: hidden;
   // position: fixed;
   justify-content: space-between;
@@ -190,7 +168,8 @@ h4 {
 
 .fa-circle-info {
   font-size: 25px;
-  margin-top: 30px;
+  color: $primary-color;
+  padding: 0 0 0px 0;
 }
 
 #refresh-link {
