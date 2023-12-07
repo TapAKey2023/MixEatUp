@@ -1,7 +1,6 @@
 <header class="header">
   <div class="name-number">
     <%= link_to "MixEatUp", root_path%>
-    <p> 4 of 4</p>
   </div>
   <h1>Final Details</h1>
 </header>
@@ -12,7 +11,7 @@
   </div>
 
 
-  <%= form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"}, class: 'w-100 my-3 d-flex flex-column align-items-center justify-content-center row-gap-3 flex-grow-1')  do |f| %>
+  <%= form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"}, class: 'w-100  d-flex flex-column align-items-center justify-content-center row-gap-3 flex-grow-1')  do |f| %>
 
 
     <div class="card-clarification w-100" style="background-size:cover; background-position: center; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://i2-prod.mirror.co.uk/incoming/article30930935.ece/ALTERNATES/s615/0_Hands-with-bill-food-service-and-people-in-restaurant-customer-with-receipt-and-payment-with-cashi.jpg') %>');" data-field="budget" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'budget')">
@@ -40,16 +39,15 @@
     </div>
 
 
-    <div class="d-flex align-items-center justify-content-center gap-4">
+    <div class="d-flex align-items-center justify-content-center gap-4 my-2">
       <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
         <i class="fa-solid fa-arrow-left"></i>
       <% end %>
-      
+
       <p class="mb-0">4 of 4</p>
 
       <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
-      <i class="fa-solid fa-arrow-right"></i>
-
+        <i class="fa-solid fa-arrow-right"></i>
       <% end %>
     </div>
   <% end %>

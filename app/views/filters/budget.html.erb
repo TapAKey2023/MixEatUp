@@ -2,15 +2,7 @@
   <div class="name-number">
     <%= link_to "MixEatUp", root_path%>
 
-    <% if cookies[:filter] == "occasion" && cookies[:preferences] == "positive" && cookies[:location] == "positive" %>
-     <p> 1 of 3</p>
-     <% elsif cookies[:filter] == "occasion" && (cookies[:preferences] == "positive" || cookies[:location] == "positive") %>
-     <p> 1 of 2</p>
-     <% elsif cookies[:filter] == "occasion" %>
-     <p> 1 of 1</p>
-     <% else %>
-     <p> 2 of 4</p>
-     <% end %>
+
   </div>
   <h1>Budget</h1>
 </header>
@@ -29,7 +21,27 @@
       <div class="label2">2. Let's set the perfect budget for your indulgent soiree!</div>
       <%= f.input :total_price, label: "What's your budget per person?", input_html: { type: 'number', class: 'w-100' }, wrapper_html: { class: 'w-100' } %>
       <%= f.input :number_of_people,label: "How many people will be attending?", input_html: { type: 'number', class: 'w-100' }, wrapper_html: { class: 'w-100' } %>
-      <%= f.submit "Next" %>
+       <div class="d-flex align-items-center justify-content-center gap-4 my-2">
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+
+       <% if cookies[:filter] == "occasion" && cookies[:preferences] == "positive" && cookies[:location] == "positive" %>
+     <p class= "mb-0"> 1 of 3</p>
+     <% elsif cookies[:filter] == "occasion" && (cookies[:preferences] == "positive" || cookies[:location] == "positive") %>
+     <p class= "mb-0"> 1 of 2</p>
+     <% elsif cookies[:filter] == "occasion" %>
+     <p class= "mb-0"> 1 of 1</p>
+     <% else %>
+     <p class= "mb-0"> 2 of 4</p>
+     <% end %>
+
+      <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+      <i class="fa-solid fa-arrow-right"></i>
+
+
+      <% end %>
+    </div>
     <% end %>
 
 <!--   </div> -->
@@ -44,8 +56,27 @@
       <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image h-100 w-100 card-indulge drink-food-label"},input_html: { class: "d-none" }, wrapper_html: { class: 'flex-grow-1 w-100' } %>
       <%= f.input :total_price, input_html: { type: 'number' }, wrapper_html: { class: 'w-100' } %>
       <%= f.input :number_of_people, input_html: { type: 'number' }, wrapper_html: { class: 'w-100' } %>
-      <%= f.submit "Next" %>
+
+      <div class="d-flex align-items-center justify-content-center gap-4 my-2">
+      <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+
+       <% if cookies[:filter] == "occasion" && cookies[:preferences] == "positive" && cookies[:location] == "positive" %>
+     <p class= "mb-0"> 1 of 3</p>
+     <% elsif cookies[:filter] == "occasion" && (cookies[:preferences] == "positive" || cookies[:location] == "positive") %>
+     <p class= "mb-0"> 1 of 2</p>
+     <% elsif cookies[:filter] == "occasion" %>
+     <p class= "mb-0"> 1 of 1</p>
+     <% else %>
+     <p class= "mb-0"> 2 of 4</p>
+     <% end %>
+      <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+        <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+    </div>
     <% end %>
+
   <% end %>
 
 </div>
