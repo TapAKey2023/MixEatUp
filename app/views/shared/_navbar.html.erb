@@ -4,13 +4,13 @@
       <% if user_signed_in? %>
 <div class="navbar">
 <%= link_to root_path do %>
-<%= image_tag "home.png", class: "icons"%>
+<%= image_tag "home-logo.png", class: "icons"%>
 <% end %>
 <%= link_to filters_path do %>
 <%= image_tag "food.png", class: "icons" %>
 <% end %>
 <%= link_to new_bill_path do %>
-<%= image_tag "receipt.png", class: "icons" %>
+<%= image_tag "circum_receipt.png", class: "icons" %>
 <% end %>
 <%= link_to user_path(current_user) do %>
 <%= image_tag "profile.png", class: "icons" %>
