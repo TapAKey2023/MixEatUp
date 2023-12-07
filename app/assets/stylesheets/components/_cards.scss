@@ -374,12 +374,9 @@ h4 {
 }
 
 .card-preferences {
-  width: 400px;
-  height: 610px;
   // border: 1px solid #ccc;
   border-radius: 15px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  margin: 15px;
   // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
   //           0 6px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -472,8 +469,7 @@ h4 {
 .card-indulge {
   background-size: cover;
   background-position: center;
-  width: 165px;
-  height: 165px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
