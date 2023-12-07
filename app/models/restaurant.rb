@@ -5,4 +5,5 @@ class Restaurant < ApplicationRecord
   has_many :allergies, through: :restaurant_allergies
   has_many :saved_restaurants
   has_many :users, through: :saved_restaurants
+  has_one_attached :pic_url
 end
