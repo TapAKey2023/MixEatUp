@@ -1,10 +1,14 @@
 
 .navbar {
-  background-color: #FDFDFF;
+  background-color: $secondary-color;
   overflow: hidden;
   position: fixed;
   bottom: 0;
+<<<<<<< HEAD
   padding: 15px 15px 15px 15px;
+=======
+  padding: 25px 25px 25px 25px;
+>>>>>>> master
   width: 100%;
   box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5) inset;
   z-index: 1000;
@@ -14,12 +18,23 @@
   float: left;
   display: block;
   color: $primary-color;
-  // font-family: $font;
   text-align: center;
-  // padding: 14px px;
   text-decoration: none;
+<<<<<<< HEAD
   // font-size: 32px;
   height: 30px;
   // width: 35px;
   // padding: 5px;
+=======
+  width: 40px;
+  height: 40px;
+>>>>>>> master
 }
+
+
+
+  // font-family: $font;
+ // padding: 14px px;
+ // font-size: 32px;
+// width: 35px;
+  // padding: 5px;
