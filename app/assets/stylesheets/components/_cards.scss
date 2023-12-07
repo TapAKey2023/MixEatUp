@@ -250,13 +250,12 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 175px;
+  flex: 1;
   color: $secondary-color;
   font-size: 30px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
@@ -335,20 +334,20 @@ h4 {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin-bottom: 18px;
-  margin-top: 18px;
   overflow: hidden;
   position: relative;
+  flex: 1;
 
   .overlay-text {
     position: absolute;
     text-align: center;
-    padding: 0px 40px 0px 40px;
     z-index: 1;
     color: $secondary-color;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-family: $font;
-    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     .additional-text {
       padding: 0 0 10px 0;
       font-size: 18px;
@@ -395,11 +394,6 @@ h4 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
-  .card-clarification {
-    width: 400px;
-    height: 265px;
-  }
-
   .card-content {
     display: flex;
     flex-direction: column;
@@ -418,12 +412,10 @@ h4 {
   }
 }
 .card-clarification {
-  height: 225px;
+  flex: 1;
   border: 1px solid #ccc;
   border-radius: 15px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 15px;
-  margin-top: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   // margin: 10px;
@@ -443,11 +435,8 @@ h4 {
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 15px;
 
     label {
-      display: block;
-      margin-bottom: 8px;
       font-family: $font;
       color: $secondary-color !important;
       font-size: 30px;

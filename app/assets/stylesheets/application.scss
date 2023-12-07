@@ -28,3 +28,8 @@
     width: #{$i}vw;
   }
 }
+
+.max-container-height {
+  height: calc(100dvh - 200px);
+  overflow: scroll;
+}

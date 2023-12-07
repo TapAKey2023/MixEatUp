@@ -1,39 +1,37 @@
-<header class="header">
+<header class="header flex-shrink-0">
   <div class="name-number">
     <%= link_to "MixEatUp", root_path%>
   </div>
   <h1>Budget</h1>
 </header>
 
-<div class="container" id="budget">
+<div class="container d-flex flex-column align-items-center justify-content-between row-gap-3 max-container-height my-3" id="budget">
   <div class="label">Bonjour! What budget parameters would you like to plan for in your culinary voyage?</div>
-  <div class="indulge-cards-wrapper" style="height:auto; padding: 8px;">
-    <% if cookies[:filter] == "budget" %>
-      <div class="label2">1. What do you plan to indulge in?</div>
-      <%= simple_form_for :budget_form, url: filters_meal_path, method: :get, data: {turbo: false} do |f| %>
-        <div class="top-check-boxes d-flex justify-content-between pl-0">
-          <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"},input_html: {class: "d-none"} %>
-          <%= f.input :food , as: :boolean,checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"food-image card-indulge food-label"},input_html: {class: "d-none"} %>
-        </div>
-        <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image w-100 card-indulge drink-food-label"},input_html: {class: "d-none"}%>
+  <% if cookies[:filter] == "budget" %>
+    <div class="label2">1. What do you plan to indulge in?</div>
+    <%= simple_form_for :budget_form, url: filters_meal_path, method: :get, html: { class: 'w-100' } do |f| %>
+      <div class="top-check-boxes d-flex justify-content-between pl-0">
+        <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"}, input_html: { class: "d-none" }, wrapper_html: { class: "flex-grow-1" } %>
+        <%= f.input :food , as: :boolean,checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"food-image card-indulge food-label"}, input_html: { class: "d-none" }, wrapper_html: { class: "flex-grow-1" } %>
+      </div>
+      <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image w-100 card-indulge drink-food-label"},input_html: {class: "d-none"}%>
 
-        <div class="label2">2. Let's set the perfect budget for your indulgent soiree!</div>
-        <%= f.input :total_price, label: "What's your budget per person?", input_html: { type: 'number' } %>
-        <%= f.input :number_of_people,label: "How many people will be attending?", input_html: { type: 'number' } %>
-        <%= f.submit "Next" %>
-      <% end %>
-    <% else %>
-      <div class="label2">1. What do you plan to indulge in?</div>
-      <%= simple_form_for :budget_form, url: filters_preferences_path, method: :get do |f|  %>
-        <div class="top-check-boxes d-flex justify-content-between">
-          <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"},input_html: {class: "d-none"} %>
-          <%= f.input :food , as: :boolean,checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"food-image card-indulge food-label"},input_html: {class: "d-none"} %>
-        </div>
-        <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image w-100 card-indulge drink-food-label"},input_html: {class: "d-none"} %>
-        <%= f.input :total_price, input_html: { type: 'number' } %>
-        <%= f.input :number_of_people, input_html: { type: 'number' } %>
-        <%= f.submit "Next" %>
-      <% end %>
+      <div class="label2">2. Let's set the perfect budget for your indulgent soiree!</div>
+      <%= f.input :total_price, label: "What's your budget per person?", input_html: { type: 'number' } %>
+      <%= f.input :number_of_people,label: "How many people will be attending?", input_html: { type: 'number' } %>
+      <%= f.submit "Next" %>
     <% end %>
-  </div>
+  <% else %>
+    <div class="label2">1. What do you plan to indulge in?</div>
+    <%= simple_form_for :budget_form, url: filters_preferences_path, method: :get, html: { class: 'w-100' } do |f|  %>
+      <div class="top-check-boxes d-flex justify-content-between">
+        <%= f.input :drinks, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"drinks-image card-indulge drink-label"},input_html: { class: "d-none" }, wrapper_html: { class: "flex-grow-1" } %>
+        <%= f.input :food , as: :boolean,checked_value: 'positive', unchecked_value: 'negative', label_html: {class:"food-image card-indulge food-label"},input_html: { class: "d-none" }, wrapper_html: { class: "flex-grow-1" } %>
+      </div>
+      <%= f.input :drinks_and_food, as: :boolean,checked_value: 'positive', unchecked_value: 'negative',label_html: { class: "food-and-drinks-image w-100 card-indulge drink-food-label"},input_html: {class: "d-none"} %>
+      <%= f.input :total_price, input_html: { type: 'number' } %>
+      <%= f.input :number_of_people, input_html: { type: 'number' } %>
+      <%= f.submit "Next" %>
+    <% end %>
+  <% end %>
 </div>

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header flex-shrink-0">
   <div class="name-number">
     <%= link_to "MixEatUp", root_path %>
     <p>3 of 4</p>
@@ -6,13 +6,12 @@
   <h1>Meals</h1>
 </header>
 
-
-<div class="container">
+<div class="container d-flex flex-column align-items-center justify-content-between row-gap-3 max-container-height my-3">
   <div class="label">
     We certainly don't want to match you with a restaurant taking the day off. When do you plan to dine?
   </div>
 
-  <div class="card-occasion">
+  <div class="card-occasion w-100">
     <%= image_tag "pancakes.jpg", class: "occ-style" %>
     <div class="overlay-text">
       <% if cookies[:filter] == "budget"  %>
@@ -23,7 +22,7 @@
     </div>
   </div>
 
-  <div class="card-occasion">
+  <div class="card-occasion w-100">
     <%= image_tag "Lobster.jpeg", class: "occ-style" %>
     <div class="overlay-text">
     <% if cookies[:filter] == "budget"  %>
@@ -35,7 +34,7 @@
   </div>
 
 
-  <div class="card-occasion">
+  <div class="card-occasion w-100">
     <%= image_tag "chicken.jpg", class: "occ-style" %>
     <div class="overlay-text">
       <% if cookies[:filter] == "budget"  %>
@@ -46,7 +45,7 @@
     </div>
   </div>
 
-  <div class="card-occasion">
+  <div class="card-occasion w-100">
     <%= image_tag "cocktail3.jpg", class: "occ-style" %>
     <div class="overlay-text">
       <% if cookies[:filter] == "budget"  %>
