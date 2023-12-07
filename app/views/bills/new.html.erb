@@ -7,16 +7,19 @@
   </header>
 
 <div class="container pt-4 pb-5">
+<<<<<<< HEAD
 <p class= "label">"Uploading your bill today, helps your fellow foodies stay savvy on menu pricing tomorrow!"</p>
+=======
+<p class= "label">“Uploading your bill helps fellow foodies stay savvy on menu pricing tomorrow!”</p>
+>>>>>>> master
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
      <div class= "bill rounded-4 p-3 shadow">
       <div  class= "rounded-4 p-3 shadow">
 
       <%# <div > %>
-
+      <div class="text2">
         <h3>Add Bill:</h3>
-        <br>
         <%= simple_form_for @bill do |f| %>
           <%= f.input :date_of_visit%>
           <%= f.input :restaurant.name, class: "restaurant-name" %>
@@ -28,6 +31,7 @@
 
           <%= f.submit "Submit Bill", class: 'submit-btn' %>
         <% end %>
+        </div>
 
       </div>
     </div>

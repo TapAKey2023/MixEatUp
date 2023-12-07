@@ -1,0 +1,37 @@
+.left-button {
+  color: $primary-color;
+  font-family: $font;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 2px $primary-color;
+}
+
+
+.right-button {
+  color: $primary-color;
+  font-family: $font;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 2px $primary-color;
+}
+
+.two-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+}
+
+
+
+// <i class="fa-solid fa-arrow-right"></i>
+
+// <i class="fa-solid fa-arrow-left"></i>
+
+
+// <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
+//       <i class="fa-solid fa-arrow-right"></i>
+//     <% end %>
