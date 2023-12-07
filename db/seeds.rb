@@ -246,42 +246,45 @@ user_3.save!
 # end
 
 
+
 Restaurant_1 = Restaurant.create(
   name: "Fischer's",
   address: "Marylebone",
   cuisine_type: "Austrian",
+
   phone_no: "020 1234 5678",
   chain: false,
-  budget: [50, 60, 100, 20, 40],
-  opening_hour: "07:30",
-  closing_hour: "22:00",
+  budget: [50, 40, 100, 32, 22],
+  opening_hour: "12:00",
+  closing_hour: "23:00",
   meal_type: "dinner",
-  reason: "It's nice.",
+  reason: "To fill your farm to table heart",
   rating: ":smile:",
   trending: ":fire:",
   instagram: "@STK_london",
   facebook: "STK London",
   resy: 'stk_london.resy.com',
-  about: "It's the best.",
-  location_details: "The food is delicious.",
+  about: "A relaxed, thoughtful & personal dining experience driven by a farm to table concept.",
+  location_details: "Whether it's a stroll along the river or jazz concert, this restaurant is nested in the heart of East London.",
   other_occasion: "Date",
   pic_url: "https://media-cdn.tripadvisor.com/media/photo-s/1d/1c/1e/a3/pulpo-a-la-barbacoa.jpg"
-
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 ),
 
-
-
 Restaurant_2 = Restaurant.create(
-  name: "Sussex Bar & Restaurant ",
+  name: "Santo Remedio",
   address: "London",
-  cuisine_type: "British",
+  cuisine_type: "Mexican",
   phone_no: "020 1234 5678",
   chain: false,
   budget: [50, 40, 100, 32, 22],
   opening_hour: "12:00",
-  closing_hour: "22:00",
+  closing_hour: "23:00",
   meal_type: "dinner",
-  reason: "Date night fun",
+  reason: "Your fav. marg. awaits you",
   rating: ":smile:",
   trending: ":fire:",
   instagram: "@STK_london",
@@ -372,6 +375,7 @@ Restaurant_5 = Restaurant.create(
   vegetarian: true,
   pic_url: "https://static.wixstatic.com/media/20583c_2373efe6713746b3b99fc8e57ac25c06~mv2.jpg/v1/fill/w_894,h_761,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/20583c_2373efe6713746b3b99fc8e57ac25c06~mv2.jpg"
 ),
+
 Restaurant_6 = Restaurant.create(
   name: "Nest",
   address: "London",
@@ -524,9 +528,6 @@ Restaurant_11 = Restaurant.create(
   pic_url: "https://zapote.co.uk/wp-content/uploads/2023/01/Food-pics-06-1.jpg"
 )
 
-
-
-
 Restaurant_12 = Restaurant.create(
  name: "Caldesi",
  address: "London",
@@ -594,8 +595,6 @@ Restaurant_12 = Restaurant.create(
      pic_url: "https://cdn.squaremeal.co.uk/restaurants/10605/images/ivy-cafe-address_31012020045132.jpg?w=928&h=522&fit=crop&auto=format%2Ccompress"
    )
 
-
-
      Restaurant_15 = Restaurant.create(
        name: "Honest Burgers",
        address: "London",
@@ -640,7 +639,6 @@ Restaurant_12 = Restaurant.create(
          pic_url: "https://www.doylecollection.com/var/doyle/storage/images/media/doyle-redesign/images/hotels/marylebone/club-bar-restaurant/the-salon/578129-3-eng-US/the-salon_rect719.jpg"
        )
 
-
          Restaurant_17 = Restaurant.create(
            name: "Twist Connubio",
            address: "London",
@@ -663,7 +661,7 @@ Restaurant_12 = Restaurant.create(
            pic_url: "https://qul.imgix.net/9da98666-a6d8-445f-b354-be04a99c8565/531995_sld.jpg"
          )
 
-           Restaurant_18 = Restaurant.create(
+          Restaurant_18 = Restaurant.create(
              name: "Hawksmoor",
              address: "London",
              cuisine_type: "American",
@@ -685,7 +683,7 @@ Restaurant_12 = Restaurant.create(
              pic_url: "https://www.hot-dinners.com/images/stories/blog/2023/hawksmoorsunday.jpg"
            )
 
-             Restaurant_19 = Restaurant.create(
+            Restaurant_19 = Restaurant.create(
                name: "SushiSamba",
                address: "London",
                cuisine_type: "Japanese",
@@ -707,9 +705,7 @@ Restaurant_12 = Restaurant.create(
                pic_url: "https://1.bp.blogspot.com/-lZqxHvayV_s/YK1FlD_sy_I/AAAAAAAAOnI/Qh_fH7FpP-c0BzHj5oPVWZP8bl2aFwUCQCLcBGAsYHQ/s2048/sushi%2Bsamba%2Bfood.jpeg"
              )
 
-
-
-               Restaurant_20 = Restaurant.create(
+             Restaurant_20 = Restaurant.create(
                  name: "Banh Mi Keu Deli Cityin ",
                  address: "London",
                  cuisine_type: "Vietnamese",
@@ -731,8 +727,55 @@ Restaurant_12 = Restaurant.create(
                  pic_url: "https://www.hot-dinners.com/images/stories/features/2020/sandwiches/keu2.jpg"
                )
 
+# Restaurant_9 = Restaurant.create(
+#   name: "Americana London",
+#   address: "London",
+#   cuisine_type: "American",
+#   phone_no: "020 1234 5678",
+#   chain: false,
+#   budget: [50, 40, 100, 32, 22],
+#   opening_hour: "12:00",
+#   closing_hour: "23:00",
+#   meal_type: "dinner",
+#   reason: "Hop the pond for dinner",
+#   rating: ":smile:",
+#   trending: ":fire:",
+#   instagram: "@STK_london",
+#   facebook: "STK London",
+#   resy: 'stk_london.resy.com',
+#   about: "We are passionate about serving classic Southern American food.",
+#   location_details: "Countless shops and bars surround this fun restaurant.",
+#   other_occasion: "Date",
+#   wheat: true,
+#   lactose: true,
+#   nuts: true,
+#   vegetarian: true
+# ),
 
-
+# Restaurant_10 = Restaurant.create(
+#   name: "Laxeiro",
+#   address: "London",
+#   cuisine_type: "Spanish",
+#   phone_no: "020 1234 5678",
+#   chain: false,
+#   budget: [50, 40, 100, 32, 22],
+#   opening_hour: "12:00",
+#   closing_hour: "23:00",
+#   meal_type: "dinner",
+#   reason: "Best patatas bravas in town",
+#   rating: ":smile:",
+#   trending: ":fire:",
+#   instagram: "@STK_london",
+#   facebook: "STK London",
+#   resy: 'stk_london.resy.com',
+#   about: "40 years on, East London is now a culinary destination and we are still proud as ever to serve our neighbourhood with delicious food and wines.",
+#   location_details: "Beautiful parks to lively event venues offer ample post-dinner enjoyments",
+#   other_occasion: "Date",
+#   wheat: true,
+#   lactose: true,
+#   nuts: true,
+#   vegetarian: true
+# ),
 # Add more records as needed
 # Restaurant.create(
 #   name: "Another Restaurant",

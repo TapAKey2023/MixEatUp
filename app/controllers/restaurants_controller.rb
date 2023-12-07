@@ -47,7 +47,6 @@ class RestaurantsController < ApplicationController
     #   @restaurants = @restaurants.where("(SELECT AVG(value::numeric) FROM UNNEST(budget) value) < ?", (cookies[:total_price].to_i / cookies[:number_of_people].to_i))
     # end
 
-
     @user = current_user
 
 

@@ -1,10 +1,13 @@
 <header class="header flex-shrink-0">
   <div class="name-number">
-    <%= link_to "MixEatUp", root_path%>
+
+    <%# <%= link_to "MixEatUp", root_path%>
+
     <p> 3 of 3</p>
   </div>
   <h1>5 Perfect Restaurants</h1>
 </header>
+
 <%# container py-5 %>
 <div class="cover d-flex align-items-center justify-content-center">
   <%# <div class="text-center text-black">
@@ -86,65 +89,58 @@
             </div>
           </div>
 
+
         </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="filter: invert(100%);">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="filter: invert(100%);" data-action="click->swipe-restaurants#swipe">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<div class="card-container d-none" data-swipe-restaurants-target="hiddenCarousel">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-      <h3 class="mb-0 explore">Explore:</h3>
-    </div>
-
-    <%# <div class="card-grid">
-        <% @restaurants.each do |restaurant| %>
-        <%# <div class="card"> %>
-            <%# <%= link_to restaurant_path(restaurant), class:"text-decoration-none card-class" do %>
-                <%# <div class="card-class-infos"> %>
-                  <%# <h3><%= restaurant.name</h3>  %>
-                <%# </div> %>
-            <%# <% end %>
-        <%# </div> %>
-        <%# <% end %>
-    <%# </div> %>
-
-      <%# <p class="information"><%= "Type of occasions this restaurant is perfect for: " restaurant.other_occasion</p>  %>
-
-      <div id="carouselExample1" class="carousel slide">
-        <div class="carousel-inner">
-        <div class="carousel-item"></div>
-        <div class="carousel-item active">
-        <!-- Example link to trigger page reload -->
-<%= link_to "Not found what you're looking for..click here for another 5", restaurants_path({next_5: true}), id: 'refresh-link' %>
-
-          <%# <h1>Not found what you're looking for..click here for another 5</h1> %>
-        </div>
-        <div class="carousel-item"></div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev" style="filter: invert(100%);" data-action="click->swipe-restaurants#swipeLeft">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="filter: invert(100%);">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next" style="filter: invert(100%);">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="filter: invert(100%);" data-action="click->swipe-restaurants#swipe">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <div class="card-container d-none" data-swipe-restaurants-target="hiddenCarousel">
+      <div class="d-flex align-items-center justify-content-between">
+        <h3 class="mb-0 explore text-black">Explore</h3>
+      </div>
+      <div id="carouselExample1" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item"></div>
+          <div class="carousel-item active">
+            <%= link_to "Not found what you're looking for..click here for another 5", restaurants_path({next_5: true}), id: 'refresh-link' %>
+          </div>
+          <div class="carousel-item"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev" style="filter: invert(100%);" data-action="click->swipe-restaurants#swipeLeft">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next" style="filter: invert(100%);">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
+
 <%# <script>
   function refreshPage() {
     // You can add additional logic here to customize the page reload behavior
     location.reload();
   }
 </script> %>
+
+<script>
+  function flipCard(card) {
+    card.classList.toggle("flipped");
+
+     if (card.classList.contains("flipped")) {
+      // Update the content of the back card
+      var backContent = card.querySelector(".back");
+      backContent.innerHTML = `<p>Here is more information</p>`;
+    }
+  }
+</script>
