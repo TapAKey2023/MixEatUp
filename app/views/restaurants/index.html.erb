@@ -9,12 +9,13 @@
     <h1>5 Perfect Restaurants</h1>
   </header>
 <%# container py-5 %>
-  <div class="text-center text-black">
+<div class="cover d-flex align-items-center justify-content-center">
+  <%# <div class="text-center text-black">
     <h3 class="typed-js" data-controller="typed-js"></h3>
-  </div>
-
+  </div> %>
+</div>
 <div class="stimulus-container" data-controller="swipe-restaurants">
-<div class="card-container " data-swipe-restaurants-target="mainCarousel">
+<div class="card-container" data-swipe-restaurants-target="mainCarousel">
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <% @restaurants.each_with_index do |restaurant, index| %>

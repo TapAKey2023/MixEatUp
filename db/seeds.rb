@@ -245,6 +245,7 @@ user_3.save!
 #   # puts "Created restaurant #{i + 1}..."
 # end
 
+
 Restaurant_1 = Restaurant.create(
   name: "Fischer's",
   address: "Marylebone",
@@ -278,36 +279,202 @@ Restaurant_2 = Restaurant.create(
   opening_hour: "12:00",
   closing_hour: "22:00",
   meal_type: "dinner",
-  reason: "A place where family fun + master classes or fun + work can collide",
+  reason: "Date night fun",
   rating: ":smile:",
   trending: ":fire:",
   instagram: "@STK_london",
   facebook: "STK London",
   resy: 'stk_london.resy.com',
   about: "The kitchen overlooking the dining room,  provides a theatrical hospitality area for the team to carve wellingtons, decant beautiful wines and display a British cheese board",
-  location_details: "‘Located steps from the British Museum, National Gallery, St. James Park and countless other walkable adventures",
+  location_details: "'Located steps from the British Museum, National Gallery, St. James Park and countless other walkable adventures",
   other_occasion: "Date"
 ),
 
 Restaurant_3 = Restaurant.create(
-   name: "Zapote",
-   address: "London",
-   cuisine_type: "Mexican",
-   chain: false,
-   budget: [15, 25, 12, 26, 18],
-   opening_hour: "12:00",
-   closing_hour: "23:00",
-   meal_type: "Lunch",
-   reason: 'Mexican food with a twist',
-   rating: ":smile:",
-   about: "Our tortillas are made in-house using traditional methods and heritage corn. To bring the flavours of Mexico, fresh ingredients are used, with a wide variety of chillies and spices.",
-   location_details: "Walkable to countless restaurants, theatrical venues and timeless nightlife in London",
-   other_occasion: "Work",
-   wheat: "no",
-   lactose: "no",
-   nuts: "no",
-   vegetarian:"yes",
+  name: "La Petite Ferme ",
+  address: "London",
+  cuisine_type: "French",
+  phone_no: "020 1234 5678",
+  chain: false,
+  budget: [50, 40, 100, 32, 22],
+  opening_hour: "12:00",
+  closing_hour: "23:00",
+  meal_type: "dinner",
+  reason: "Mexican food with a modern twist",
+  rating: ":smile:",
+  trending: ":fire:",
+  instagram: "@STK_london",
+  facebook: "STK London",
+  resy: 'stk_london.resy.com',
+  about: "Our tortillas are made in-house using traditional methods and heritage corn. To bring the flavours of Mexico, fresh ingredients are used, with a wide variety of chillies and spices",
+  location_details: "'Walkable to countless restaurants, theatrical venues and timeless nightlife in London",
+  other_occasion: "Date",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
+),
+
+Restaurant_4 = Restaurant.create(
+  name: "Marcus Wareing",
+  address: "London",
+  cuisine_type: "French",
+  phone_no: "020 1234 5678",
+  chain: false,
+  budget: [50, 40, 100, 32, 22],
+  opening_hour: "18:00",
+  closing_hour: "23:00",
+  meal_type: "dinner",
+  reason: "We know you love a Michelin star",
+  rating: ":smile:",
+  trending: ":fire:",
+  instagram: "@STK_london",
+  facebook: "STK London",
+  resy: 'stk_london.resy.com',
+  about: "A  fine dining experience in a warm and welcoming dining room and sourcing some of the best seasonal ingredients",
+  location_details: "'Whether it's a stroll around Victoria Park or walk along the river, we know this is a great spot for all occasions",
+  other_occasion: "Date",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
+),
+
+Restaurant_5 = Restaurant.create(
+  name: "Behind Restaurant",
+  address: "London",
+  cuisine_type: "Seafood",
+  phone_no: "020 1234 5678",
+  chain: false,
+  budget: [50, 40, 100, 32, 22],
+  opening_hour: "12:00",
+  closing_hour: "23:00",
+  meal_type: "dinner",
+  reason: "For an eccentric foodie",
+  rating: ":smile:",
+  trending: ":fire:",
+  instagram: "@STK_london",
+  facebook: "STK London",
+  resy: 'stk_london.resy.com',
+  about: "The service is as much a part of the meal as the food itself, which is why the entire menu IS served by us, the chef",
+  location_details: "Whether it's a stroll around Victoria Park or walk along the river, we know this is a great spot for all occasions",
+  other_occasion: "Date",
+  wheat: true,
+  lactose: true,
+  nuts: true,
+  vegetarian: true
 )
+
+Restaurant_6 = Restaurant.create(
+  name: "108 Brasserie",
+  address: "London",
+  cuisine_type: "European",
+  phone_no: "020 1234 5678",
+  chain: false,
+  budget: [50, 40, 100, 32, 22],
+  opening_hour: "12:00",
+  closing_hour: "22:00",
+  meal_type: "lunch",
+  reason: "Wonderful, warm and thoroughly lovely",
+  rating: ":smile:",
+  trending: ":fire:",
+  instagram: "@STK_london",
+  facebook: "STK London",
+  resy: 'stk_london.resy.com',
+  about: "Service is fantastic, food even better",
+  location_details: "Museums and parks nearby",
+  other_occasion: "Work"
+)
+
+
+  Restaurant_7 = Restaurant.create(
+    name: "Twist Connubio",
+    address: "London",
+    cuisine_type: "Spanish",
+    phone_no: "020 1234 5678",
+    chain: false,
+    budget: [50, 40, 100, 32, 22],
+    opening_hour: "12:00",
+    closing_hour: "22:00",
+    meal_type: "lunch",
+    reason: "Quick bite perfect for lunch",
+    rating: ":smile:",
+    trending: ":fire:",
+    instagram: "@STK_london",
+    facebook: "STK London",
+    resy: 'stk_london.resy.com',
+    about: "Brings a taste of Spain to London",
+    location_details: "Surrounded by bars and different events",
+    other_occasion: "Work"
+  )
+
+    Restaurant_8 = Restaurant.create(
+      name: "Hawksmoor",
+      address: "London",
+      cuisine_type: "American",
+      phone_no: "020 1234 5678",
+      chain: false,
+      budget: [50, 40, 100, 32, 22],
+      opening_hour: "12:00",
+      closing_hour: "22:00",
+      meal_type: "lunch",
+      reason: "No one does steak like Hawksmoor",
+      rating: ":smile:",
+      trending: ":fire:",
+      instagram: "@STK_london",
+      facebook: "STK London",
+      resy: 'stk_london.resy.com',
+      about: "Tasty, filling food",
+      location_details: "In the heart of London",
+      other_occasion: "Work"
+    )
+
+      Restaurant_9 = Restaurant.create(
+        name: "SushiSamba",
+        address: "London",
+        cuisine_type: "Japanese",
+        phone_no: "020 1234 5678",
+        chain: false,
+        budget: [50, 40, 100, 32, 22],
+        opening_hour: "12:00",
+        closing_hour: "22:00",
+        meal_type: "lunch",
+        reason: "Perfect for a sushi lunch",
+        rating: ":smile:",
+        trending: ":fire:",
+        instagram: "@STK_london",
+        facebook: "STK London",
+        resy: 'stk_london.resy.com',
+        about: "Famous for the best sushi",
+        location_details: "Incredible view on the 39th floor",
+        other_occasion: "Work"
+
+      )
+
+
+        Restaurant_10 = Restaurant.create(
+          name: "Banh Mi Keu Deli Cityin ",
+          address: "London",
+          cuisine_type: "Vietnamese",
+          phone_no: "020 1234 5678",
+          chain: false,
+          budget: [50, 40, 100, 32, 22],
+          opening_hour: "12:00",
+          closing_hour: "22:00",
+          meal_type: "lunch",
+          reason: "Tasty quick choices",
+          rating: ":smile:",
+          trending: ":fire:",
+          instagram: "@STK_london",
+          facebook: "STK London",
+          resy: 'stk_london.resy.com',
+          about: "Perfect lunch spot in London",
+          location_details: "Lots to discover nearby",
+          other_occasion: "Work"
+
+        )
+
+
 
 
 
