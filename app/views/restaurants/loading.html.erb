@@ -1,63 +1,47 @@
-
   <header class="header flex-shrink-0">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
     </div>
     <h1>Summary</h1>
   </header>
-<div class="label" data-controller="loading-page">
-<br>
-<h2 class= "calc">Calculating Your Perfect Matches</h2>
-  <img class= "load" src="https://t3.ftcdn.net/jpg/04/44/58/26/360_F_444582608_qDpK9F0g0lPUtnvxe5ndlkRLIgZM8S45.jpg" alt="menu">
-  <h2 class= "choice-bold">Your Choices:</h2>
-  <ul class="container ml-5 mr-5 loading-list">
-    <li data-loading-page-target="listItems" class= "d-none"><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
-    <% if cookies[:occasion] != "negative" %>
-    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
-    <% end %>
-    <% if cookies[:location] == "positive"%>
-    <li data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Location: </span><%= cookies[:city] %></li>
-    <% end %>
-    <% if cookies[:total_price] == "positive" %>
-    <li data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Total price: </span><%= cookies[:total_price] %></li>
-    <% end %>
-    <% if cookies[:number_of_people] =="positive" %>
-    <li data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Number of people: </span><%= cookies[:number_of_people] %></li>
-    <% end %>
-    <% if cookies[:wheat] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Sensitivity: </span>Wheat</li>
-    <% end %>
-    <% if cookies[:lactose] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Sensitivity: </span>Lactose</li>
-    <% end %>
-    <% if cookies[:nuts] == "positive" %>
-    <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Sensitivity: </span>Nuts</li>
-    <% end %>
-    <% if cookies[:vegetarian] == "positive" %>
-    <li data-loading-page-target = "listItems" class= "d-none"><span class="loading-bold">Preferences: </span> Vegetarian</li>
-    <% end %>
-  </ul>
+  <div class="label" data-controller="loading-page" style="height:70dvh;">
+    <h2 class= "calc">Calculating Your Perfect Matches</h2>
+      <img class= "load" src="https://t3.ftcdn.net/jpg/04/44/58/26/360_F_444582608_qDpK9F0g0lPUtnvxe5ndlkRLIgZM8S45.jpg" alt="menu">
+      <h2 class= "choice-bold">Your Choices:</h2>
+      <ul class="container ml-5 mr-5 loading-list">
+        <% if cookies[:meal].present? %>
 
-  <br>
-  <br>
-  <h2 data-loading-page-target ="listItems" class= "d-none"><span class="loading-bold">Loading </span>
-    <span data-loading-page-target ="listItems" class= "d-none">.</span>
-    <span data-loading-page-target ="listItems" class= "d-none">.</span>
-    <span data-loading-page-target ="listItems" class= "d-none">.</span>
-  </h2>
+        <li  ><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
+        <% end %>
 
-  <br>
-  <div class="col-md-12 text-center">
-  <button data-loading-page-target ="listItems" class= "button d-none" >
-    <%=  link_to "See results", restaurants_path  %>
-  </button>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+        <% if cookies[:occasion] != "negative" %>
+        <li  ><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
+        <% end %>
+        <% if cookies[:location] == "positive"%>
+        <li  ><span class="loading-bold">Location: </span><%= cookies[:city] %></li>
+        <% end %>
+        <% if cookies[:total_price] == "positive" %>
+        <li  ><span class="loading-bold">Total price: </span><%= cookies[:total_price] %></li>
+        <% end %>
+        <% if cookies[:number_of_people] =="positive" %>
+        <li  ><span class="loading-bold">Number of people: </span><%= cookies[:number_of_people] %></li>
+        <% end %>
+        <% if cookies[:wheat] == "positive" %>
+        <li  ><span class="loading-bold">Sensitivity: </span>Wheat</li>
+        <% end %>
+        <% if cookies[:lactose] == "positive" %>
+        <li  ><span class="loading-bold">Sensitivity: </span>Lactose</li>
+        <% end %>
+        <% if cookies[:nuts] == "positive" %>
+        <li  ><span class="loading-bold">Sensitivity: </span>Nuts</li>
+        <% end %>
+        <% if cookies[:vegetarian] == "positive" %>
+        <li  ><span class="loading-bold">Preferences: </span> Vegetarian</li>
+        <% end %>
+      </ul>
+      <h2 data-loading-page-target="listItems" class= "d-none mt-5 pt-5"><span class="loading-bold">Loading </span>
+        <span data-loading-page-target="listItems" class= "d-none">.</span>
+        <span data-loading-page-target="listItems" class= "d-none">.</span>
+        <span data-loading-page-target="listItems" class= "d-none">.</span>
+      </h2>
 </div>
