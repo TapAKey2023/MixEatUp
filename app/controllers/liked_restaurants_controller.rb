@@ -4,7 +4,7 @@ class LikedRestaurantsController < ApplicationController
     @linked_restaurant.restaurant = Restaurant.find(params[:restaurant_id])
     @linked_restaurant.user = current_user
     @linked_restaurant.save
-    redirect_to restaurant_path(@linked_restaurant.restaurant)
+    redirect_to restaurants_path
   end
 
   def destroy

@@ -1,16 +1,43 @@
 .bill {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://i.pinimg.com/474x/98/e7/31/98e7316b50ed00524db128ccd14956a8.jpg");
+  position: relative;
   color: white !important;
+  border-radius: 10px;
+  height: 622px;
+
+  .label{
+    margin: -4px 5px 9px 5px;
+  }
+
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://i.pinimg.com/474x/98/e7/31/98e7316b50ed00524db128ccd14956a8.jpg");
+    filter: blur(4px);
+    border-radius: inherit;
+  }
+}
+
+h3{
+  color: $secondary-color;
+  font-size: 30px;
+  padding-bottom: 0px;
+}
+.text2 {
   font-weight: bold;
   font-size: large;
 }
+
 .set-height-bills {
   height: 5vh;
-}
+    border-radius: 15px;
 
-// .bill-text {
-//   font-size: 20px;
-// }
+}
 
 .new_bill {
   .submit-btn {
