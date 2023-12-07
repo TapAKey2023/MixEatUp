@@ -88,4 +88,16 @@
   }
 }
 
+.home-logo {
+  z-index: 1000;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* or 'absolute' depending on your layout */
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // background-image: url('https://media.licdn.com/dms/image/C5112AQEsEvnzHSaZ4w/article-cover_image-shrink_600_2000/0/1525673908614?e=2147483647&v=beta&t=qgXoQx05t9pX6RJwt57XAlGsadWlq6gIV3j4vk97Cko') center/cover no-repeat;

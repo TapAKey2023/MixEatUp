@@ -1,6 +1,6 @@
 <header class="header">
   <div class="name-number">
-    <%= link_to "MixEatUp", root_path%>
+    <%# <%= link_to "MixEatUp", root_path%>
     <p> 4 of 4</p>
   </div>
   <h1>Final Details</h1>
@@ -44,7 +44,7 @@
       <%= button_tag type: 'button', class: "left-button", onclick: "history.back();" do %>
         <i class="fa-solid fa-arrow-left"></i>
       <% end %>
-      
+
       <p class="mb-0">4 of 4</p>
 
       <%= f.button :button, type: :submit, class: "right-button", data: { buttons_target: "submit" } do %>
