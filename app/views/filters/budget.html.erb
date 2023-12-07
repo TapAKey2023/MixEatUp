@@ -1,6 +1,16 @@
 <header class="header flex-shrink-0">
   <div class="name-number">
     <%= link_to "MixEatUp", root_path%>
+
+    <% if cookies[:filter] == "occasion" && cookies[:preferences] == "positive" && cookies[:location] == "positive" %>
+     <p> 1 of 3</p>
+     <% elsif cookies[:filter] == "occasion" && (cookies[:preferences] == "positive" || cookies[:location] == "positive") %>
+     <p> 1 of 2</p>
+     <% elsif cookies[:filter] == "occasion" %>
+     <p> 1 of 1</p>
+     <% else %>
+     <p> 2 of 4</p>
+     <% end %>
   </div>
   <h1>Budget</h1>
 </header>
@@ -21,6 +31,9 @@
       <%= f.input :number_of_people,label: "How many people will be attending?", input_html: { type: 'number', class: 'w-100' }, wrapper_html: { class: 'w-100' } %>
       <%= f.submit "Next" %>
     <% end %>
+
+<!--   </div> -->
+
   <% else %>
     <div class="label2">1. What do you plan to indulge in?</div>
     <%= simple_form_for :budget_form, url: filters_preferences_path, method: :get, html: { class: 'w-100 h-100 d-flex flex-column align-items-center justify-content-between' } do |f|  %>
@@ -34,4 +47,5 @@
       <%= f.submit "Next" %>
     <% end %>
   <% end %>
+
 </div>

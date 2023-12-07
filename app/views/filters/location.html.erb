@@ -1,6 +1,17 @@
 <header class="header flex-shrink-0">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
+      <% if cookies[:filter] == "occasion" && cookies[:budget] == "positive" && cookies[:preferences] == "positive" %>
+     <p> 3 of 3 </p>
+     <% elsif cookies[:filter] == "occasion" && (cookies[:budget] == "positive" || cookies[:preferences] == "positive") %>
+     <p> 2 of 2</p>
+     <% elsif cookies[:filter] == "occasion" %>
+     <p> 1 of 1</p>
+      <% elsif cookies[:filter] == "budget" %>
+     <p>1 of 1</p>
+     <% elsif cookies[:filter] == "budget" && cookies[:preferences] == "positive" %>
+     <p>2 of 2</p>
+     <% end %>
     </div>
     <h1>Location</h1>
 </header>

@@ -2,11 +2,9 @@
   <header class="header flex-shrink-0">
     <div class="name-number">
       <%= link_to "MixEatUp", root_path%>
-      <p> 4 of 4</p>
     </div>
     <h1>Summary</h1>
   </header>
-
 <div class="label" data-controller="loading-page">
 <br>
 <h2 class= "calc">Calculating Your Perfect Matches</h2>
@@ -14,7 +12,7 @@
   <h2 class= "choice-bold">Your Choices:</h2>
   <ul class="container ml-5 mr-5 loading-list">
     <li data-loading-page-target="listItems" class= "d-none"><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
-    <% if cookies[:occasion] == "positive" %>
+    <% if cookies[:occasion] != "negative" %>
     <li data-loading-page-target= "listItems" class= "d-none"><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
     <% end %>
     <% if cookies[:location] == "positive"%>
