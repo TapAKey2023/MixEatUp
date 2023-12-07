@@ -19,6 +19,24 @@
   margin-bottom: 0;
 }
 
+.reaction {
+  height: 20px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  img {
+    height: 145%;
+    width: auto;
+    aspect-ratio: 1;
+    // border: 0.5px solid black;
+    margin-bottom: 2px;
+    // background: rgba($color: gold, $alpha: 0.6);
+    border-radius: 50%;
+  }
+  h4 {
+    margin-bottom: 0px;
+  }
+}
 
 h3 {
   color: $primary-color;

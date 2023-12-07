@@ -21,13 +21,13 @@
       <% @restaurants.each_with_index do |restaurant, index| %>
       <% active = index == 0 ? "active": "" %>
         <div class="carousel-item <%= active %>" id="<%= index %>" data-swipe-restaurants-target="carouselItem">
-          <div class="card-small" onclick="this.classList.toggle('flipped')">
+          <div class="card-small" data-controller='card'>
             <div class="card-inner">
               <div class="front">
                 <img src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:300px" />
                 <div class="card-small-infos">
 
-                  <h2 class="title"><%= restaurant.name  %> <%= restaurant.trending %></h2>
+                  <h2 class="title"><%= restaurant.name  %> </h2>
                   <%# <div class="info-icon"> %>
                 </div>
                   <%# <div class="details-icon"> %>
@@ -36,7 +36,14 @@
                     <h4><i class="fa-solid fa-utensils"><%= " : " %></i><%= restaurant.cuisine_type %></h4>
                     <h4><%= "Why you'll love it: " %> <%= restaurant.about %> <%= " " %> <i class="fa-solid fa-wand-magic-sparkles"></i></h4>
                     <h4><%= "Price Per Person: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %></h4>
-                    <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
+                    <% if restaurant.rating == ':smile:' %>
+                    <div class="reaction">
+                    <h4><%= "How others feel:" %></h4>
+                    <%= image_tag 'smile.svg' %>
+                    </div>
+                    <% else %>
+                     <h4><%= "How others feel: n/a" %></h4>
+                    <% end %>
                   </div>
 
                 </div>
@@ -49,14 +56,14 @@
                     <i class="fa-regular fa-heart icon" ></i>
                     <% end %>
                   </div>
-                    <i class="fa-solid fa-circle-info"></i>
+                    <i class="fa-solid fa-circle-info"  style='margin-right: 8px;' data-action='click->card#flip'></i>
                   </div>
                 <%# </div> %>
               </div>
             <div class="back">
               <div class="pic-info">
                 <img class="small-image" src="https://img.freepik.com/premium-photo/delicious-details-closeup-food-table-with-purpose_950053-1523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699747200&semt=ais" style="height:150px" />
-                <p class="back-title"><%= restaurant.name  %> <%= restaurant.trending %>
+                <p class="back-title"><%= restaurant.name  %>
                 <br>
                 <br>
                 <br>
@@ -137,18 +144,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  function flipCard(card) {
-    card.classList.toggle("flipped");
-
-     if (card.classList.contains("flipped")) {
-      // Update the content of the back card
-      var backContent = card.querySelector(".back");
-      backContent.innerHTML = `<p>Here is more information</p>`;
-    }
-  }
-</script>
 <%# <script>
   function refreshPage() {
     // You can add additional logic here to customize the page reload behavior
