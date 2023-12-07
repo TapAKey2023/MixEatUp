@@ -12,7 +12,7 @@
   </div>
 
 <br>
-  <%=  form_for(:user_clarifications, url: filters_user_clarification_choice_path, method: :get, data: {controller: "buttons"})  do |f| %>
+  <%=  form_for(:user_clarifications, url: filters_preferences_path, method: :get, data: {controller: "buttons"})  do |f| %>
 
     <div class="card-clarification " style="background-size:cover; background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('<%= image_url('https://img.livestrong.com/640/cme-data/getty%2F999a2db907c849b6a162d2c843a8173d.jpg') %>');" data-field="preferences" data-action="click->buttons#selectButton" onclick="toggleCheckbox(this, 'preferences')">
       <div class="card-content ">

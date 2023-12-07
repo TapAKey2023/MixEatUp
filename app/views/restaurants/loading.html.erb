@@ -14,7 +14,7 @@
         <li  ><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
         <% end %>
 
-        <% if cookies[:occasion] != "negative" %>
+        <% if cookies[:occasion] == "positive" %>
         <li  ><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
         <% end %>
         <% if cookies[:location] == "positive"%>
