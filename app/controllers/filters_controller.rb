@@ -11,9 +11,8 @@ class FiltersController < ApplicationController
 
   def meal
     if cookies[:filter] == "budget"
-      cookies[:total_price] = params[:total_price]
-      cookies[:number_of_people] = params[:number_of_people]
-
+      cookies[:total_price] = params[:budget_form][:total_price]
+      cookies[:number_of_people] = params[:budget_form][:number_of_people]
     end
     cookies[:occasion] = params[:occasion]
   end
@@ -50,18 +49,14 @@ class FiltersController < ApplicationController
     end
 
       redirect_to filters_budget_path
-
   end
 
   def budget
     cookies[:filter] = "budget" if params[:filter] == "budget"
     redirect_to filters_preferences_path if cookies[:filter] == "occasion" && cookies[:budget] == "negative"
     # Need to check what these are doing
-    if cookies[:meal] == false
-      redirect_to filters_preferences_path
-      return
-    end
 
+    redirect_to filters_preferences_path if cookies[:meal] == false
 
     # Need to check what these are doing
     if cookies[:filter] == "budget"
@@ -71,9 +66,9 @@ class FiltersController < ApplicationController
 
 
   def preferences
-    cookies.delete :total_price
-    cookies.delete :number_of_people
-    cookies.delete :drink_or_food_choice
+    # cookies.delete :total_price
+    # cookies.delete :number_of_people
+    # cookies.delete :drink_or_food_choice
     # This is only done when the user selects Budget at the beginning
     if cookies[:filter] == "budget"
       cookies[:preferences] = params[:user_clarifications][:preferences]
