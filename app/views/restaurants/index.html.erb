@@ -49,12 +49,12 @@
                       <p class="back-title"><strong><%= restaurant.name  %></strong> <%= restaurant.trending %></p>
                       <div class="row">
                         <div class="col-6">
-                          <h4><%= "Cuisine: " %><%= restaurant.cuisine_type %></h4>
-                          <h4><%= "Price: £" %><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %>pp</h4>
-                          <h4><%= "How others feel: " %><%= restaurant.rating %></h4>
+                          <h4><strong><%= "Cuisine: " %></strong><%= restaurant.cuisine_type %></h4>
+                          <h4><strong><%= "Price: £" %></strong><%= (restaurant.budget.map {|budget| budget.to_i }).sum / restaurant.budget.length %>pp</h4>
+                          <h4><strong><%= "How others feel: " %></strong><i class="fa-regular fa-face-smile"></i></h4>
                         </div>
                         <div class="col-6">
-                          <h4><%= "Why you'll love it: " %> <%= restaurant.about %></h4>
+                          <h4><strong><%= "Why you'll love it: " %></strong><%= restaurant.about %></h4>
                         </div>
                         <div class="col-6">
                         </div>
