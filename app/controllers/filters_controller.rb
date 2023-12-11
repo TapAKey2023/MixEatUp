@@ -98,7 +98,7 @@ class FiltersController < ApplicationController
     cookies.delete :lactose
     cookies.delete :nuts
     if cookies[:filter] == "budget"
-      if cookies[:preferences] == "positive"
+      if cookies[:preferences] == "true"
         cookies[:wheat] = params[:wheat] if params[:wheat] == "positive"
         cookies[:lactose] = params[:lactose] if params[:lactose] == "positive"
         cookies[:nuts] = params[:nuts] if params[:nuts] == "positive"

@@ -17,25 +17,25 @@
         <% if cookies[:occasion] == "positive" %>
         <li  ><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
         <% end %>
-        <% if cookies[:location] == "positive"%>
+        <% if cookies[:location].present?%>
         <li  ><span class="loading-bold">Location: </span><%= cookies[:city] %></li>
         <% end %>
-        <% if cookies[:total_price] == "positive" %>
+        <% if cookies[:total_price].present? %>
         <li  ><span class="loading-bold">Total price: </span><%= cookies[:total_price] %></li>
         <% end %>
-        <% if cookies[:number_of_people] =="positive" %>
+        <% if cookies[:number_of_people].present? %>
         <li  ><span class="loading-bold">Number of people: </span><%= cookies[:number_of_people] %></li>
         <% end %>
-        <% if cookies[:wheat] == "positive" %>
+        <% if cookies[:wheat].present? %>
         <li  ><span class="loading-bold">Sensitivity: </span>Wheat</li>
         <% end %>
-        <% if cookies[:lactose] == "positive" %>
+        <% if cookies[:lactose].present? %>
         <li  ><span class="loading-bold">Sensitivity: </span>Lactose</li>
         <% end %>
-        <% if cookies[:nuts] == "positive" %>
+        <% if cookies[:nuts].present? %>
         <li  ><span class="loading-bold">Sensitivity: </span>Nuts</li>
         <% end %>
-        <% if cookies[:vegetarian] == "positive" %>
+        <% if cookies[:vegetarian].present? %>
         <li  ><span class="loading-bold">Preferences: </span> Vegetarian</li>
         <% end %>
       </ul>
