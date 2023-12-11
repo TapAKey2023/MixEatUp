@@ -14,10 +14,10 @@
         <li  ><span class="loading-bold">Meal: </span><%= cookies[:meal].capitalize %></li>
         <% end %>
 
-        <% if cookies[:occasion] == "positive" %>
+        <% if cookies[:occasion].present? %>
         <li  ><span class="loading-bold">Occasion: </span><%= cookies[:occasion].capitalize %></li>
         <% end %>
-        <% if cookies[:location].present?%>
+        <% if cookies[:city].present?%>
         <li  ><span class="loading-bold">Location: </span><%= cookies[:city] %></li>
         <% end %>
         <% if cookies[:total_price].present? %>
